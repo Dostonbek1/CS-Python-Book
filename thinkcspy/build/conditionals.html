@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>5. Conditionals &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="6. Fruitful functions" href="fruitful_functions.html" />
     <link rel="prev" title="4. Functions" href="functions.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -57,13 +54,13 @@
 <div class="section" id="conditionals">
 <h1>5. Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">¶</a></h1>
 <p>Programs get really interesting when we can test conditions and change the
-program behaviour depending on the outcome of the tests.  That&#8217;s what this
+program behaviour depending on the outcome of the tests.  That’s what this
 chapter is about.</p>
 <div class="section" id="boolean-values-and-expressions">
 <span id="index-0"></span><h2>5.1. Boolean values and expressions<a class="headerlink" href="#boolean-values-and-expressions" title="Permalink to this headline">¶</a></h2>
 <p>A <em>Boolean</em> value is either true or false.  It is named
 after the British mathematician, George Boole, who first formulated <em>Boolean
-algebra</em> &#8212; some rules for reasoning about and combining these values.
+algebra</em> — some rules for reasoning about and combining these values.
 This is the basis of all modern computer logic.</p>
 <p>In Python, the two Boolean values are <code class="docutils literal"><span class="pre">True</span></code> and <code class="docutils literal"><span class="pre">False</span></code> (the
 capitalization must be exactly as shown), and the Python type is <strong>bool</strong>.</p>
@@ -110,7 +107,7 @@ different from the mathematical symbols. A common error is to use a single
 equal sign (<code class="docutils literal"><span class="pre">=</span></code>) instead of a double equal sign (<code class="docutils literal"><span class="pre">==</span></code>). Remember that <code class="docutils literal"><span class="pre">=</span></code>
 is an assignment operator and <code class="docutils literal"><span class="pre">==</span></code> is a comparison operator. Also, there is
 no such thing as <code class="docutils literal"><span class="pre">=&lt;</span></code> or <code class="docutils literal"><span class="pre">=&gt;</span></code>.</p>
-<p>Like any other types we&#8217;ve seen so far, Boolean values can be assigned to
+<p>Like any other types we’ve seen so far, Boolean values can be assigned to
 variables, printed, etc.</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
@@ -139,7 +136,7 @@ Will the expression yield <code class="docutils literal"><span class="pre">True<
 is <code class="docutils literal"><span class="pre">True</span></code> if <code class="docutils literal"><span class="pre">(x</span> <span class="pre">&gt;</span> <span class="pre">y)</span></code> is <code class="docutils literal"><span class="pre">False</span></code>, that is, if <code class="docutils literal"><span class="pre">x</span></code> is less than or equal to
 <code class="docutils literal"><span class="pre">y</span></code>.</p>
 <p>The expression on the left of the <code class="docutils literal"><span class="pre">or</span></code> operator is evaluated first: if the result is <code class="docutils literal"><span class="pre">True</span></code>,
-Python does not (and need not) evaluate the expression on the right &#8212; this is called <em>short-circuit evaluation</em>.
+Python does not (and need not) evaluate the expression on the right — this is called <em>short-circuit evaluation</em>.
 Similarly, for the <code class="docutils literal"><span class="pre">and</span></code> operator, if the expression on the left yields <code class="docutils literal"><span class="pre">False</span></code>, Python does not
 evaluate the expression on the right.</p>
 <p>So there are no unnecessary evaluations.</p>
@@ -251,7 +248,7 @@ For example, we are all familiar with school algebra rules, such as:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Here we see a different algebra &#8212; the <em>Boolean</em> algebra &#8212;
+<p>Here we see a different algebra — the <em>Boolean</em> algebra —
 which provides rules for working with Boolean values.</p>
 <p>First, the <code class="docutils literal"><span class="pre">and</span></code> operator:</p>
 <blockquote>
@@ -337,7 +334,7 @@ all the statements indented under the <code class="docutils literal"><span class
 <p>There is no limit on the number of statements that can appear under the two clauses of an
 <code class="docutils literal"><span class="pre">if</span></code> statement, but there has to be at least one statement in each block.  Occasionally, it is useful
 to have a section with no statements (usually as a place keeper, or scaffolding,
-for code we haven&#8217;t written yet). In that case, we can use the <code class="docutils literal"><span class="pre">pass</span></code> statement, which
+for code we haven’t written yet). In that case, we can use the <code class="docutils literal"><span class="pre">pass</span></code> statement, which
 does nothing except act as a placeholder.</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -375,7 +372,7 @@ executed, otherwise the flow of execution continues to the statement after the <
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>In this case, the print function that outputs the square root is the one after the <code class="docutils literal"><span class="pre">if</span></code> &#8212; not
+<p>In this case, the print function that outputs the square root is the one after the <code class="docutils literal"><span class="pre">if</span></code> — not
 because we left a blank line, but because of the way the code is indented.    Note too that
 the function call <code class="docutils literal"><span class="pre">math.sqrt(x)</span></code> will give an error unless we have an <code class="docutils literal"><span class="pre">import</span> <span class="pre">math</span></code> statement,
 usually placed near the top of our script.</p>
@@ -383,7 +380,7 @@ usually placed near the top of our script.</p>
 <p class="first admonition-title">Python terminology</p>
 <p>Python documentation sometimes uses the term <strong>suite</strong> of statements to mean what we
 have called a <em>block</em> here. They mean the same thing, and since most other languages and
-computer scientists use the word <em>block</em>, we&#8217;ll stick with that.</p>
+computer scientists use the word <em>block</em>, we’ll stick with that.</p>
 <p class="last">Notice too that <code class="docutils literal"><span class="pre">else</span></code> is not a statement.  The <code class="docutils literal"><span class="pre">if</span></code> statement has
 two <em>clauses</em>, one of which is the (optional) <code class="docutils literal"><span class="pre">else</span></code> clause.</p>
 </div>
@@ -585,7 +582,7 @@ write instead:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>Two powerful simplification laws (called de Morgan&#8217;s laws) that are often
+<p>Two powerful simplification laws (called de Morgan’s laws) that are often
 helpful when dealing with complicated Boolean expressions are:</p>
 <blockquote>
 <div><div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="go">not (x and y)  ==  (not x) or (not y)</span>
@@ -608,7 +605,7 @@ We find this fragment of Python code in the game:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>de Morgan&#8217;s laws together with the logical opposites would let us
+<p>de Morgan’s laws together with the logical opposites would let us
 rework the condition in a (perhaps) easier to understand way like this:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -638,10 +635,10 @@ rework the condition in a (perhaps) easier to understand way like this:</p>
 the initial English statement. Clarity of our code (for other humans),
 and making it easy to see that the code does what was expected should always
 be a high priority.</p>
-<p>As our programming skills develop we&#8217;ll find we have
+<p>As our programming skills develop we’ll find we have
 more than one way to solve any problem.  So good programs are <em>designed</em>.
 We make choices that favour clarity, simplicity, and elegance.  The job
-title <em>software architect</em> says a lot about what we do &#8212; we are <em>architects</em>
+title <em>software architect</em> says a lot about what we do — we are <em>architects</em>
 who engineer our products to balance beauty, functionality, simplicity and
 clarity in our creations.</p>
 <div class="admonition tip">
@@ -655,7 +652,7 @@ we rather use a function?  Can we simplify the conditionals?</p>
 </div>
 <div class="section" id="type-conversion">
 <span id="index-8"></span><h2>5.11. Type conversion<a class="headerlink" href="#type-conversion" title="Permalink to this headline">¶</a></h2>
-<p>We&#8217;ve had a first look at this in an earlier chapter.  Seeing it again won&#8217;t hurt!</p>
+<p>We’ve had a first look at this in an earlier chapter.  Seeing it again won’t hurt!</p>
 <p>Many Python types come with a built-in function that attempts to convert values
 of another type into its own type. The <code class="docutils literal"><span class="pre">int</span></code> function, for example,
 takes any value and converts it to an integer, if possible, or complains
@@ -720,23 +717,23 @@ and is not defined here, so we get an error.</p>
 </div>
 <div class="section" id="a-turtle-bar-chart">
 <span id="index-9"></span><h2>5.12. A Turtle Bar Chart<a class="headerlink" href="#a-turtle-bar-chart" title="Permalink to this headline">¶</a></h2>
-<p>The turtle has a lot more power than we&#8217;ve seen so far. The full
+<p>The turtle has a lot more power than we’ve seen so far. The full
 documentation can be found at
 <a class="reference external" href="http://docs.python.org/py3k/library/turtle.html">http://docs.python.org/py3k/library/turtle.html</a>
 or within PyScripter, use <em>Help</em> and search for the turtle module.</p>
 <p>Here are a couple of new tricks for our turtles:</p>
 <ul class="simple">
-<li>We can get a turtle to display text on the canvas at the turtle&#8217;s current position.  The method to do that is
+<li>We can get a turtle to display text on the canvas at the turtle’s current position.  The method to do that is
 <code class="docutils literal"><span class="pre">alex.write(&quot;Hello&quot;)</span></code>.</li>
 <li>We can fill a shape (circle, semicircle, triangle, etc.) with a color.  It is a two-step process.
 First we call the method <code class="docutils literal"><span class="pre">alex.begin_fill()</span></code>, then we draw the shape, then we call <code class="docutils literal"><span class="pre">alex.end_fill()</span></code>.</li>
-<li>We&#8217;ve previously set the color of our turtle &#8212; we can now also set its fill color, which need not
+<li>We’ve previously set the color of our turtle — we can now also set its fill color, which need not
 be the same as the turtle and the pen color.  We use <code class="docutils literal"><span class="pre">alex.color(&quot;blue&quot;,&quot;red&quot;)</span></code> to set the turtle
 to draw in blue, and fill in red.</li>
 </ul>
 <p>Ok, so can we get tess to draw a bar chart?  Let us start with some data to be charted,</p>
 <p><code class="docutils literal"><span class="pre">xs</span> <span class="pre">=</span> <span class="pre">[48,</span> <span class="pre">117,</span> <span class="pre">200,</span> <span class="pre">240,</span> <span class="pre">160,</span> <span class="pre">260,</span> <span class="pre">220]</span></code></p>
-<p>Corresponding to each data measurement, we&#8217;ll draw a simple rectangle of that height, with a fixed width.</p>
+<p>Corresponding to each data measurement, we’ll draw a simple rectangle of that height, with a fixed width.</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -775,17 +772,17 @@ to draw in blue, and fill in red.</li>
 was the mental chunking, or how we broke the problem into smaller pieces. Our chunk
 is to draw one bar, and we wrote a function to do that. Then, for the whole
 chart, we repeatedly called our function.</p>
-<p>Next, at the top of each bar, we&#8217;ll print the value of the data.
-We&#8217;ll do this in the body of <code class="docutils literal"><span class="pre">draw_bar</span></code>, by adding   <code class="docutils literal"><span class="pre">t.write('</span>&#160; <span class="pre">'</span> <span class="pre">+</span> <span class="pre">str(height))</span></code>
+<p>Next, at the top of each bar, we’ll print the value of the data.
+We’ll do this in the body of <code class="docutils literal"><span class="pre">draw_bar</span></code>, by adding   <code class="docutils literal"><span class="pre">t.write('</span>&#160; <span class="pre">'</span> <span class="pre">+</span> <span class="pre">str(height))</span></code>
 as the new third line of the body.
-We&#8217;ve put a little space in front of the number, and turned the
+We’ve put a little space in front of the number, and turned the
 number into a string.  Without this extra space we tend
 to cramp our text awkwardly against the bar to the left.
 The result looks a lot better now:</p>
 <blockquote>
 <div><img alt="_images/tess_bar_2.png" src="_images/tess_bar_2.png" />
 </div></blockquote>
-<p>And now we&#8217;ll add two lines to fill each bar.  Our final program now looks like this:</p>
+<p>And now we’ll add two lines to fill each bar.  Our final program now looks like this:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -847,7 +844,7 @@ The result looks a lot better now:</p>
 <blockquote>
 <div><img alt="_images/tess_bar_3.png" src="_images/tess_bar_3.png" />
 </div></blockquote>
-<p>Mmm.  Perhaps the bars should not be joined to each other at the bottom.  We&#8217;ll need to pick up the pen while making the gap between the bars.  We&#8217;ll leave that as an exercise for you!</p>
+<p>Mmm.  Perhaps the bars should not be joined to each other at the bottom.  We’ll need to pick up the pen while making the gap between the bars.  We’ll leave that as an exercise for you!</p>
 </div>
 <div class="section" id="glossary">
 <h2>5.13. Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
@@ -898,11 +895,11 @@ of an operator.</dd>
 corresponding value of another type.</dd>
 <dt id="term-wrapping-code-in-a-function">wrapping code in a function</dt>
 <dd>The process of adding a function header and parameters to a sequence
-of program statements is often refered to as &#8220;wrapping the code in
-a function&#8221;.  This process is very useful whenever the program
+of program statements is often refered to as “wrapping the code in
+a function”.  This process is very useful whenever the program
 statements in question are going to be used multiple times.  It is
 even more useful when it allows the programmer to express their mental
-chunking, and how they&#8217;ve broken a complex problem into pieces.</dd>
+chunking, and how they’ve broken a complex problem into pieces.</dd>
 </dl>
 </div>
 <div class="section" id="exercises">
@@ -911,7 +908,7 @@ chunking, and how they&#8217;ve broken a complex problem into pieces.</dd>
 <li><p class="first">Assume the days of the week are numbered 0,1,2,3,4,5,6 from Sunday to Saturday.
 Write a function which is given the day number, and it returns the day name (a string).</p>
 </li>
-<li><p class="first">You go on a wonderful holiday (perhaps to jail, if you don&#8217;t like happy exercises)
+<li><p class="first">You go on a wonderful holiday (perhaps to jail, if you don’t like happy exercises)
 leaving on day number 3 (a Wednesday).  You return home after 137 sleeps.
 Write a general version of the program which asks for the starting day number, and
 the length of your stay, and it will tell you the name of day of the week you will return on.</p>
@@ -997,8 +994,8 @@ the length of your stay, and it will tell you the name of day of the week you wi
 </table>
 </div></blockquote>
 </li>
-<li><p class="first">Write a function which is given an exam mark, and it returns a string &#8212;
-the grade for that mark &#8212; according to this scheme:</p>
+<li><p class="first">Write a function which is given an exam mark, and it returns a string —
+the grade for that mark — according to this scheme:</p>
 <blockquote>
 <div><table border="1" class="docutils">
 <colgroup>
@@ -1073,9 +1070,9 @@ If a good programmer wants to know whether
 </li>
 <li><p class="first">Extend the above program so that the sides can be given to the function in any order.</p>
 </li>
-<li><p class="first">If you&#8217;re intrigued by why floating point arithmetic is sometimes inaccurate, on a piece
-of paper, divide 10 by 3 and write down the decimal result.  You&#8217;ll find it does not terminate,
-so you&#8217;ll need an infinitely long sheet of paper.  The <em>representation</em> of numbers in computer
+<li><p class="first">If you’re intrigued by why floating point arithmetic is sometimes inaccurate, on a piece
+of paper, divide 10 by 3 and write down the decimal result.  You’ll find it does not terminate,
+so you’ll need an infinitely long sheet of paper.  The <em>representation</em> of numbers in computer
 memory or on your calculator has similar problems: memory is finite, and some digits may have to be discarded. So small
 inaccuracies creep in.   Try this script:</p>
 </li>
@@ -1116,7 +1113,7 @@ inaccuracies creep in.   Try this script:</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

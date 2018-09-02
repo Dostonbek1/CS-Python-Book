@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>1. The way of the program &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="2. Variables, expressions and statements" href="variables_expressions_statements.html" />
     <link rel="prev" title="Contributor List" href="contrib.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -67,7 +64,7 @@ systems, form hypotheses, and test predictions.</p>
 solving</strong>. Problem solving means the ability to formulate problems, think
 creatively about solutions, and express a solution clearly and accurately. As
 it turns out, the process of learning to program is an excellent opportunity to
-practice problem-solving skills. That&#8217;s why this chapter is called, The way of
+practice problem-solving skills. That’s why this chapter is called, The way of
 the program.</p>
 <p>On one level, you will be learning to program, a useful skill by itself. On
 another level, you will use programming as a means to an end. As we go along,
@@ -101,8 +98,8 @@ execute the contents of the file. Such a file is called a <strong>script</strong
 advantage that they can be saved to disk, printed, and so on.</p>
 <p>In this Rhodes Local Edition of the textbook, we use a program development environment called
 <strong>PyScripter</strong>. (It is available at <a class="reference external" href="http://code.google.com/p/pyscripter">http://code.google.com/p/pyscripter</a>.)  There are various other
-development environments. If you&#8217;re using one of the others, you might be
-better off working with the authors&#8217; original book rather than this edition.</p>
+development environments. If you’re using one of the others, you might be
+better off working with the authors’ original book rather than this edition.</p>
 <p>For example, we created a file named <code class="docutils literal"><span class="pre">firstprogram.py</span></code> using PyScripter.
 By convention, files that contain Python programs have names that end with
 <code class="docutils literal"><span class="pre">.py</span></code></p>
@@ -135,7 +132,7 @@ statements.</dd>
 <dt>repetition</dt>
 <dd>Perform some action repeatedly, usually with some variation.</dd>
 </dl>
-<p>Believe it or not, that&#8217;s pretty much all there is to it. Every program you&#8217;ve
+<p>Believe it or not, that’s pretty much all there is to it. Every program you’ve
 ever used, no matter how complicated, is made up of instructions that look more
 or less like these. Thus, we can describe programming as the process of
 breaking a large, complex task into smaller and smaller subtasks until the
@@ -210,9 +207,9 @@ you want. The idea is that you should start with a program that does
 always have a working program.</p>
 <p>For example, Linux is an operating system kernel that contains millions of
 lines of code, but it started out as a simple program Linus Torvalds used to
-explore the Intel 80386 chip. According to Larry Greenfield, one of Linus&#8217;s
+explore the Intel 80386 chip. According to Larry Greenfield, one of Linus’s
 earlier projects was a program that would switch between displaying AAAA and
-BBBB. This later evolved to Linux (<em>The Linux Users&#8217; Guide</em> Beta Version 1).</p>
+BBBB. This later evolved to Linux (<em>The Linux Users’ Guide</em> Beta Version 1).</p>
 <p>Later chapters will make more suggestions about debugging and other programming
 practices.</p>
 </div>
@@ -242,9 +239,9 @@ One of the problems with <code class="docutils literal"><span class="pre">3=+6$<
 legal token in mathematics (at least as far as we know). Similarly,
 <sub>2</sub>Zz is not a legal token in chemistry notation because there is no element with the abbreviation
 <code class="docutils literal"><span class="pre">Zz</span></code>.</p>
-<p>The second type of syntax rule pertains to the <strong>structure</strong> of a statement&#8212; that
+<p>The second type of syntax rule pertains to the <strong>structure</strong> of a statement— that
 is, the way the tokens are arranged. The statement <code class="docutils literal"><span class="pre">3=+6$</span></code> is structurally
-illegal because you can&#8217;t place a plus sign immediately after an equal sign.
+illegal because you can’t place a plus sign immediately after an equal sign.
 Similarly, molecular formulas have to have subscripts after the element name,
 not before.  And in our Python example, if we omitted the comma, or if we changed the two
 parentheses around to say  <code class="docutils literal"><span class="pre">print)&quot;Happy</span> <span class="pre">New</span> <span class="pre">Year</span> <span class="pre">for</span> <span class="pre">&quot;,2013(</span></code> our statement would still
@@ -252,13 +249,13 @@ have six legal and valid tokens, but the structure is illegal.</p>
 <p>When you read a sentence in English or a statement in a formal language, you
 have to figure out what the structure of the sentence is (although in a natural
 language you do this subconsciously). This process is called <strong>parsing</strong>.</p>
-<p>For example, when you hear the sentence, &#8220;The other shoe fell&#8221;, you understand
+<p>For example, when you hear the sentence, “The other shoe fell”, you understand
 that the other shoe is the subject and fell is the verb.  Once you have parsed
 a sentence, you can figure out what it means, or the <strong>semantics</strong> of the sentence.
 Assuming that you know what a shoe is and what it means to fall, you will
 understand the general implication of this sentence.</p>
-<p>Although formal and natural languages have many features in common &#8212; tokens,
-structure, syntax, and semantics &#8212; there are many differences:</p>
+<p>Although formal and natural languages have many features in common — tokens,
+structure, syntax, and semantics — there are many differences:</p>
 <dl class="glossary docutils">
 <dt id="term-ambiguity">ambiguity</dt>
 <dd>Natural languages are full of ambiguity, which people deal with by
@@ -271,13 +268,13 @@ languages employ lots of redundancy. As a result, they are often
 verbose.  Formal languages are less redundant and more concise.</dd>
 <dt id="term-literalness">literalness</dt>
 <dd>Formal languages mean exactly what they say.  On the other hand, natural languages
-are full of idiom and metaphor. If someone says, &#8220;The
-other shoe fell&#8221;, there is probably no shoe and nothing falling.
-You&#8217;ll need to find the
+are full of idiom and metaphor. If someone says, “The
+other shoe fell”, there is probably no shoe and nothing falling.
+You’ll need to find the
 original joke to understand the idiomatic meaning of the other shoe falling.
 <em>Yahoo! Answers</em> thinks it knows!</dd>
 </dl>
-<p>People who grow up speaking a natural language&#8212;everyone&#8212;often have a hard
+<p>People who grow up speaking a natural language—everyone—often have a hard
 time adjusting to formal languages. In some ways, the difference between formal
 and natural language is like the difference between poetry and prose, but more
 so:</p>
@@ -307,13 +304,13 @@ natural languages, can make a big difference in a formal language.</p>
 <h2>1.9. The first program<a class="headerlink" href="#the-first-program" title="Permalink to this headline">¶</a></h2>
 <p>Traditionally, the first program written in a new language is called <em>Hello,
 World!</em> because all it does is display the words, Hello, World!  In Python, the script
-looks like this: (For scripts, we&#8217;ll show line numbers to the left of the Python statements.)</p>
+looks like this: (For scripts, we’ll show line numbers to the left of the Python statements.)</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>This is an example of using the <strong>print function</strong>, which doesn&#8217;t actually print
+<p>This is an example of using the <strong>print function</strong>, which doesn’t actually print
 anything on paper. It displays a value on the screen. In this case, the result shown
 is</p>
 <blockquote>
@@ -322,7 +319,7 @@ is</p>
 </td></tr></table></div>
 </div></blockquote>
 <p>The quotation marks in the program mark the beginning and end of the value;
-they don&#8217;t appear in the result.</p>
+they don’t appear in the result.</p>
 <p>Some people judge the quality of a programming language by the simplicity of
 the Hello, World! program. By this standard, Python does about as well as
 possible.</p>
@@ -335,7 +332,7 @@ code and figure out what it is doing, or why.</p>
 <p>For this reason, it is a good idea to add notes to your programs to explain in
 natural language what the program is doing.</p>
 <p>A <strong>comment</strong> in a computer program is text that is intended
-only for the human reader &#8212; it is completely ignored by the interpreter.</p>
+only for the human reader — it is completely ignored by the interpreter.</p>
 <p>In Python, the <cite>#</cite> token starts a comment.  The rest of the line
 is ignored.   Here is a new version of <em>Hello, World!</em>.</p>
 <blockquote>
@@ -355,7 +352,7 @@ is ignored.   Here is a new version of <em>Hello, World!</em>.</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>You&#8217;ll also notice that we&#8217;ve left a blank line in the program.  Blank lines
+<p>You’ll also notice that we’ve left a blank line in the program.  Blank lines
 are also ignored by the interpreter, but comments and blank lines can make your
 programs much easier for humans to parse.  Use them liberally!</p>
 </div>
@@ -414,7 +411,7 @@ Python shell types commands at the prompt (&gt;&gt;&gt;), and presses the return
 key to send these commands immediately to the interpreter for
 processing.  The word <em>shell</em> comes from Unix.  In the PyScripter
 used in this RLE version of the book, the Interpreter Window is where
-we&#8217;d do the immediate mode interaction.</dd>
+we’d do the immediate mode interaction.</dd>
 <dt id="term-runtime-error">runtime error</dt>
 <dd>An error that does not occur until the program has started to execute
 but that prevents the program from continuing.</dd>
@@ -430,7 +427,7 @@ programmer intended.</dd>
 <dt id="term-syntax">syntax</dt>
 <dd>The structure of a program.</dd>
 <dt id="term-syntax-error">syntax error</dt>
-<dd>An error in a program that makes it impossible to parse &#8212; and
+<dd>An error in a program that makes it impossible to parse — and
 therefore impossible to interpret.</dd>
 <dt id="term-token">token</dt>
 <dd>One of the basic elements of the syntactic structure of a program,
@@ -451,7 +448,7 @@ is the <em>multiplication operator</em>, and <code class="docutils literal"><spa
 recording what is displayed by the Python interpreter.</p>
 </li>
 <li><p class="first">Type <code class="docutils literal"><span class="pre">1</span> <span class="pre">2</span></code> and then hit return. Python tries to evaluate the expression,
-but it can&#8217;t because the expression is not syntactically legal. Instead, it
+but it can’t because the expression is not syntactically legal. Instead, it
 shows the error message:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;&lt;interactive input&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span>
@@ -462,7 +459,7 @@ shows the error message:</p>
 </div>
 </div></blockquote>
 <p>In many cases, Python indicates where the syntax error occurred, but it is
-not always right, and it doesn&#8217;t give you much information about what is
+not always right, and it doesn’t give you much information about what is
 wrong.</p>
 <p>So, for the most part, the burden is on you to learn the syntax rules.</p>
 <p>In this case, Python is complaining because there is no operator between the
@@ -476,7 +473,7 @@ back to you.</p>
 of printing the letters h-e-l-l-o. Notice that the quotation marks that you
 used to enclose the string are not part of the output.  Now type <code class="docutils literal"><span class="pre">&quot;hello&quot;</span></code>
 and describe your result.  Make notes of when you see the quotation marks
-and when you don&#8217;t.</p>
+and when you don’t.</p>
 </li>
 <li><p class="first">Type <code class="docutils literal"><span class="pre">cheese</span></code> without the quotation marks. The output will look
 something like this:</p>
@@ -487,7 +484,7 @@ NameError: name &#39;cheese&#39; is not defined
 </div>
 <p>This is a run-time error; specifically, it is a NameError, and even more
 specifically, it is an error because the name <cite>cheese</cite> is not defined. If
-you don&#8217;t know what that means yet, you will soon.</p>
+you don’t know what that means yet, you will soon.</p>
 </li>
 <li><p class="first">Type <code class="docutils literal"><span class="pre">6</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">*</span> <span class="pre">9</span></code> at the Python prompt and hit enter.  Record what
 happens.</p>
@@ -507,7 +504,7 @@ happens.</p>
 <p>What happened this time?</p>
 <p>Whenever an <em>expression</em> is typed at the Python prompt, it is evaluated
 and the result is <em>automatically</em> shown on the line below.  (Like on your calculator,
-if you type this expression you&#8217;ll get the result 42.)</p>
+if you type this expression you’ll get the result 42.)</p>
 <p>A script is different, however.  Evaluations of
 expressions are not automatically displayed,
 so it is necessary to use the <strong>print</strong> function to make the answer
@@ -540,7 +537,7 @@ show up.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

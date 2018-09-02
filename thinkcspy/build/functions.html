@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>4. Functions &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="5. Conditionals" href="conditionals.html" />
     <link rel="prev" title="3. Hello, little turtles!" href="hello_little_turtles.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -70,7 +67,7 @@ the problem.</p>
 </div>
 </div></blockquote>
 <p>We can make up any names we want for the functions we create, except that
-we can&#8217;t use a name that is a Python keyword, and the names must follow the rules
+we can’t use a name that is a Python keyword, and the names must follow the rules
 for legal identifiers.</p>
 <p>There can be any number of statements inside the function, but they have to be
 indented from the <code class="docutils literal"><span class="pre">def</span></code>. In the examples in this book, we will use the
@@ -80,19 +77,19 @@ pattern:</p>
 <ol class="arabic simple">
 <li>A header line which begins with a keyword and ends with a colon.</li>
 <li>A <strong>body</strong> consisting of one or more Python statements, each
-indented the same amount &#8212; <em>the Python style guide recommends 4 spaces</em> &#8212; from
+indented the same amount — <em>the Python style guide recommends 4 spaces</em> — from
 the header line.</li>
 </ol>
-<p>We&#8217;ve already seen the <code class="docutils literal"><span class="pre">for</span></code> loop which follows this pattern.</p>
+<p>We’ve already seen the <code class="docutils literal"><span class="pre">for</span></code> loop which follows this pattern.</p>
 <p>So looking again at the function definition, the keyword in the header is <code class="docutils literal"><span class="pre">def</span></code>, which is
 followed by the name of the function and some <em>parameters</em> enclosed in
 parentheses. The parameter list may be empty, or it may contain any number of
 parameters separated from one another by commas. In either case, the parentheses are required.
 The parameters specifies what information, if any, we have to provide in order to use the new function.</p>
-<p>Suppose we&#8217;re working with turtles, and a common operation we need is to draw
-squares.   &#8220;Draw a square&#8221; is an <em>abstraction</em>, or a mental
-chunk, of a number of smaller steps.  So let&#8217;s write a function to capture the pattern
-of this &#8220;building block&#8221;:</p>
+<p>Suppose we’re working with turtles, and a common operation we need is to draw
+squares.   “Draw a square” is an <em>abstraction</em>, or a mental
+chunk, of a number of smaller steps.  So let’s write a function to capture the pattern
+of this “building block”:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -132,7 +129,7 @@ of this &#8220;building block&#8221;:</p>
 <p>This function is named <code class="docutils literal"><span class="pre">draw_square</span></code>.  It has two parameters: one to tell
 the function which turtle to move around, and the other to tell it the size
 of the square we want drawn.   Make sure you know where the body of the function
-ends &#8212; it depends on the indentation, and the blank lines don&#8217;t count for
+ends — it depends on the indentation, and the blank lines don’t count for
 this purpose!</p>
 <div class="admonition-docstrings-for-documentation admonition">
 <p class="first admonition-title">Docstrings for documentation</p>
@@ -144,12 +141,12 @@ pops up, telling us what arguments the function takes, and it shows
 us any other text contained in the docstring.</p>
 <p>Docstrings are the key way to document our functions in Python and
 the documentation part is important. Because whoever calls our
-function shouldn&#8217;t have to need to know what is going on in the
+function shouldn’t have to need to know what is going on in the
 function or how it works; they just need to know what arguments our
 function takes, what it does, and what the expected result is.
 Enough to be able to use the function without having to look
 underneath. This goes back to the concept of abstraction of which
-we&#8217;ll talk more about.</p>
+we’ll talk more about.</p>
 <p>Docstrings are usually formed using triple-quoted strings as they
 allow us to easily expand the docstring later on should we want to
 write more than a one-liner.</p>
@@ -159,7 +156,7 @@ By contrast, comments are completely eliminated when the program is
 parsed.</p>
 </div>
 <p>Defining a new function does not make the function run. To do that we need a
-<strong>function call</strong>. We&#8217;ve already seen how to call some built-in functions like
+<strong>function call</strong>. We’ve already seen how to call some built-in functions like
 <strong>print</strong>, <strong>range</strong> and <strong>int</strong>. Function calls contain the name of the function being
 executed followed by a list of values, called <em>arguments</em>, which are assigned
 to the parameters in the function definition.  So in the second last line of
@@ -167,9 +164,9 @@ the program, we call the function, and pass <code class="docutils literal"><span
 and 50 as the size of the square we want. While the function is executing, then, the
 variable <code class="docutils literal"><span class="pre">sz</span></code> refers to the value 50, and the variable <code class="docutils literal"><span class="pre">t</span></code> refers to the same
 turtle instance that the variable <code class="docutils literal"><span class="pre">alex</span></code> refers to.</p>
-<p>Once we&#8217;ve defined a function, we can call it as often as we like, and its
+<p>Once we’ve defined a function, we can call it as often as we like, and its
 statements will be executed each time we call it.  And we could use it to get
-any of our turtles to draw a square.   In the next example, we&#8217;ve changed the <code class="docutils literal"><span class="pre">draw_square</span></code>
+any of our turtles to draw a square.   In the next example, we’ve changed the <code class="docutils literal"><span class="pre">draw_square</span></code>
 function a little, and we get tess to draw 15 squares, with some variations.</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -224,7 +221,7 @@ function a little, and we get tess to draw 15 squares, with some variations.</p>
 </div>
 <div class="section" id="functions-can-call-other-functions">
 <h2>4.2. Functions can call other functions<a class="headerlink" href="#functions-can-call-other-functions" title="Permalink to this headline">¶</a></h2>
-<p>Let&#8217;s assume now we want a function to draw a rectangle.  We need to be able to call
+<p>Let’s assume now we want a function to draw a rectangle.  We need to be able to call
 the function with different arguments for width and height.  And, unlike the case of the
 square, we cannot repeat the same thing 4 times, because the four sides are not equal.</p>
 <p>So we eventually come up with this rather nice code that can draw a rectangle.</p>
@@ -245,13 +242,13 @@ square, we cannot repeat the same thing 4 times, because the four sides are not 
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>The parameter names are deliberately chosen as single letters to ensure they&#8217;re not misunderstood.
-In real programs, once we&#8217;ve had more experience, we will insist on better variable names than this.
-But the point is that the program doesn&#8217;t &#8220;understand&#8221; that we&#8217;re drawing a rectangle, or that the
+<p>The parameter names are deliberately chosen as single letters to ensure they’re not misunderstood.
+In real programs, once we’ve had more experience, we will insist on better variable names than this.
+But the point is that the program doesn’t “understand” that we’re drawing a rectangle, or that the
 parameters represent the width and the height.  Concepts like rectangle, width, and height are
 the meaning we humans have, not concepts that the program or the computer understands.</p>
 <p><em>Thinking like a scientist</em> involves looking for patterns and
-relationships.  In the code above, we&#8217;ve done that to some extent.  We did not just draw four sides.
+relationships.  In the code above, we’ve done that to some extent.  We did not just draw four sides.
 Instead, we spotted that we could draw the rectangle as two halves, and used a loop to
 repeat that pattern twice.</p>
 <p>But now we might spot that a square is a special kind of rectangle.
@@ -268,7 +265,7 @@ our square.</p>
 <ul class="simple">
 <li>Functions can call other functions.</li>
 <li>Rewriting <code class="docutils literal"><span class="pre">draw_square</span></code> like this captures the relationship
-that we&#8217;ve spotted between squares and rectangles.</li>
+that we’ve spotted between squares and rectangles.</li>
 <li>A caller of this function might say <code class="docutils literal"><span class="pre">draw_square(tess,</span> <span class="pre">50)</span></code>.  The parameters
 of this function, <code class="docutils literal"><span class="pre">tx</span></code> and <code class="docutils literal"><span class="pre">sz</span></code>, are assigned the values of the tess object, and
 the int 50 respectively.</li>
@@ -297,13 +294,13 @@ function is called.</p>
 <span id="index-1"></span><h2>4.3. Flow of execution<a class="headerlink" href="#flow-of-execution" title="Permalink to this headline">¶</a></h2>
 <p>In order to ensure that a function is defined before its first use, we have to
 know the order in which statements are executed, which is called the <strong>flow of
-execution</strong>.   We&#8217;ve already talked about this a little in the previous chapter.</p>
+execution</strong>.   We’ve already talked about this a little in the previous chapter.</p>
 <p>Execution always begins at the first statement of the program.  Statements are
 executed one at a time, in order from top to bottom.</p>
 <p>Function definitions do not alter the flow of execution of the program, but
 remember that statements inside the function are not executed until the
 function is called. Although it is not common, we can define one function
-inside another. In this case, the inner definition isn&#8217;t executed until the
+inside another. In this case, the inner definition isn’t executed until the
 outer function is called.</p>
 <p>Function calls are like a detour in the flow of execution. Instead of going to
 the next statement, the flow jumps to the first line of the called function,
@@ -316,25 +313,25 @@ program might have to execute yet another function!</p>
 <p>Fortunately, Python is adept at keeping track of where it is, so each time a
 function completes, the program picks up where it left off in the function that
 called it. When it gets to the end of the program, it terminates.</p>
-<p>What&#8217;s the moral of this sordid tale? When we read a program, don&#8217;t read from
+<p>What’s the moral of this sordid tale? When we read a program, don’t read from
 top to bottom. Instead, follow the flow of execution.</p>
 <div class="admonition-watch-the-flow-of-execution-in-action admonition" id="index-2">
 <p class="first admonition-title">Watch the flow of execution in action</p>
-<p>In PyScripter, we can watch the flow of execution by &#8220;single-stepping&#8221; through
+<p>In PyScripter, we can watch the flow of execution by “single-stepping” through
 any program.  PyScripter will highlight each line of code just before it is about to
 be executed.</p>
 <p>PyScripter also lets us hover the mouse over any
 variable in the program, and it will pop up the current value of that variable.
-So this makes it easy to inspect the &#8220;state snapshot&#8221; of the program &#8212; the
-current values that are assigned to the program&#8217;s variables.</p>
+So this makes it easy to inspect the “state snapshot” of the program — the
+current values that are assigned to the program’s variables.</p>
 <p>This is a powerful mechanism for building a deep and thorough understanding of
 what is happening at each step of the way.  Learn to use the single-stepping
 feature well, and be mentally proactive:  as you work through the code,
-challenge yourself before each step: <em>&#8220;What changes will this line make to
-any variables in the program?&#8221;</em> and <em>&#8220;Where will flow of execution go next?&#8221;</em></p>
+challenge yourself before each step: <em>“What changes will this line make to
+any variables in the program?”</em> and <em>“Where will flow of execution go next?”</em></p>
 <p>Let us go back and see how this works with the program above that draws 15
-multicolor squares.  First, we&#8217;re going to add one line of magic below
-the import statement &#8212; not strictly necessary, but it will make our lives
+multicolor squares.  First, we’re going to add one line of magic below
+the import statement — not strictly necessary, but it will make our lives
 much simpler, because it prevents stepping into the module containing
 the turtle code.</p>
 <blockquote>
@@ -343,22 +340,22 @@ the turtle code.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Now we&#8217;re ready to begin.  Put the mouse cursor on the line of the program
+<p>Now we’re ready to begin.  Put the mouse cursor on the line of the program
 where we create the turtle screen, and press the <em>F4</em> key.  This will run the Python
 program up to, but not including, the line where we have the cursor.   Our program
-will &#8220;break&#8221; now, and provide a highlight on the next line to be executed, something like this:</p>
+will “break” now, and provide a highlight on the next line to be executed, something like this:</p>
 <img alt="_images/breakpoint.png" src="_images/breakpoint.png" />
 <p>At this point we can press the <em>F7</em> key (<em>step into</em>) repeatedly to single step through
-the code.  Observe as we execute lines 10, 11, 12, ... how the turtle window gets
+the code.  Observe as we execute lines 10, 11, 12, … how the turtle window gets
 created, how its canvas color is changed, how the title
 gets changed, how the turtle is created on the canvas, and then how the flow of execution gets into the loop, and from there into the function,
-and into the function&#8217;s loop, and then repeatedly through the body of that loop.</p>
+and into the function’s loop, and then repeatedly through the body of that loop.</p>
 <p>While we do this, we can also hover our mouse over some of the variables in the program, and confirm that
 their values match our conceptual model of what is happening.</p>
-<p>After a few loops, when we&#8217;re about to execute line 20 and we&#8217;re starting to get bored, we can use the key <em>F8</em>
-to &#8220;step over&#8221; the function we are calling.  This executes all the statements in the function, but without
+<p>After a few loops, when we’re about to execute line 20 and we’re starting to get bored, we can use the key <em>F8</em>
+to “step over” the function we are calling.  This executes all the statements in the function, but without
 having to step through each one.   We always have the choice to either
-&#8220;go for the detail&#8221;, or to &#8220;take the high-level view&#8221; and execute the function as a single chunk.</p>
+“go for the detail”, or to “take the high-level view” and execute the function as a single chunk.</p>
 <p class="last">There are some other options, including one that allow us to <em>resume</em> execution without further stepping.
 Find them under the <em>Run</em> menu of PyScripter.</p>
 </div>
@@ -411,18 +408,18 @@ expressions. In the last example, 503 is returned, since it is larger than 33,
 Furthermore, functions like <code class="docutils literal"><span class="pre">range</span></code>, <code class="docutils literal"><span class="pre">int</span></code>, <code class="docutils literal"><span class="pre">abs</span></code> all return values that
 can be used to build more complex expressions.</p>
 <p>So an important difference between these functions and one like <code class="docutils literal"><span class="pre">draw_square</span></code> is that
-<code class="docutils literal"><span class="pre">draw_square</span></code> was not executed because we wanted it to compute a value &#8212; on the contrary,
+<code class="docutils literal"><span class="pre">draw_square</span></code> was not executed because we wanted it to compute a value — on the contrary,
 we wrote <code class="docutils literal"><span class="pre">draw_square</span></code> because we wanted it to execute a sequence of steps that caused
 the turtle to draw.</p>
 <p>A function that returns a value is called a <strong>fruitful function</strong> in this book.
-The opposite of a fruitful function is <strong>void function</strong> &#8212; one that is not executed
+The opposite of a fruitful function is <strong>void function</strong> — one that is not executed
 for its resulting value, but is executed because it does something useful. (Languages
-like Java, C#, C and C++ use the term &#8220;void function&#8221;, other languages like Pascal
+like Java, C#, C and C++ use the term “void function”, other languages like Pascal
 call it a <strong>procedure</strong>.) Even though void functions are not executed
 for their resulting value, Python always wants to return something.  So if the programmer
-doesn&#8217;t arrange to return a value, Python will automatically return the value <code class="docutils literal"><span class="pre">None</span></code>.</p>
+doesn’t arrange to return a value, Python will automatically return the value <code class="docutils literal"><span class="pre">None</span></code>.</p>
 <p>How do we write our own fruitful function?  In the exercises at the end of chapter 2 we saw
-the standard formula for compound interest, which we&#8217;ll now write as a fruitful function:</p>
+the standard formula for compound interest, which we’ll now write as a fruitful function:</p>
 <blockquote>
 <div><img alt="_images/compoundInterest.png" src="_images/compoundInterest.png" />
 <div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -455,35 +452,35 @@ the standard formula for compound interest, which we&#8217;ll now write as a fru
 </div></blockquote>
 <ul>
 <li><p class="first">The <strong>return</strong> statement is followed an expression (<code class="docutils literal"><span class="pre">a</span></code> in this case). This expression will be
-evaluated and returned to the caller as the &#8220;fruit&#8221; of calling this function.</p>
+evaluated and returned to the caller as the “fruit” of calling this function.</p>
 </li>
 <li><p class="first">We prompted the user for the principal amount.  The type of <code class="docutils literal"><span class="pre">toInvest</span></code> is a string, but
 we need a number before we can work with it.  Because it is money, and could have decimal places,
-we&#8217;ve used the <code class="docutils literal"><span class="pre">float</span></code> type converter function to parse the string and return a float.</p>
+we’ve used the <code class="docutils literal"><span class="pre">float</span></code> type converter function to parse the string and return a float.</p>
 </li>
 <li><p class="first">Notice how we entered the arguments for 8% interest, compounded 12 times per year, for 5 years.</p>
 </li>
 <li><p class="first">When we run this, we get the output</p>
 <blockquote>
-<div><p><em>At the end of the period you&#8217;ll have 14898.457083</em></p>
+<div><p><em>At the end of the period you’ll have 14898.457083</em></p>
 </div></blockquote>
 <p>This is a bit messy with all these decimal places, but remember that
-Python doesn&#8217;t understand that we&#8217;re working with money: it just does the calculation to
-the best of its ability, without rounding.  Later we&#8217;ll see how to format the string that
+Python doesn’t understand that we’re working with money: it just does the calculation to
+the best of its ability, without rounding.  Later we’ll see how to format the string that
 is printed in such a way that it does get nicely rounded to two decimal places before printing.</p>
 </li>
 <li><p class="first">The line <code class="docutils literal"><span class="pre">toInvest</span> <span class="pre">=</span> <span class="pre">float(input(&quot;How</span> <span class="pre">much</span> <span class="pre">do</span> <span class="pre">you</span> <span class="pre">want</span> <span class="pre">to</span> <span class="pre">invest?&quot;))</span></code>
 also shows yet another example
-of <em>composition</em> &#8212; we can call a function like <code class="docutils literal"><span class="pre">float</span></code>, and its arguments
-can be the results of other function calls (like <code class="docutils literal"><span class="pre">input</span></code>) that we&#8217;ve called along the way.</p>
+of <em>composition</em> — we can call a function like <code class="docutils literal"><span class="pre">float</span></code>, and its arguments
+can be the results of other function calls (like <code class="docutils literal"><span class="pre">input</span></code>) that we’ve called along the way.</p>
 </li>
 </ul>
 <p>Notice something else very important here. The name of the variable we pass as an
-argument &#8212; <code class="docutils literal"><span class="pre">toInvest</span></code> &#8212; has nothing to do with the name of the parameter
-&#8212; <code class="docutils literal"><span class="pre">p</span></code>.  It is as if  <code class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">toInvest</span></code> is executed when <code class="docutils literal"><span class="pre">final_amt</span></code> is called.
-It doesn&#8217;t matter what the value was named in
+argument — <code class="docutils literal"><span class="pre">toInvest</span></code> — has nothing to do with the name of the parameter
+— <code class="docutils literal"><span class="pre">p</span></code>.  It is as if  <code class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">toInvest</span></code> is executed when <code class="docutils literal"><span class="pre">final_amt</span></code> is called.
+It doesn’t matter what the value was named in
 the caller, in <code class="docutils literal"><span class="pre">final_amt</span></code> its name is <code class="docutils literal"><span class="pre">p</span></code>.</p>
-<p>These short variable names are getting quite tricky, so perhaps we&#8217;d prefer one of these
+<p>These short variable names are getting quite tricky, so perhaps we’d prefer one of these
 versions instead:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -528,7 +525,7 @@ the function, and we cannot use it outside. For example, consider again this fun
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>If we try to use <code class="docutils literal"><span class="pre">a</span></code>, outside the function, we&#8217;ll get an error:</p>
+<p>If we try to use <code class="docutils literal"><span class="pre">a</span></code>, outside the function, we’ll get an error:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
 <span class="go">NameError: name &#39;a&#39; is not defined</span>
@@ -537,7 +534,7 @@ the function, and we cannot use it outside. For example, consider again this fun
 </div></blockquote>
 <p>The variable <code class="docutils literal"><span class="pre">a</span></code> is local to <code class="docutils literal"><span class="pre">final_amt</span></code>, and is not visible
 outside the function.</p>
-<p>Additionally, <code class="docutils literal"><span class="pre">a</span></code> only exists while the function is being executed &#8212;
+<p>Additionally, <code class="docutils literal"><span class="pre">a</span></code> only exists while the function is being executed —
 we call this its <strong>lifetime</strong>.
 When the execution of the function terminates,
 the local variables  are destroyed.</p>
@@ -555,7 +552,7 @@ to the caller.</p>
 <p>Now that we have fruitful functions, we can focus our attention on
 reorganizing our code so that it fits more nicely into our mental chunks.
 This process of rearrangement is called <strong>refactoring</strong> the code.</p>
-<p>Two things we&#8217;re always going to want to do when working with turtles
+<p>Two things we’re always going to want to do when working with turtles
 is to create the window for the turtle, and to create one or more turtles.
 We could write some functions to make these tasks easier in future:</p>
 <blockquote>
@@ -650,7 +647,7 @@ from the header.</li>
 <dt id="term-docstring">docstring</dt>
 <dd>A special string that is attached to a function as its <code class="docutils literal"><span class="pre">__doc__</span></code> attribute.
 Tools like PyScripter can use docstrings to provide documentation or hints for the programmer.
-When we get to modules, classes, and methods, we&#8217;ll see that docstrings can also be used there.</dd>
+When we get to modules, classes, and methods, we’ll see that docstrings can also be used there.</dd>
 <dt id="term-flow-of-execution">flow of execution</dt>
 <dd>The order in which statements are executed during a program run.</dd>
 <dt id="term-frame">frame</dt>
@@ -678,7 +675,7 @@ ends with a colon (:)</dd>
 module to be brought into the environment of another script.  To use the
 features of the turtle, we need to first import the turtle module.</dd>
 <dt id="term-lifetime">lifetime</dt>
-<dd>Variables and objects have lifetimes &#8212; they are created at some point during
+<dd>Variables and objects have lifetimes — they are created at some point during
 program execution, and will be destroyed at some time.</dd>
 <dt id="term-local-variable">local variable</dt>
 <dd>A variable defined inside a function. A local variable can only be used
@@ -690,7 +687,7 @@ to it as an argument.</dd>
 <dt id="term-refactor">refactor</dt>
 <dd>A fancy word to describe reorganizing our program code, usually to make
 it more understandable.  Typically, we have a program that is already working,
-then we go back to &#8220;tidy it up&#8221;.  It often involves choosing better variable
+then we go back to “tidy it up”.  It often involves choosing better variable
 names, or spotting repeated patterns and moving that code into a function.</dd>
 <dt id="term-stack-diagram">stack diagram</dt>
 <dd>A graphical representation of a stack of functions, their variables,
@@ -734,7 +731,7 @@ When called with <code class="docutils literal"><span class="pre">draw_poly(tess
 previous question to have its turtle draw a equilateral triangle.</p>
 </li>
 <li><p class="first">Write a fruitful function <code class="docutils literal"><span class="pre">sum_to(n)</span></code> that returns the sum of all integer numbers up to and
-including <code class="docutils literal"><span class="pre">n</span></code>.   So <code class="docutils literal"><span class="pre">sum_to(10)</span></code> would be <cite>1+2+3...+10</cite> which would return the value 55.</p>
+including <code class="docutils literal"><span class="pre">n</span></code>.   So <code class="docutils literal"><span class="pre">sum_to(10)</span></code> would be <cite>1+2+3…+10</cite> which would return the value 55.</p>
 </li>
 <li><p class="first">Write a function <code class="docutils literal"><span class="pre">area_of_circle(r)</span></code> which returns the area of a circle of radius <code class="docutils literal"><span class="pre">r</span></code>.</p>
 </li>
@@ -746,9 +743,9 @@ including <code class="docutils literal"><span class="pre">n</span></code>.   So
 </li>
 <li><p class="first">Extend your program above.  Draw five stars, but between each, pick up the pen,
 move forward by 350 units, turn right by 144, put the pen down, and draw the next star.
-You&#8217;ll get something like this:</p>
+You’ll get something like this:</p>
 <img alt="_images/five_stars.png" src="_images/five_stars.png" />
-<p>What would it look like if you didn&#8217;t pick up the pen?</p>
+<p>What would it look like if you didn’t pick up the pen?</p>
 </li>
 </ol>
 </div>
@@ -776,7 +773,7 @@ You&#8217;ll get something like this:</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

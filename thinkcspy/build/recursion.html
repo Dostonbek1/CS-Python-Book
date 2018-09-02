@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>18. Recursion &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="19. Exceptions" href="exceptions.html" />
     <link rel="prev" title="17. PyGame" href="pygame.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -56,11 +53,11 @@
 </div>
 <div class="section" id="recursion">
 <h1>18. Recursion<a class="headerlink" href="#recursion" title="Permalink to this headline">¶</a></h1>
-<p><strong>Recursion</strong> means &#8220;defining something in terms of itself&#8221; usually at some
+<p><strong>Recursion</strong> means “defining something in terms of itself” usually at some
 smaller scale, perhaps multiple times, to achieve your objective.
-For example, we might say &#8220;A human being is someone whose mother is a human being&#8221;,
-or &#8220;a directory is a structure that holds files and (smaller) directories&#8221;, or &#8220;a family tree starts
-with a couple who have children, each with their own family sub-trees&#8221;.</p>
+For example, we might say “A human being is someone whose mother is a human being”,
+or “a directory is a structure that holds files and (smaller) directories”, or “a family tree starts
+with a couple who have children, each with their own family sub-trees”.</p>
 <p>Programming languages generally support <strong>recursion</strong>, which means that, in order
 to solve a problem, functions can <em>call themselves</em> to solve smaller subproblems.</p>
 <div class="section" id="drawing-fractals">
@@ -74,7 +71,7 @@ a straight line of a given size.</p>
 draw instead four smaller segments, in the pattern shown here:</p>
 <img alt="_images/koch_1.png" src="_images/koch_1.png" />
 <p>Now what would happen if we repeated this Koch pattern again on each of the order 1 segments?
-We&#8217;d get this order 2 Koch fractal:</p>
+We’d get this order 2 Koch fractal:</p>
 <img alt="_images/koch_2.png" src="_images/koch_2.png" />
 <p>Repeating our pattern again gets us an order 3 Koch fractal:</p>
 <img alt="_images/koch_3.png" src="_images/koch_3.png" />
@@ -118,7 +115,7 @@ at order 0. This is very simple to code up in Python:</p>
 </td></tr></table></div>
 <p>The key thing that is new here is that if order is not zero,
 <code class="docutils literal"><span class="pre">koch</span></code> calls itself recursively to get its job done.</p>
-<p>Let&#8217;s make a simple observation and tighten up this code.  Remember that
+<p>Let’s make a simple observation and tighten up this code.  Remember that
 turning right by 120 is the same as turning left by -120.  So with a
 bit of clever rearrangement, we can use a loop instead of lines 10-16:</p>
 <div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -136,20 +133,20 @@ bit of clever rearrangement, we can use a loop instead of lines 10-16:</p>
            <span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p>The final turn is 0 degrees &#8212; so it has no effect.  But it has allowed us to
+<p>The final turn is 0 degrees — so it has no effect.  But it has allowed us to
 find a pattern and reduce seven lines of code to three, which will make
 things easier for our next observations.</p>
 <div class="admonition-recursion-the-high-level-view admonition">
 <p class="first admonition-title">Recursion, the high-level view</p>
 <p>One way to think about this is to convince yourself that the function
 works correctly when you call it for an order 0 fractal.  Then do
-a mental <em>leap of faith</em>, saying <em>&#8220;the fairy godmother</em> (or Python, if
+a mental <em>leap of faith</em>, saying <em>“the fairy godmother</em> (or Python, if
 you can think of Python as your fairy godmother) <em>knows how to
 handle the recursive level 0 calls for me on lines 11, 13, 15, and 17, so
-I don&#8217;t need to think about that detail!&#8221;</em>  All I need to focus on
+I don’t need to think about that detail!”</em>  All I need to focus on
 is how to draw an order 1 fractal <em>if I can assume the order 0 one is
 already working.</em></p>
-<p>You&#8217;re practicing <em>mental abstraction</em> &#8212; ignoring the subproblem
+<p>You’re practicing <em>mental abstraction</em> — ignoring the subproblem
 while you solve the big problem.</p>
 <p>If this mode of thinking works (and you should practice it!), then take
 it to the next level.  Aha! now can I see that it will work when called
@@ -200,7 +197,7 @@ to a situation where there was no longer any recursion, like this:</p>
        <span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p>This trick of &#8220;unrolling&#8221; the recursion gives us an operational view
+<p>This trick of “unrolling” the recursion gives us an operational view
 of what happens.  You can trace the program into <code class="docutils literal"><span class="pre">koch_3</span></code>, and from
 there, into <code class="docutils literal"><span class="pre">koch_2</span></code>, and then into <code class="docutils literal"><span class="pre">koch_1</span></code>, etc., all the way down
 the different layers of the recursion.</p>
@@ -214,7 +211,7 @@ is, however, to be able to do the abstraction!</p>
 tuples in a variety of ways. Lists and tuples can also be nested, providing
 many possibilities for organizing data. The organization of data for the
 purpose of making it easier to use is called a <strong>data structure</strong>.</p>
-<p>It&#8217;s election time and we are helping to compute the votes as they come in.
+<p>It’s election time and we are helping to compute the votes as they come in.
 Votes arriving from individual wards, precincts, municipalities, counties, and
 states are sometimes reported as a sum total of votes and sometimes as a list
 of subtotals of votes. After considering how best to store the tallies, we
@@ -281,7 +278,7 @@ function definition in which the function calls itself is known as the
 <strong>recursive call</strong>.</p>
 <p>The example above has a <strong>base case</strong> (on line 13) which does not lead to a
 recursive call: the case where the element is not a (sub-) list. Without
-a base case, you&#8217;ll have <strong>infinite recursion</strong>, and your program will not work.</p>
+a base case, you’ll have <strong>infinite recursion</strong>, and your program will not work.</p>
 <p>Recursion is truly one of the most beautiful and elegant tools in computer
 science.</p>
 <p>A slightly more complicated problem is finding the largest value in our nested
@@ -337,13 +334,13 @@ number list:</p>
 </td></tr></table></div>
 <p>Tests are included to provide examples of <code class="docutils literal"><span class="pre">r_max</span></code> at work.</p>
 <p>The added twist to this problem is finding a value for initializing
-<code class="docutils literal"><span class="pre">largest</span></code>. We can&#8217;t just use <code class="docutils literal"><span class="pre">nxs[0]</span></code>, since that could be either
+<code class="docutils literal"><span class="pre">largest</span></code>. We can’t just use <code class="docutils literal"><span class="pre">nxs[0]</span></code>, since that could be either
 a element or a list. To solve this problem (at every recursive call)
-we initialize a Boolean flag (at line 8).  When we&#8217;ve found the value of interest,
+we initialize a Boolean flag (at line 8).  When we’ve found the value of interest,
 (at line 15)
 we check to see whether this is the initializing (first) value for
 <code class="docutils literal"><span class="pre">largest</span></code>, or a value that could potentially change <code class="docutils literal"><span class="pre">largest</span></code>.</p>
-<p>Again here we have a base case at line 13.  If we don&#8217;t supply a base case,
+<p>Again here we have a base case at line 13.  If we don’t supply a base case,
 Python stops after reaching a maximum recursion depth and returns a runtime
 error.  See how this happens, by running this little script which we will call <cite>infinite_recursion.py</cite>:</p>
 <div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -363,17 +360,17 @@ long traceback that ends with a message like the following:</p>
 </pre></div>
 </div>
 <p>We would certainly never want something like this to happen to a user of one of
-our programs, so in the next chapter we&#8217;ll see how
+our programs, so in the next chapter we’ll see how
 errors, any kinds of errors, are handled in Python.</p>
 </div>
 <div class="section" id="case-study-fibonacci-numbers">
 <span id="index-2"></span><h2>18.4. Case study: Fibonacci numbers<a class="headerlink" href="#case-study-fibonacci-numbers" title="Permalink to this headline">¶</a></h2>
-<p>The famous <strong>Fibonacci sequence</strong> 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 134, ... was devised by
+<p>The famous <strong>Fibonacci sequence</strong> 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 134, … was devised by
 Fibonacci (1170-1250), who used this to model the breeding of (pairs) of rabbits.
 If, in generation 7 you had 21 pairs in total, of which 13 were adults,
 then next generation the adults will all have bred new children,
 and the previous children will have grown up to become adults.
-So in generation 8 you&#8217;ll have 13+21=34, of which 21 are adults.</p>
+So in generation 8 you’ll have 13+21=34, of which 21 are adults.</p>
 <p>This <em>model</em> to explain rabbit breeding made the simplifying assumption that rabbits never died.
 Scientists often make (unrealistic) simplifying assumptions and restrictions
 to make some headway with the problem.</p>
@@ -396,7 +393,7 @@ as the sum of the previous two terms:</p>
     <span class="k">return</span> <span class="n">t</span>
 </pre></div>
 </td></tr></table></div>
-<p>This is a particularly inefficient algorithm, and we&#8217;ll show one way of fixing it when we learn about dictionaries:</p>
+<p>This is a particularly inefficient algorithm, and we’ll show one way of fixing it when we learn about dictionaries:</p>
 <div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -488,7 +485,7 @@ as the sum of the previous two terms:</p>
 </div>
 <div class="section" id="an-animated-fractal-using-pygame">
 <h2>18.6. An animated fractal, using PyGame<a class="headerlink" href="#an-animated-fractal-using-pygame" title="Permalink to this headline">¶</a></h2>
-<p>Here we have a tree fractal pattern of order 8.  We&#8217;ve labelled some of the edges,
+<p>Here we have a tree fractal pattern of order 8.  We’ve labelled some of the edges,
 showing the depth of the recursion at which each edge was drawn.</p>
 <img alt="_images/recursivetree1.png" src="_images/recursivetree1.png" />
 <p>In the tree above, the angle of deviation from the trunk is 30 degrees.
@@ -498,7 +495,7 @@ the angle at 90 degrees we get this:</p>
 <p>An interesting animation occurs if we generate and draw trees very rapidly,
 each time varying the angle a little. Although the Turtle module can draw trees
 like this quite elegantly, we could struggle for good frame rates.
-So we&#8217;ll use PyGame instead, with a few embellishments and observations.
+So we’ll use PyGame instead, with a few embellishments and observations.
 (Once again, we suggest you cut and paste this code into your Python environment.)</p>
 <div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -641,8 +638,8 @@ tree can be accomplished by adding this line directly below line 18:</p>
 </td></tr></table></div>
 </li>
 </ul>
-<p>Another interesting effect &#8212; instructive too, if you wish to reinforce the idea
-of different instances of the function being called at different depths of recursion &#8212;
+<p>Another interesting effect — instructive too, if you wish to reinforce the idea
+of different instances of the function being called at different depths of recursion —
 is to create a list of colors, and let each recursive depth use a different color
 for drawing. (Use the depth of the recursion to index the list of colors.)</p>
 </div>
@@ -659,7 +656,7 @@ case. Eventually, infinite recursion causes a runtime error.</dd>
 <dd>The process of calling a function that is already executing.</dd>
 <dt id="term-recursive-call">recursive call</dt>
 <dd>The statement that calls an already executing function.  Recursion can
-also be indirect &#8212; function <cite>f</cite> can call <cite>g</cite> which calls <cite>h</cite>,
+also be indirect — function <cite>f</cite> can call <cite>g</cite> which calls <cite>h</cite>,
 and <cite>h</cite> could make a call back to <cite>f</cite>.</dd>
 <dt id="term-recursive-definition">recursive definition</dt>
 <dd>A definition which defines something in terms of itself. To be useful
@@ -685,16 +682,16 @@ In this example, the angle of the tear is 10 degrees.</p>
 <img alt="_images/cesaro_torn_line.png" src="_images/cesaro_torn_line.png" />
 </li>
 <li><p class="first">Four lines make a square.  Use the code in part a) to draw cesaro squares.
-Varying the angle gives interesting effects &#8212; experiment a bit,
+Varying the angle gives interesting effects — experiment a bit,
 or perhaps let the user input the angle of the tear.</p>
 <img alt="_images/cesaro_torn_square.png" src="_images/cesaro_torn_square.png" />
 </li>
 </ol>
 <ol class="loweralpha simple" id="index-4" start="3">
 <li>(For the mathematically inclined). In the squares shown here, the higher-order drawings
-become a little larger. (Look at the bottom lines of each square - they&#8217;re not aligned.)
+become a little larger. (Look at the bottom lines of each square - they’re not aligned.)
 This is because we just halved the drawn part of the line for each recursive subproblem.
-So we&#8217;ve &#8220;grown&#8221; the overall square by the width of the tear(s).
+So we’ve “grown” the overall square by the width of the tear(s).
 Can you solve the geometry problem so that the total size of the subproblem case
 (including the tear) remains exactly the same size as the original?</li>
 </ol>
@@ -760,8 +757,8 @@ to test your understanding of how these module functions work.</p>
 </li>
 <li><p class="first">Write a program that walks a directory structure (as in the last section of
 this chapter), but instead of printing filenames, it returns a list of all
-the full paths of files in the directory or the subdirectories.  (Don&#8217;t include
-directories in this list &#8212; just files.)  For example, the output list might
+the full paths of files in the directory or the subdirectories.  (Don’t include
+directories in this list — just files.)  For example, the output list might
 have elements like this:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;C:\Python31\Lib\site-packages\pygame\docs</span><span class="se">\r</span><span class="s2">ef\mask.html&quot;</span><span class="p">,</span>
  <span class="s2">&quot;C:\Python31\Lib\site-packages\pygame\docs</span><span class="se">\r</span><span class="s2">ef\midi.html&quot;</span><span class="p">,</span>
@@ -778,12 +775,12 @@ have elements like this:</p>
 tree as an argument (or the current directory as a default). Now write a
 program named <code class="docutils literal"><span class="pre">cleanup.py</span></code> that removes all these files.</p>
 <p><em>Hint #1:</em> Use the program from the example in the last section of this
-chapter as a basis for these two recursive programs.  Because you&#8217;re
+chapter as a basis for these two recursive programs.  Because you’re
 going to destroy files on your disks, you better get this right, or
 you risk losing files you care about.  So excellent advice is that
-initially you should fake the deletion of the files &#8212; just print
+initially you should fake the deletion of the files — just print
 the full path names of each file that you intend to delete.  Once
-you&#8217;re happy that your logic is correct, and you can see that you&#8217;re
+you’re happy that your logic is correct, and you can see that you’re
 not deleting the wrong things, you can replace the print statement
 with the real thing.</p>
 <p><em>Hint #2:</em> Look in the <code class="docutils literal"><span class="pre">os</span></code> module for a function that removes
@@ -815,7 +812,7 @@ files.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

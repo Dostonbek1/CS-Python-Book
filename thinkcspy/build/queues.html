@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>27. Queues &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="28. Trees" href="trees.html" />
     <link rel="prev" title="26. Stacks" href="stacks.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -63,7 +60,7 @@ exceptions, though. At airports, peoples whose flights are leaving soon are
 sometimes taken from the middle of the queue. At supermarkets, a polite
 person might let someone with only a few items go in front of them.</p>
 <p>The rule that determines who goes next is called the <strong>queueing policy</strong>. The
-simplest queueing policy is called &#8220;First in, First out&#8221;, <strong>FIFO</strong> for short. The most
+simplest queueing policy is called “First in, First out”, <strong>FIFO</strong> for short. The most
 general queueing policy is <strong>priority queueing</strong>, in which each person is
 assigned a priority and the person with the highest priority goes first,
 regardless of the order of arrival. We say this is the most general policy
@@ -177,7 +174,7 @@ that difference is not significant.</p>
 to traverse the list to find the last element.</p>
 <p>This traversal takes time proportional to the length of the list.  Since the
 runtime is a linear function of the length, this method is called <strong>linear
-time</strong>. Compared to constant time, that&#8217;s very bad.</p>
+time</strong>. Compared to constant time, that’s very bad.</p>
 </div>
 <div class="section" id="improved-linked-queue">
 <h2>27.4. Improved Linked Queue<a class="headerlink" href="#improved-linked-queue" title="Permalink to this headline">¶</a></h2>
@@ -238,7 +235,7 @@ the figure:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>Since <code class="docutils literal"><span class="pre">last</span></code> keeps track of the last node, we don&#8217;t have to search for it. As
+<p>Since <code class="docutils literal"><span class="pre">last</span></code> keeps track of the last node, we don’t have to search for it. As
 a result, this method is constant time.</p>
 <p>There is a price to pay for that speed. We have to add a special case to
 <code class="docutils literal"><span class="pre">remove</span></code> to set <code class="docutils literal"><span class="pre">last</span></code> to <code class="docutils literal"><span class="pre">None</span></code> when the last node is removed:</p>
@@ -265,7 +262,7 @@ a result, this method is constant time.</p>
 </div></blockquote>
 <p>This implementation is more complicated than the Linked Queue implementation,
 and it is more difficult to demonstrate that it is correct. The advantage is
-that we have achieved the goal &#8212; both <code class="docutils literal"><span class="pre">insert</span></code> and <code class="docutils literal"><span class="pre">remove</span></code> are
+that we have achieved the goal — both <code class="docutils literal"><span class="pre">insert</span></code> and <code class="docutils literal"><span class="pre">remove</span></code> are
 constant time operations.</p>
 </div>
 <div class="section" id="priority-queue">
@@ -343,11 +340,11 @@ operations. The only interesting method is <code class="docutils literal"><span 
 </div></blockquote>
 <p>At the beginning of each iteration, <code class="docutils literal"><span class="pre">maxi</span></code> holds the index of the biggest
 item (highest priority) we have seen <em>so far</em>. Each time through the loop, the
-program compares the <code class="docutils literal"><span class="pre">i</span></code>&#8216;th item to the champion. If the new item is bigger,
+program compares the <code class="docutils literal"><span class="pre">i</span></code>’th item to the champion. If the new item is bigger,
 the value of <code class="docutils literal"><span class="pre">maxi</span></code> is set to <code class="docutils literal"><span class="pre">i</span></code>.</p>
 <p>When the <code class="docutils literal"><span class="pre">for</span></code> statement completes, <code class="docutils literal"><span class="pre">maxi</span></code> is the index of the biggest
 item. This item is removed from the list and returned.</p>
-<p>Let&#8217;s test the implementation:</p>
+<p>Let’s test the implementation:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">PriorityQueue</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">13</span><span class="p">]:</span>
@@ -374,7 +371,7 @@ as the <code class="docutils literal"><span class="pre">__gt__</span></code> met
 </div>
 <div class="section" id="the-golfer-class">
 <h2>27.6. The <code class="docutils literal"><span class="pre">Golfer</span></code> class<a class="headerlink" href="#the-golfer-class" title="Permalink to this headline">¶</a></h2>
-<p>As an example of an object with an unusual definition of priority, let&#8217;s
+<p>As an example of an object with an unusual definition of priority, let’s
 implement a class called <code class="docutils literal"><span class="pre">Golfer</span></code> that keeps track of the names and scores of
 golfers. As usual, we start by defining <code class="docutils literal"><span class="pre">__init__</span></code> and <code class="docutils literal"><span class="pre">__str__</span></code>:</p>
 <blockquote>
@@ -495,7 +492,7 @@ Python list implementation.</li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

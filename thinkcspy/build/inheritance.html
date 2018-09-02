@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>24. Inheritance &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="25. Linked lists" href="linked_lists.html" />
     <link rel="prev" title="23. Collections of objects" href="collections.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -89,7 +86,7 @@ similar to a deck, of course. Both are made up of a set of cards, and both
 require operations like adding and removing cards. Also, we might like the
 ability to shuffle both decks and hands.</p>
 <p>A hand is also different from a deck. Depending on the game being played, we
-might want to perform some operations on hands that don&#8217;t make sense for a
+might want to perform some operations on hands that don’t make sense for a
 deck. For example, in poker we might classify a hand (straight, flush, etc.) or
 compare it with another hand. In bridge, we might want to compute a score for a
 hand in order to make a bid.</p>
@@ -205,7 +202,7 @@ list, the expression <code class="docutils literal"><span class="pre">i</span> <
 </pre></div>
 </div>
 </div></blockquote>
-<p>It&#8217;s not a great hand, but it has the makings of a straight flush.</p>
+<p>It’s not a great hand, but it has the makings of a straight flush.</p>
 <p>Although it is convenient to inherit the existing methods, there is additional
 information in a <code class="docutils literal"><span class="pre">Hand</span></code> object we might want to include when we print one. To
 do that, we can provide a <code class="docutils literal"><span class="pre">__str__</span></code> method in the <code class="docutils literal"><span class="pre">Hand</span></code> class that
@@ -261,7 +258,7 @@ such as creating the deck and shuffling it:</p>
 <p>This is the first case we have seen where the initialization method performs a
 significant computation, beyond initializing attributes.</p>
 <p>To implement specific games, we can inherit from <code class="docutils literal"><span class="pre">CardGame</span></code> and add features
-for the new game. As an example, we&#8217;ll write a simulation of Old Maid.</p>
+for the new game. As an example, we’ll write a simulation of Old Maid.</p>
 <p>The object of Old Maid is to get rid of cards in your hand. You do this by
 matching cards by rank and color. For example, the 4 of Clubs matches the 4 of
 Spades since both suits are black. The Jack of Hearts matches the Jack of
@@ -272,16 +269,16 @@ players in a round robin. After the deal, all players match and discard as many
 cards as possible.</p>
 <p>When no more matches can be made, play begins. In turn, each player picks a
 card (without looking) from the closest neighbor to the left who still has
-cards. If the chosen card matches a card in the player&#8217;s hand, the pair is
-removed. Otherwise, the card is added to the player&#8217;s hand. Eventually all
-possible matches are made, leaving only the Queen of Spades in the loser&#8217;s
+cards. If the chosen card matches a card in the player’s hand, the pair is
+removed. Otherwise, the card is added to the player’s hand. Eventually all
+possible matches are made, leaving only the Queen of Spades in the loser’s
 hand.</p>
 <p>In our computer simulation of the game, the computer plays all hands.
 Unfortunately, some nuances of the real game are lost. In a real game, the
 player with the Old Maid goes to some effort to get their neighbor to pick that
 card, by displaying it a little more prominently, or perhaps failing to display
 it more prominently, or even failing to fail to display that card more
-prominently. The computer simply picks a neighbor&#8217;s card at random.</p>
+prominently. The computer simply picks a neighbor’s card at random.</p>
 </div>
 <div class="section" id="oldmaidhand-class">
 <h2>24.6. <code class="docutils literal"><span class="pre">OldMaidHand</span></code> class<a class="headerlink" href="#oldmaidhand-class" title="Permalink to this headline">¶</a></h2>
@@ -320,7 +317,7 @@ inherits from <code class="docutils literal"><span class="pre">Hand</span></code
 </div></blockquote>
 <p>We start by making a copy of the list of cards, so that we can traverse the
 copy while removing cards from the original. Since <code class="docutils literal"><span class="pre">self.cards</span></code> is modified
-in the loop, we don&#8217;t want to use it to control the traversal. Python can get
+in the loop, we don’t want to use it to control the traversal. Python can get
 quite confused if it is traversing a list that is changing!</p>
 <p>For each card in the hand, we figure out what the matching card is and go
 looking for it. The match card has the same rank and the other suit of the same
@@ -457,12 +454,12 @@ contains a new shuffled deck:</p>
 </td></tr></table></div>
 </div></blockquote>
 <p><code class="docutils literal"><span class="pre">count</span></code> is an accumulator that adds up the number of matches in each
-hand. When we&#8217;ve gone through every hand, the total is returned
+hand. When we’ve gone through every hand, the total is returned
 (<code class="docutils literal"><span class="pre">count</span></code>).</p>
 <p>When the total number of matches reaches twenty-five, fifty cards have been
 removed from the hands, which means that only one card is left and the game is
 over.</p>
-<p>The variable <code class="docutils literal"><span class="pre">turn</span></code> keeps track of which player&#8217;s turn it is. It starts at 0
+<p>The variable <code class="docutils literal"><span class="pre">turn</span></code> keeps track of which player’s turn it is. It starts at 0
 and increases by one each time; when it reaches <code class="docutils literal"><span class="pre">num_hands</span></code>, the modulus
 operator wraps it back around to 0.</p>
 <p>The method <code class="docutils literal"><span class="pre">play_one_turn</span></code> takes a parameter that indicates whose turn it is.
@@ -494,11 +491,11 @@ The return value is the number of matches made during this turn:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>If a player&#8217;s hand is empty, that player is out of the game, so he or she does
+<p>If a player’s hand is empty, that player is out of the game, so he or she does
 nothing and returns 0.</p>
 <p>Otherwise, a turn consists of finding the first player on the left that has
 cards, taking one card from the neighbor, and checking for matches. Before
-returning, the cards in the hand are shuffled so that the next player&#8217;s choice
+returning, the cards in the hand are shuffled so that the next player’s choice
 is random.</p>
 <p>The method <code class="docutils literal"><span class="pre">find_neighbor</span></code> starts with the player to the immediate left and
 continues around the circle until it finds a player that still has cards:</p>
@@ -633,7 +630,7 @@ to count the distance if the turtle is asked to move forward
 by a negative amount.  (We would not want
 to buy a second-hand turtle whose odometer reading was faked because its previous
 owner drove it backwards around the block too often. Try this in a car near you, and see
-if the car&#8217;s odometer counts up or down when you reverse.)</li>
+if the car’s odometer counts up or down when you reverse.)</li>
 <li>After travelling some random distance, your turtle should break down with a flat tyre.
 After this happens, raise an exception whenever <code class="docutils literal"><span class="pre">forward</span></code> is called.
 Also provide a <code class="docutils literal"><span class="pre">change_tyre</span></code> method that can fix the flat.</li>
@@ -663,7 +660,7 @@ Also provide a <code class="docutils literal"><span class="pre">change_tyre</spa
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

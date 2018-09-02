@@ -1,16 +1,16 @@
-How to Think Like a Computer Scientist
-======================================
+Kompyuter Dasturchi Kabi Qanday Fikrlash
+========================================
 
 .. image:: _static/gasp_lessons.png
     :alt: GASP Logo
 
 
-Learning with Python 3 (RLE)
----------------------------- 
+Python (Piton) 3 bilan o'rganish
+--------------------------------
 
 Version date: October 2012 
 
-by Peter Wentworth, Jeffrey Elkner, Allen B. Downey, and Chris Meyers
+by Dostonbek Toirov, Peter Wentworth, Jeffrey Elkner, Allen B. Downey, and Chris Meyers
 
   (based on 2nd edition by Jeffrey Elkner, Allen B. Downey, and Chris Meyers)
   
@@ -24,38 +24,38 @@ from http://www.ict.ru.ac.za/Resources/cspw/thinkcspy3/
 * :ref:`search`  
   
 * `Copyright Notice <copyright.html>`__ 
-* `Foreword <foreword.html>`__
-* `Preface <preface.html>`__
+* `So'z Boshi <foreword.html>`__
+* `Kirish <preface.html>`__
 * `Preface-3 <preface3-rle.html>`__ *This Rhodes Local Edition (RLE) of the book* 
-* `Contributor List <contrib.html>`__
-* `Chapter 1 <way_of_the_program.html>`__ *The way of the program*
-* `Chapter 2 <variables_expressions_statements.html>`__ *Variables, expressions, and statements*
-* `Chapter 3 <hello_little_turtles.html>`__ *Hello, little turtles!*  
-* `Chapter 4 <functions.html>`__ *Functions*
-* `Chapter 5 <conditionals.html>`__ *Conditionals*
-* `Chapter 6 <fruitful_functions.html>`__ *Fruitful functions*
-* `Chapter 7 <iteration.html>`__ *Iteration*
-* `Chapter 8 <strings.html>`__ *Strings*
-* `Chapter 9 <tuples.html>`__ *Tuples*
-* `Chapter 10 <events.html>`__ *Event handling*
-* `Chapter 11 <lists.html>`__ *Lists*
-* `Chapter 12 <modules.html>`__ *Modules*
-* `Chapter 13 <files.html>`__ *Files*
-* `Chapter 14 <list_algorithms.html>`__ *List Algorithms*
-* `Chapter 15 <classes_and_objects_I.html>`__ *Classes and Objects - the Basics*
-* `Chapter 16 <classes_and_objects_II.html>`__ *Classes and Objects - Digging a little deeper*
-* `Chapter 17 <pygame.html>`__ *PyGame*
-* `Chapter 18 <recursion.html>`__ *Recursion*
-* `Chapter 19 <exceptions.html>`__ *Exceptions*
-* `Chapter 20 <dictionaries.html>`__ *Dictionaries*
-* `Chapter 21 <casestudy_fileindexer.html>`__ *Case Study: A File Indexer*
-* `Chapter 22 <even_more_oop.html>`__ *Even more OOP*
-* `Chapter 23 <collections.html>`__ *Collections of Objects*
-* `Chapter 24 <inheritance.html>`__ *Inheritance*
-* `Chapter 25 <linked_lists.html>`__ *Linked Lists*
-* `Chapter 26 <stacks.html>`__ *Stacks*
-* `Chapter 27 <queues.html>`__ *Queues*
-* `Chapter 28 <trees.html>`__ *Trees*
+* `Ishtirokchilar Ro'yxati <contrib.html>`__
+* `1-Bo'lim <way_of_the_program.html>`__ *Dasturning yo'li*
+* `2-Bo'lim <variables_expressions_statements.html>`__ *O'zgaruvchilar, ifodalar, and bayonot*
+* `3-Bo'lim <hello_little_turtles.html>`__ *Salom, mitti toshbaqachalar!*  
+* `4-Bo'limi <functions.html>`__ *Funksiyalar*
+* `5-Bo'lim <conditionals.html>`__ *Shartlar*
+* `6-Bo'lim <fruitful_functions.html>`__ *'Mevali' funksiyalar*
+* `7-Bo'lim <iteration.html>`__ *Iteratsiya (Takrorlash)*
+* `8-Bo'lim <strings.html>`__ *Matnlar*
+* `9-Bo'lim <tuples.html>`__ *Tuple*
+* `10-Bo'lim <events.html>`__ *Hodisalarni boshqarish*
+* `11-Bo'lim <lists.html>`__ *Ro'yxat*
+* `12-Bo'lim <modules.html>`__ *Modullar*
+* `13-Bo'lim <files.html>`__ *Fayllar*
+* `14-Bo'lim <list_algorithms.html>`__ *List Algoritmlari*
+* `15-Bo'lim <classes_and_objects_I.html>`__ *Sinflar va Obyektlar - Asoslar*
+* `16-Bo'lim <classes_and_objects_II.html>`__ *Sinflar va Obyektlar - Chuqurroq o'rganish*
+* `17-Bo'lim <pygame.html>`__ *PyGame*
+* `18-Bo'lim <recursion.html>`__ *Rekursiya (Recursion)*
+* `19-Bo'lim <exceptions.html>`__ *Istisnolar*
+* `20-Bo'lim <dictionaries.html>`__ *Lug'atlar*
+* `21-Bo'lim <casestudy_fileindexer.html>`__ *Amaliy Tadqiqot: Fayl Indekslovchi*
+* `22-Bo'lim <even_more_oop.html>`__ *Yanada ko'proq OYD (Obyektga Yo'naltirilgan Dasturlash)*
+* `23-Bo'lim <collections.html>`__ *Obyektlar To'plami*
+* `24-Bo'lim <inheritance.html>`__ *Meros*
+* `25-Bo'lim <linked_lists.html>`__ *Bog'langan Ro'yxatlar*
+* `26-Bo'lim <stacks.html>`__ *To'plamlar*
+* `27-Bo'lim <queues.html>`__ *Navbatlar*
+* `28-Bo'lim <trees.html>`__ *Daraxtlar*
 * `Appendix A <app_a.html>`__ *Debugging*
 * `Appendix B <app_b.html>`__ *An odds-and-ends Workbook*
 * `Appendix C <app_c.html>`__ *Configuring Ubuntu for Python Development*

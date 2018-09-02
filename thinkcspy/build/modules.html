@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>12. Modules &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="13. Files" href="files.html" />
     <link rel="prev" title="11. Lists" href="lists.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -76,7 +73,7 @@ estimating the environmental impact of building a dam,</li>
 <li>For encrypting banking sessions on the Internet.</li>
 </ul>
 <p>Python provides a module <code class="docutils literal"><span class="pre">random</span></code> that helps with tasks like this.  You can
-look it up using help, but here are the key things we&#8217;ll do with it:</p>
+look it up using help, but here are the key things we’ll do with it:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -95,10 +92,10 @@ look it up using help, but here are the key things we&#8217;ll do with it:</p>
 </td></tr></table></div>
 </div></blockquote>
 <p>The <code class="docutils literal"><span class="pre">randrange</span></code> method call generates an integer between its lower and upper
-argument, using the same semantics as <code class="docutils literal"><span class="pre">range</span></code> &#8212; so the lower bound is included, but
+argument, using the same semantics as <code class="docutils literal"><span class="pre">range</span></code> — so the lower bound is included, but
 the upper bound is excluded.   All the values have an equal probability of occurring
 (i.e. the results are <em>uniformly</em> distributed).   Like <code class="docutils literal"><span class="pre">range</span></code>, <code class="docutils literal"><span class="pre">randrange</span></code> can
-also take an optional step argument. So let&#8217;s assume we needed a random odd number less
+also take an optional step argument. So let’s assume we needed a random odd number less
 than 100, we could say:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">r_odd</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -106,15 +103,15 @@ than 100, we could say:</p>
 </td></tr></table></div>
 </div></blockquote>
 <p>Other methods can also generate other distributions e.g. a bell-shaped,
-or &#8220;normal&#8221; distribution might be more appropriate for estimating seasonal rainfall,
+or “normal” distribution might be more appropriate for estimating seasonal rainfall,
 or the concentration of a compound in the body after taking a dose of medicine.</p>
-<p>The <code class="docutils literal"><span class="pre">random</span></code> method returns a floating point number in the interval [0.0, 1.0) &#8212; the
-square bracket means &#8220;closed interval on the left&#8221; and the round parenthesis means
-&#8220;open interval on the right&#8221;.  In other words, 0.0 is possible, but all returned
+<p>The <code class="docutils literal"><span class="pre">random</span></code> method returns a floating point number in the interval [0.0, 1.0) — the
+square bracket means “closed interval on the left” and the round parenthesis means
+“open interval on the right”.  In other words, 0.0 is possible, but all returned
 numbers will be strictly less than 1.0.  It is usual to <em>scale</em> the results after
 calling this method, to get them into an interval suitable for your application.  In the
-case shown here, we&#8217;ve converted the result of the method call to a number in
-the interval [0.0, 5.0).  Once more, these are uniformly distributed numbers &#8212; numbers
+case shown here, we’ve converted the result of the method call to a number in
+the interval [0.0, 5.0).  Once more, these are uniformly distributed numbers — numbers
 close to 0 are just as likely to occur as numbers close to 0.5, or numbers close to 1.0.</p>
 <p>This example shows how to shuffle a list.  (<code class="docutils literal"><span class="pre">shuffle</span></code> cannot work directly
 with a lazy promise, so notice that we had to convert the range object
@@ -130,15 +127,15 @@ using the <code class="docutils literal"><span class="pre">list</span></code> ty
 </div></blockquote>
 <div class="section" id="repeatability-and-testing">
 <span id="index-1"></span><h3>12.1.1. Repeatability and Testing<a class="headerlink" href="#repeatability-and-testing" title="Permalink to this headline">¶</a></h3>
-<p>Random number generators are based on a <strong>deterministic</strong> algorithm &#8212; repeatable and predictable.
-So they&#8217;re called <strong>pseudo-random</strong> generators &#8212; they are not genuinely random.
-They start with a <em>seed</em> value. Each time you ask for another random number, you&#8217;ll get
+<p>Random number generators are based on a <strong>deterministic</strong> algorithm — repeatable and predictable.
+So they’re called <strong>pseudo-random</strong> generators — they are not genuinely random.
+They start with a <em>seed</em> value. Each time you ask for another random number, you’ll get
 one based on the current seed attribute, and the state of the seed (which is one
 of the attributes of the generator) will be updated.</p>
 <p>For debugging and for writing unit tests, it is convenient
-to have repeatability &#8212; programs that do the same thing every time they are run.
+to have repeatability — programs that do the same thing every time they are run.
 We can arrange this by forcing the random number generator to be initialized with
-a known seed every time.  (Often this is only wanted during testing &#8212; playing a game
+a known seed every time.  (Often this is only wanted during testing — playing a game
 of cards where the shuffled deck was always in the same order as last time you played
 would get boring very rapidly!)</p>
 <blockquote>
@@ -189,7 +186,7 @@ lower and an upper bound:</p>
 <p>Notice that we got a duplicate in the result. Often this is
 wanted, e.g. if we throw a die five times, we would expect some
 duplicates.</p>
-<p>But what if you don&#8217;t want duplicates?  If you wanted 5 distinct months,
+<p>But what if you don’t want duplicates?  If you wanted 5 distinct months,
 then this algorithm is wrong.  In this case a good algorithm is to generate the
 list of possibilities, shuffle it, and slice off the number of elements you want:</p>
 <blockquote>
@@ -203,12 +200,12 @@ list of possibilities, shuffle it, and slice off the number of elements you want
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>In statistics courses, the first case &#8212; allowing duplicates &#8212; is usually
-described as pulling balls out of a bag <em>with replacement</em> &#8212; you put the drawn
+<p>In statistics courses, the first case — allowing duplicates — is usually
+described as pulling balls out of a bag <em>with replacement</em> — you put the drawn
 ball back in each time, so it can occur again.  The latter case, with no duplicates,
 is usually described as pulling balls out of the bag <em>without replacement</em>. Once the
-ball is drawn, it doesn&#8217;t go back to be drawn again.  TV lotto games work like this.</p>
-<p>The second &#8220;shuffle and slice&#8221; algorithm would not be so great if
+ball is drawn, it doesn’t go back to be drawn again.  TV lotto games work like this.</p>
+<p>The second “shuffle and slice” algorithm would not be so great if
 you only wanted a few elements, but from a very large domain.
 Suppose I wanted five numbers between one and ten million, without duplicates.
 Generating a list of ten million items, shuffling it, and then slicing off
@@ -274,17 +271,17 @@ this case?</p>
 <div class="section" id="the-time-module">
 <h2>12.2. The <code class="docutils literal"><span class="pre">time</span></code> module<a class="headerlink" href="#the-time-module" title="Permalink to this headline">¶</a></h2>
 <p>As we start to work with more sophisticated algorithms and bigger programs, a natural
-concern is <em>&#8220;is our code efficient?&#8221;</em>  One way to experiment is to time how long various
+concern is <em>“is our code efficient?”</em>  One way to experiment is to time how long various
 operations take.  The <code class="docutils literal"><span class="pre">time</span></code> module has a function called <code class="docutils literal"><span class="pre">clock</span></code> that is recommended
 for this purpose.   Whenever <code class="docutils literal"><span class="pre">clock</span></code> is called, it returns a floating point number
 representing how many seconds have elapsed since your program started running.</p>
 <p>The way to use it is to call <code class="docutils literal"><span class="pre">clock</span></code> and assign the result to a variable, say <code class="docutils literal"><span class="pre">t0</span></code>,
 just before you start executing the code you want to measure.  Then after execution, call
-<code class="docutils literal"><span class="pre">clock</span></code> again, (this time we&#8217;ll save the result in variable <code class="docutils literal"><span class="pre">t1</span></code>).  The difference
+<code class="docutils literal"><span class="pre">clock</span></code> again, (this time we’ll save the result in variable <code class="docutils literal"><span class="pre">t1</span></code>).  The difference
 <code class="docutils literal"><span class="pre">t1-t0</span></code> is the time elapsed, and is a measure of how fast your program is running.</p>
-<p>Let&#8217;s try a small example.  Python has a built-in <code class="docutils literal"><span class="pre">sum</span></code> function that can sum the
+<p>Let’s try a small example.  Python has a built-in <code class="docutils literal"><span class="pre">sum</span></code> function that can sum the
 elements in a list.  We can also write our own.  How do we think they would compare
-for speed?   We&#8217;ll try to do the summation of a list [0, 1, 2 ...] in both cases, and
+for speed?   We’ll try to do the summation of a list [0, 1, 2 …] in both cases, and
 compare the results:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -345,7 +342,7 @@ Generating and summing up ten million elements in under a second is not too shab
 </div>
 <div class="section" id="the-math-module">
 <h2>12.3. The <code class="docutils literal"><span class="pre">math</span></code> module<a class="headerlink" href="#the-math-module" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal"><span class="pre">math</span></code> module contains the kinds of mathematical functions you&#8217;d typically find on your
+<p>The <code class="docutils literal"><span class="pre">math</span></code> module contains the kinds of mathematical functions you’d typically find on your
 calculator (<code class="docutils literal"><span class="pre">sin</span></code>, <code class="docutils literal"><span class="pre">cos</span></code>, <code class="docutils literal"><span class="pre">sqrt</span></code>, <code class="docutils literal"><span class="pre">asin</span></code>, <code class="docutils literal"><span class="pre">log</span></code>, <code class="docutils literal"><span class="pre">log10</span></code>) and some mathematical constants
 like <code class="docutils literal"><span class="pre">pi</span></code> and <code class="docutils literal"><span class="pre">e</span></code>:</p>
 <blockquote>
@@ -370,11 +367,11 @@ rather than degrees.  There are two functions <code class="docutils literal"><sp
 convert between these two popular ways of measuring angles.</p>
 <p>Notice another difference between this module and our use of <code class="docutils literal"><span class="pre">random</span></code> and <code class="docutils literal"><span class="pre">turtle</span></code>:
 in <code class="docutils literal"><span class="pre">random</span></code> and <code class="docutils literal"><span class="pre">turtle</span></code> we create objects and we call methods on the object.  This is
-because objects have <em>state</em> &#8212; a turtle has a color, a position, a heading, etc.,
+because objects have <em>state</em> — a turtle has a color, a position, a heading, etc.,
 and every random number generator has a seed value that determines its next result.</p>
-<p>Mathematical functions are &#8220;pure&#8221; and don&#8217;t have any state &#8212; calculating the square root of
-2.0 doesn&#8217;t depend on any kind of state or history about what happened in the past.
-So the functions are not methods of an object &#8212;
+<p>Mathematical functions are “pure” and don’t have any state — calculating the square root of
+2.0 doesn’t depend on any kind of state or history about what happened in the past.
+So the functions are not methods of an object —
 they are simply functions that are grouped together in a module called <code class="docutils literal"><span class="pre">math</span></code>.</p>
 </div>
 <div class="section" id="creating-your-own-modules">
@@ -409,8 +406,8 @@ manageable sized parts, and to keep related parts together.</p>
 <span id="index-3"></span><h2>12.5. Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h2>
 <p>A <strong>namespace</strong> is a collection of identifiers that belong to
 a module, or to a function, (and as we will see soon, in classes too).  Generally,
-we like a namespace to hold &#8220;related&#8221; things, e.g. all the math functions, or all
-the typical things we&#8217;d do with random numbers.</p>
+we like a namespace to hold “related” things, e.g. all the math functions, or all
+the typical things we’d do with random numbers.</p>
 <p>Each module has its own namespace, so we can use the same identifier name in
 multiple modules without causing an identification problem.</p>
 <blockquote>
@@ -502,9 +499,9 @@ multiple modules without causing an identification problem.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>The three <code class="docutils literal"><span class="pre">n</span></code>&#8216;s here do not collide since they are each in a different
-namespace &#8212; they are three names for three different variables, just like
-there might be three different instances of people, all called &#8220;Bruce&#8221;.</p>
+<p>The three <code class="docutils literal"><span class="pre">n</span></code>’s here do not collide since they are each in a different
+namespace — they are three names for three different variables, just like
+there might be three different instances of people, all called “Bruce”.</p>
 <p>Namespaces permit several programmers to work on the same project without
 having naming collisions.</p>
 <blockquote>
@@ -517,18 +514,18 @@ is called <code class="docutils literal"><span class="pre">math</span></code>, a
 So in Python the concepts are more or less interchangeable.</p>
 <p>But you will encounter other languages (e.g. C#), that allow one module
 to span multiple files, or one file to have multiple namespaces,
-or many files to all share the same namespace. So the name of the file doesn&#8217;t
+or many files to all share the same namespace. So the name of the file doesn’t
 need to be the same as the namespace.</p>
 <p>So a good idea is to try to keep the concepts distinct in your mind.</p>
 <p>Files and directories organize <em>where</em> things are stored in our computer.
 On the other hand, namespaces and modules are a programming concept:
 they help us organize how we want to group related functions and attributes.
-They are not about &#8220;where&#8221; to store things, and should not have to
+They are not about “where” to store things, and should not have to
 coincide with the file and directory structures.</p>
 <p>So in Python, if you rename the file <code class="docutils literal"><span class="pre">math.py</span></code>, its module name also changes,
 your <code class="docutils literal"><span class="pre">import</span></code> statements would need to change, and your code that refers to
 functions or attributes inside that namespace would also need to change.</p>
-<p class="last">In other languages this is not necessarily the case.  So don&#8217;t blur the concepts,
+<p class="last">In other languages this is not necessarily the case.  So don’t blur the concepts,
 just because Python blurs them!</p>
 </div>
 </div></blockquote>
@@ -542,13 +539,13 @@ identifier can be accessed, or used.</p>
 <li><strong>Local scope</strong> refers to identifiers declared within a function.  These identifiers are kept
 in the namespace that belongs to the function, and each function has its own namespace.</li>
 <li><strong>Global scope</strong> refers to all the identifiers declared within the current module, or file.</li>
-<li><strong>Built-in scope</strong> refers to all the identifiers built into Python &#8212; those like <code class="docutils literal"><span class="pre">range</span></code> and
+<li><strong>Built-in scope</strong> refers to all the identifiers built into Python — those like <code class="docutils literal"><span class="pre">range</span></code> and
 <code class="docutils literal"><span class="pre">min</span></code> that can be used without having to import anything, and are (almost) always available.</li>
 </ul>
 <p>Python (like most other computer languages) uses precedence rules: the same name could occur in
 more than one of these scopes, but the innermost, or local scope, will always take
 precedence over the global scope, and the global scope always gets used in preference to the
-built-in scope.  Let&#8217;s start with a simple example:</p>
+built-in scope.  Let’s start with a simple example:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -560,14 +557,14 @@ built-in scope.  Let&#8217;s start with a simple example:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>What gets printed?  We&#8217;ve defined our own function called <code class="docutils literal"><span class="pre">range</span></code>, so there
+<p>What gets printed?  We’ve defined our own function called <code class="docutils literal"><span class="pre">range</span></code>, so there
 is now a potential ambiguity.  When we use <code class="docutils literal"><span class="pre">range</span></code>, do we mean our own one,
 or the built-in one?  Using the scope lookup rules determines this: our own
 <code class="docutils literal"><span class="pre">range</span></code> function, not the built-in one, is called, because our function <code class="docutils literal"><span class="pre">range</span></code>
 is in the global namespace, which takes precedence over the built-in names.</p>
-<p>So although names likes <code class="docutils literal"><span class="pre">range</span></code> and <code class="docutils literal"><span class="pre">min</span></code> are built-in, they can be &#8220;hidden&#8221;
+<p>So although names likes <code class="docutils literal"><span class="pre">range</span></code> and <code class="docutils literal"><span class="pre">min</span></code> are built-in, they can be “hidden”
 from your use if you choose to define your own variables or functions that reuse
-those names.  (It is a confusing practice to redefine built-in names &#8212; so to be
+those names.  (It is a confusing practice to redefine built-in names — so to be
 a good programmer you need to understand the scope rules and understand
 that you can do nasty things that will cause confusion, and then you avoid doing them!)</p>
 <p>Now, a slightly more complex example:</p>
@@ -592,19 +589,19 @@ that you can do nasty things that will cause confusion, and then you avoid doing
 are outside the function in the global namespace.  Inside the function, new variables
 called <code class="docutils literal"><span class="pre">n</span></code> and <code class="docutils literal"><span class="pre">m</span></code> are created <em>just for the duration of the execution of f</em>. These are
 created in the local namespace of function <code class="docutils literal"><span class="pre">f</span></code>.  Within the body of <code class="docutils literal"><span class="pre">f</span></code>, the scope lookup rules
-determine that we use the local variables <code class="docutils literal"><span class="pre">m</span></code> and <code class="docutils literal"><span class="pre">n</span></code>.  By contrast, after we&#8217;ve returned from <code class="docutils literal"><span class="pre">f</span></code>,
+determine that we use the local variables <code class="docutils literal"><span class="pre">m</span></code> and <code class="docutils literal"><span class="pre">n</span></code>.  By contrast, after we’ve returned from <code class="docutils literal"><span class="pre">f</span></code>,
 the <code class="docutils literal"><span class="pre">n</span></code> and <code class="docutils literal"><span class="pre">m</span></code> arguments to the <code class="docutils literal"><span class="pre">print</span></code> function refer to the original variables
 on lines 1 and 2, and these have not been changed in any way by executing function <code class="docutils literal"><span class="pre">f</span></code>.</p>
 <p>Notice too that the <code class="docutils literal"><span class="pre">def</span></code> puts name <code class="docutils literal"><span class="pre">f</span></code> into the global namespace here.  So it can be
 called on line 7.</p>
-<p>What is the scope of the variable <code class="docutils literal"><span class="pre">n</span></code> on line 1?  Its scope &#8212; the region in which it is
-visible &#8212;  is lines 1, 2, 6, 7.  It is hidden from view in lines 3, 4, 5 because of the
+<p>What is the scope of the variable <code class="docutils literal"><span class="pre">n</span></code> on line 1?  Its scope — the region in which it is
+visible —  is lines 1, 2, 6, 7.  It is hidden from view in lines 3, 4, 5 because of the
 local variable <code class="docutils literal"><span class="pre">n</span></code>.</p>
 </div>
 <div class="section" id="attributes-and-the-dot-operator">
 <span id="index-5"></span><h2>12.7. Attributes and the dot operator<a class="headerlink" href="#attributes-and-the-dot-operator" title="Permalink to this headline">¶</a></h2>
 <p>Variables defined inside a module are called <strong>attributes</strong> of the module.
-We&#8217;ve seen that objects have attributes too: for example, most objects have
+We’ve seen that objects have attributes too: for example, most objects have
 a <code class="docutils literal"><span class="pre">__doc__</span></code> attribute, some functions have a <code class="docutils literal"><span class="pre">__annotations__</span></code> attribute.
 Attributes are accessed using the <strong>dot operator</strong> (<code class="docutils literal"><span class="pre">.</span></code>). The <code class="docutils literal"><span class="pre">question</span></code> attribute
 of <code class="docutils literal"><span class="pre">module1</span></code> and <code class="docutils literal"><span class="pre">module2</span></code> is accessed using <code class="docutils literal"><span class="pre">module1.question</span></code> and
@@ -613,7 +610,7 @@ of <code class="docutils literal"><span class="pre">module1</span></code> and <c
 to access them in the same way. <code class="docutils literal"><span class="pre">seqtools.remove_at</span></code> refers to the
 <code class="docutils literal"><span class="pre">remove_at</span></code> function in the <code class="docutils literal"><span class="pre">seqtools</span></code> module.</p>
 <p>When we use a dotted name, we often refer to it as a <strong>fully qualified name</strong>,
-because we&#8217;re saying exactly which <code class="docutils literal"><span class="pre">question</span></code> attribute we mean.</p>
+because we’re saying exactly which <code class="docutils literal"><span class="pre">question</span></code> attribute we mean.</p>
 </div>
 <div class="section" id="three-import-statement-variants">
 <span id="index-6"></span><h2>12.8. Three <code class="docutils literal"><span class="pre">import</span></code> statement variants<a class="headerlink" href="#three-import-statement-variants" title="Permalink to this headline">¶</a></h2>
@@ -660,7 +657,7 @@ shorter by importing a module under a different name:</p>
 </td></tr></table></div>
 </div></blockquote>
 <p>But hey, with nice editors that do auto-completion, and fast fingers,
-that&#8217;s a small price!</p>
+that’s a small price!</p>
 <p>Finally, observe this case:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -682,7 +679,7 @@ because it is not in the global namespace.</p>
 <div class="section" id="turn-your-unit-tester-into-a-module">
 <h2>12.9. Turn your unit tester into a module<a class="headerlink" href="#turn-your-unit-tester-into-a-module" title="Permalink to this headline">¶</a></h2>
 <p>Near the end of Chapter 6 (Fruitful functions) we introduced unit testing, and our own <code class="docutils literal"><span class="pre">test</span></code>
-function, and you&#8217;ve had to copy this into each module for which you
+function, and you’ve had to copy this into each module for which you
 wrote tests.   Now we can put that definition into a module of its
 own, say <code class="docutils literal"><span class="pre">unit_tester.py</span></code>, and simply use one line in each new script instead:</p>
 <blockquote>
@@ -695,12 +692,12 @@ own, say <code class="docutils literal"><span class="pre">unit_tester.py</span><
 <h2>12.10. Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
 <dl class="glossary docutils">
 <dt id="term-attribute">attribute</dt>
-<dd>A variable defined inside a module (or class or instance &#8211; as we will
+<dd>A variable defined inside a module (or class or instance – as we will
 see later). Module attributes are accessed by using the <strong>dot
 operator</strong> (<code class="docutils literal"><span class="pre">.</span></code>).</dd>
 <dt id="term-dot-operator">dot operator</dt>
 <dd>The dot operator (<code class="docutils literal"><span class="pre">.</span></code>) permits access to attributes and functions of
-a module (or attributes and methods of a class or instance &#8211; as we
+a module (or attributes and methods of a class or instance – as we
 have seen elsewhere).</dd>
 <dt id="term-fully-qualified-name">fully qualified name</dt>
 <dd>A name that is prefixed by some namespace identifier and the dot operator, or
@@ -802,7 +799,7 @@ and see how you can help him print a calendar that suits his needs.</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>Try a few other languages, including one that doesn&#8217;t work, and see what happens.</p>
+<p>Try a few other languages, including one that doesn’t work, and see what happens.</p>
 </li>
 <li><p class="first">Experiment with <code class="docutils literal"><span class="pre">calendar.isleap</span></code>. What does it expect as an
 argument? What does it return as a result? What kind of a function is this?</p>
@@ -840,11 +837,11 @@ following statement:</p>
 </td></tr></table></div>
 </div></blockquote>
 <p>When you will run <code class="docutils literal"><span class="pre">namespace_test.py</span></code> you will see either <code class="docutils literal"><span class="pre">True</span></code> or
-<code class="docutils literal"><span class="pre">False</span></code> as output depending on whether or not you&#8217;ve already had your
+<code class="docutils literal"><span class="pre">False</span></code> as output depending on whether or not you’ve already had your
 birthday this year.</p>
 <p>What this example illustrates is that out different modules can both have
-attributes named <code class="docutils literal"><span class="pre">myage</span></code> and <code class="docutils literal"><span class="pre">year</span></code>.  Because they&#8217;re in different namespaces,
-they don&#8217;t clash with one another.  When we write <code class="docutils literal"><span class="pre">namespace_test.py</span></code>, we
+attributes named <code class="docutils literal"><span class="pre">myage</span></code> and <code class="docutils literal"><span class="pre">year</span></code>.  Because they’re in different namespaces,
+they don’t clash with one another.  When we write <code class="docutils literal"><span class="pre">namespace_test.py</span></code>, we
 fully qualify exactly which variable <code class="docutils literal"><span class="pre">year</span></code> or <code class="docutils literal"><span class="pre">myage</span></code> we are referring to.</p>
 </li>
 <li><p class="first">Add the following statement to <code class="docutils literal"><span class="pre">mymodule1.py</span></code>, <code class="docutils literal"><span class="pre">mymodule2.py</span></code>, and
@@ -874,7 +871,7 @@ see the new print statement?</p>
 </div></blockquote>
 <p>What does Tim Peters have to say about namespaces?</p>
 </li>
-<li><p class="first">Give the Python interpreter&#8217;s response to each of the following from a
+<li><p class="first">Give the Python interpreter’s response to each of the following from a
 continuous interpreter session:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;If we took the bones out, it wouldn&#39;t be crunchy, would it?&quot;</span>
@@ -977,7 +974,7 @@ learned to fill in the body of the function below using the <code class="docutil
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

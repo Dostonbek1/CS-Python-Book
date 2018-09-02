@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>6. Fruitful functions &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="7. Iteration" href="iteration.html" />
     <link rel="prev" title="5. Conditionals" href="conditionals.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -179,7 +176,7 @@ empty string:</p>
 </div>
 </div></blockquote>
 <p>Single-step through this code and convince yourself that in the first test case
-that we&#8217;ve provided, the function returns while processing the second element
+that we’ve provided, the function returns while processing the second element
 in the list: it does not have to traverse the whole list.</p>
 </div>
 <div class="section" id="program-development">
@@ -211,7 +208,7 @@ parameters. The return value is the distance, which is a floating-point value.</
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>Obviously, this version of the function doesn&#8217;t compute distances; it always
+<p>Obviously, this version of the function doesn’t compute distances; it always
 returns zero. But it is syntactically correct, and it will run, which means
 that we can test it before we make it more complicated.</p>
 <p>To test the new function, we call it with sample values:</p>
@@ -226,7 +223,7 @@ distance equals 4; that way, the result is 5 (the hypotenuse of a 3-4-5
 triangle). When testing a function, it is useful to know the right answer.</p>
 <p>At this point we have confirmed that the function is syntactically correct, and
 we can start adding lines of code. After each incremental change, we test the
-function again. If an error occurs at any point, we know where it must be &#8212; in
+function again. If an error occurs at any point, we know where it must be — in
 the last line we added.</p>
 <p>A logical first step in the computation is to find the differences
 x<sub>2</sub>- x<sub>1</sub> and y<sub>2</sub>- y<sub>1</sub>.  We will
@@ -292,7 +289,7 @@ verifying that each step matches your expectations can save you a lot of
 debugging time.  As you improve your programming skills you should find yourself
 managing bigger and bigger chunks: this is very similar to the way we learned to read
 letters, syllables, words, phrases, sentences, paragraphs, etc., or the way we learn
-to chunk music &#8212; from individual notes to chords, bars, phrases, and so on.</p>
+to chunk music — from individual notes to chords, bars, phrases, and so on.</p>
 <p>The key aspects of the process are:</p>
 <ol class="arabic simple">
 <li>Start with a working skeleton program and make small incremental changes. At any
@@ -300,16 +297,16 @@ point, if there is an error, you will know exactly where it is.</li>
 <li>Use temporary variables to refer to intermediate values so that you
 can easily inspect and check them.</li>
 <li>Once the program is working, relax, sit back, and play around with your options.
-(There is interesting research that links &#8220;playfulness&#8221; to better understanding,
+(There is interesting research that links “playfulness” to better understanding,
 better learning, more enjoyment, and a more positive mindset about
-what you can achieve &#8212; so spend some time fiddling around!)
+what you can achieve — so spend some time fiddling around!)
 You might want to consolidate multiple statements into one bigger compound expression,
-or rename the variables you&#8217;ve used, or see if you can make the function shorter.
+or rename the variables you’ve used, or see if you can make the function shorter.
 A good guideline is to aim for making code as easy as possible for others to read.</li>
 </ol>
 <p>Here is another version of the function.  It makes use of a square root function
-that is in the <code class="docutils literal"><span class="pre">math</span></code> module (we&#8217;ll learn about modules shortly).  Which do you
-prefer?  Which looks &#8220;closer&#8221; to the Pythagorean formula we started out with?</p>
+that is in the <code class="docutils literal"><span class="pre">math</span></code> module (we’ll learn about modules shortly).  Which do you
+prefer?  Which looks “closer” to the Pythagorean formula we started out with?</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -338,7 +335,7 @@ it to.  Be clear about the following, however:</p>
 happen before you can debug a program.  Work on <em>solving</em> the problem
 on a piece of paper (perhaps using a flowchart to record the steps you take)
 <em>before</em> you concern yourself with
-writing code.  Writing a program doesn&#8217;t solve the problem &#8212; it simply <em>automates</em>
+writing code.  Writing a program doesn’t solve the problem — it simply <em>automates</em>
 the manual steps you would take. So first make sure you have
 a pen-and-paper manual solution that works.
 Programming then is about making those manual steps happen automatically.</p>
@@ -347,7 +344,7 @@ Programming then is about making those manual steps happen automatically.</p>
 function that, in addition to its primary task, also asks the user for input,
 or prints output, when it would be more useful
 if it simply shut up and did its work quietly.</p>
-<p>For example, we&#8217;ve seen built-in functions like <code class="docutils literal"><span class="pre">range</span></code>,
+<p>For example, we’ve seen built-in functions like <code class="docutils literal"><span class="pre">range</span></code>,
 <code class="docutils literal"><span class="pre">max</span></code> and <code class="docutils literal"><span class="pre">abs</span></code>.  None of these would be useful building blocks for other
 programs if they prompted the user for input, or printed their results while
 they performed their tasks.</p>
@@ -364,12 +361,12 @@ but these will then be removed once you get things working.</p>
 <span id="index-4"></span><h2>6.4. Composition<a class="headerlink" href="#composition" title="Permalink to this headline">¶</a></h2>
 <p>As you should expect by now, you can call one function from within another.
 This ability is called <strong>composition</strong>.</p>
-<p>As an example, we&#8217;ll write a function that takes two points, the center of the
+<p>As an example, we’ll write a function that takes two points, the center of the
 circle and a point on the perimeter, and computes the area of the circle.</p>
 <p>Assume that the center point is stored in the variables <code class="docutils literal"><span class="pre">xc</span></code> and <code class="docutils literal"><span class="pre">yc</span></code>, and
 the perimeter point is in <code class="docutils literal"><span class="pre">xp</span></code> and <code class="docutils literal"><span class="pre">yp</span></code>. The first step is to find the
 radius of the circle, which is the distance between the two points.
-Fortunately, we&#8217;ve just written a function, <code class="docutils literal"><span class="pre">distance</span></code>, that does just that,
+Fortunately, we’ve just written a function, <code class="docutils literal"><span class="pre">distance</span></code>, that does just that,
 so now all we have to do is use it:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">radius</span> <span class="o">=</span> <span class="n">distance</span><span class="p">(</span><span class="n">xc</span><span class="p">,</span> <span class="n">yc</span><span class="p">,</span> <span class="n">xp</span><span class="p">,</span> <span class="n">yp</span><span class="p">)</span>
@@ -480,12 +477,12 @@ read and modified far more often then they are written.  But, like most rules,
 we occasionaly break them.  Most of the code examples
 in this book will be consistent with the <em>Python Enhancement Proposal 8</em>
 (<a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">PEP 8</a>), a style guide developed by the Python community.</p>
-<p>We&#8217;ll have more to say about style as our programs become more complex, but a
+<p>We’ll have more to say about style as our programs become more complex, but a
 few pointers will be helpful already:</p>
 <ul class="simple">
 <li>use 4 spaces (instead of tabs) for indentation</li>
 <li>limit line length to 78 characters</li>
-<li>when naming identifiers, use <code class="docutils literal"><span class="pre">CamelCase</span></code> for classes (we&#8217;ll get to those)
+<li>when naming identifiers, use <code class="docutils literal"><span class="pre">CamelCase</span></code> for classes (we’ll get to those)
 and <code class="docutils literal"><span class="pre">lowercase_with_underscores</span></code> for functons and variables</li>
 <li>place imports at the top of the file</li>
 <li>keep function definitions together</li>
@@ -513,26 +510,26 @@ and over as you develop your code.</p>
 <p>Extra code in your program which is there because it makes debugging or testing
 easier is called <strong>scaffolding</strong>.</p>
 <p>A collection of tests for some code is called its <strong>test suite</strong>.</p>
-<p>There are a few different ways to do unit testing in Python &#8212;
-but at this stage we&#8217;re going to ignore what the Python community usually does,
-and we&#8217;re going to start with two functions that we&#8217;ll write ourselves.
-We&#8217;ll use these for writing our unit tests.</p>
-<p>Let&#8217;s start with the <code class="docutils literal"><span class="pre">absolute_value</span></code> function that we wrote earlier in this
+<p>There are a few different ways to do unit testing in Python —
+but at this stage we’re going to ignore what the Python community usually does,
+and we’re going to start with two functions that we’ll write ourselves.
+We’ll use these for writing our unit tests.</p>
+<p>Let’s start with the <code class="docutils literal"><span class="pre">absolute_value</span></code> function that we wrote earlier in this
 chapter.  Recall that we wrote a few different versions, the last of which was
 incorrect, and had a bug. Would tests have caught this bug?</p>
-<p>First we plan our tests.  We&#8217;d like to know
+<p>First we plan our tests.  We’d like to know
 if the function returns the correct value when its argument is negative,
 or when its argument is positive, or when its argument is zero.  When
-planning your tests, you&#8217;ll always want to think carefully about the &#8220;edge&#8221; cases &#8212;
+planning your tests, you’ll always want to think carefully about the “edge” cases —
 here, an argument of 0 to <code class="docutils literal"><span class="pre">absolute_value</span></code> is on the edge of where the function
 behaviour changes, and as we saw at the beginning of the chapter, it is an easy
 spot for the programmer to make a mistake!  So it is a good case to include in
 our test suite.</p>
-<p>We&#8217;re going to write a helper function for checking the results of one test.  It
+<p>We’re going to write a helper function for checking the results of one test.  It
 takes a boolean argument and will either print
 a message telling us that the test passed, or it will print a message to
 inform us that the test failed.  The first line of the body (after
-the function&#8217;s docstring) magically
+the function’s docstring) magically
 determines the line number in the script where the call was made from.
 This allows us to print the line number of the test, which will help
 when we want to identify which tests have passed or failed.</p>
@@ -576,9 +573,9 @@ But with this function written, we can proceed to construct our test suite:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Here you&#8217;ll see that we&#8217;ve constructed five tests in our test suite.  We could run this
+<p>Here you’ll see that we’ve constructed five tests in our test suite.  We could run this
 against the first or second versions (the correct versions) of <code class="docutils literal"><span class="pre">absolute_value</span></code>,
-and we&#8217;d get output similar to the following:</p>
+and we’d get output similar to the following:</p>
 <blockquote>
 <div><div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="go">Test at line 25 ok.</span>
 <span class="go">Test at line 26 ok.</span>
@@ -588,7 +585,7 @@ and we&#8217;d get output similar to the following:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>But let&#8217;s say you change the function to an incorrect version like this:</p>
+<p>But let’s say you change the function to an incorrect version like this:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -658,7 +655,7 @@ are working properly.  Having a test suite is extremely useful when somebody
 modifies or extends the code: it provides a safety net against
 going backwards by putting new bugs into previously working code.
 The term <em>regression</em> testing is often used to capture this idea that we
-don&#8217;t want to go backwards!</dd>
+don’t want to go backwards!</dd>
 </dl>
 </div>
 <div class="section" id="exercises">
@@ -670,7 +667,7 @@ as you work through the exercises, add the new tests to your test suite.
 you can easily copy and paste the tests and the fragments of code into your Python editor.)</p>
 <p>After completing each exercise, confirm that all the tests pass.</p>
 <ol class="arabic">
-<li><p class="first">The four compass points can be abbreviated by single-letter strings as &#8220;N&#8221;, &#8220;E&#8221;, &#8220;S&#8221;, and &#8220;W&#8221;.
+<li><p class="first">The four compass points can be abbreviated by single-letter strings as “N”, “E”, “S”, and “W”.
 Write a function <code class="docutils literal"><span class="pre">turn_clockwise</span></code> that takes one of these four compass points as
 its parameter, and returns the next compass point in the clockwise direction.
 Here are some tests that should pass:</p>
@@ -678,7 +675,7 @@ Here are some tests that should pass:</p>
 <span class="n">test</span><span class="p">(</span><span class="n">turn_clockwise</span><span class="p">(</span><span class="s2">&quot;W&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;N&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You might ask <cite>&#8220;What if the argument to the function is some other value?&#8221;</cite>  For all
+<p>You might ask <cite>“What if the argument to the function is some other value?”</cite>  For all
 other cases, the function should return the value <code class="docutils literal"><span class="pre">None</span></code>:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="n">turn_clockwise</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">)</span>
 <span class="n">test</span><span class="p">(</span><span class="n">turn_clockwise</span><span class="p">(</span><span class="s2">&quot;rubbish&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">)</span>
@@ -686,7 +683,7 @@ other cases, the function should return the value <code class="docutils literal"
 </div>
 </li>
 <li><p class="first">Write a function <code class="docutils literal"><span class="pre">day_name</span></code> that converts an integer number 0 to 6 into the name of
-a day.  Assume day 0 is &#8220;Sunday&#8221;.  Once again, return None if the arguments to the function
+a day.  Assume day 0 is “Sunday”.  Once again, return None if the arguments to the function
 are not valid.  Here are some tests that should pass:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="n">day_name</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Wednesday&quot;</span><span class="p">)</span>
 <span class="n">test</span><span class="p">(</span><span class="n">day_name</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Saturday&quot;</span><span class="p">)</span>
@@ -706,9 +703,9 @@ are not valid.  Here are some tests that should pass:</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Write a function that helps answer questions like &#8216;&#8220;Today is Wednesday.  I leave on holiday
-in 19 days time.  What day will that be?&#8221;&#8217; So the function must take a day name and
-a <code class="docutils literal"><span class="pre">delta</span></code> argument &#8212; the number of days to add &#8212; and should return the resulting day name:</p>
+<li><p class="first">Write a function that helps answer questions like ‘“Today is Wednesday.  I leave on holiday
+in 19 days time.  What day will that be?”’ So the function must take a day name and
+a <code class="docutils literal"><span class="pre">delta</span></code> argument — the number of days to add — and should return the resulting day name:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="n">day_add</span><span class="p">(</span><span class="s2">&quot;Monday&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="o">==</span>  <span class="s2">&quot;Friday&quot;</span><span class="p">)</span>
 <span class="n">test</span><span class="p">(</span><span class="n">day_add</span><span class="p">(</span><span class="s2">&quot;Tuesday&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Tuesday&quot;</span><span class="p">)</span>
 <span class="n">test</span><span class="p">(</span><span class="n">day_add</span><span class="p">(</span><span class="s2">&quot;Tuesday&quot;</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Tuesday&quot;</span><span class="p">)</span>
@@ -754,7 +751,7 @@ should always return an integer number of seconds (truncated towards zero):</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Write three functions that are the &#8220;inverses&#8221; of <code class="docutils literal"><span class="pre">to_secs</span></code>:</p>
+<li><p class="first">Write three functions that are the “inverses” of <code class="docutils literal"><span class="pre">to_secs</span></code>:</p>
 <ol class="arabic simple">
 <li><code class="docutils literal"><span class="pre">hours_in</span></code> returns the whole integer number of hours
 represented by a total number of seconds.</li>
@@ -772,13 +769,13 @@ Here are some test cases:</p>
 </pre></div>
 </div>
 <div class="admonition-it-won-t-always-be-obvious-what-is-wanted admonition">
-<p class="first admonition-title">It won&#8217;t always be obvious what is wanted ...</p>
+<p class="first admonition-title">It won’t always be obvious what is wanted …</p>
 <p>In the third case above, the requirement seems quite ambiguous and fuzzy.  But the test clarifies
 what we actually need to do.</p>
 <p>Unit tests often have this secondary benefit of clarifying the specifications.   If you write your
 own test suites, consider it part of the problem-solving process as you ask questions about what
-you really expect to happen, and whether you&#8217;ve considered all the possible cases.</p>
-<p class="last">Since our book is titled <em>How to Think Like ...</em> you might enjoy reading at least one reference about
+you really expect to happen, and whether you’ve considered all the possible cases.</p>
+<p class="last">Since our book is titled <em>How to Think Like …</em> you might enjoy reading at least one reference about
 thinking, and about fun ideas like <em>fluid intelligence</em>, a key ingredient in problem solving.
 See, for example, <a class="reference external" href="http://psychology.about.com/od/cognitivepsychology/a/fluid-crystal.htm">http://psychology.about.com/od/cognitivepsychology/a/fluid-crystal.htm</a>.
 Learning Computer Science requires a good mix of both fluid and crystallized kinds of intelligence.</p>
@@ -853,7 +850,7 @@ argument is an odd integer, and ensure that its test still pass.</p>
 </pre></div>
 </div>
 <p>An important role of unit tests is that they can also
-act as unambiguous &#8220;specifications&#8221; of what is expected.  These test
+act as unambiguous “specifications” of what is expected.  These test
 cases answer the question <em>Do we treat 1 and 15 as factors of 15?</em></p>
 </li>
 <li><p class="first">Write <code class="docutils literal"><span class="pre">is_multiple</span></code> to satisfy these unit tests:</p>
@@ -918,7 +915,7 @@ experimenting with it until you are comfortable with how it works.)</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

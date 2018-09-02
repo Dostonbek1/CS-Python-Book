@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>16. Classes and Objects — Digging a little deeper &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="17. PyGame" href="pygame.html" />
     <link rel="prev" title="15. Classes and Objects — the Basics" href="classes_and_objects_I.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -55,10 +52,10 @@
 <div class="line"><br /></div>
 </div>
 <div class="section" id="classes-and-objects-digging-a-little-deeper">
-<h1>16. Classes and Objects &#8212; Digging a little deeper<a class="headerlink" href="#classes-and-objects-digging-a-little-deeper" title="Permalink to this headline">¶</a></h1>
+<h1>16. Classes and Objects — Digging a little deeper<a class="headerlink" href="#classes-and-objects-digging-a-little-deeper" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="rectangles">
 <span id="index-0"></span><h2>16.1. Rectangles<a class="headerlink" href="#rectangles" title="Permalink to this headline">¶</a></h2>
-<p>Let&#8217;s say that we want a class to represent a rectangle which is located
+<p>Let’s say that we want a class to represent a rectangle which is located
 somewhere in the XY plane. The question is, what information do we have
 to provide in order to specify such a rectangle? To keep things simple,
 assume that the rectangle is oriented either vertically or
@@ -68,7 +65,7 @@ horizontally, never at an angle.</p>
 the corners and the size; or we could specify two opposing corners. A
 conventional choice is to specify the upper-left corner of the rectangle, and
 the size.</p>
-<p>Again, we&#8217;ll define a new class, and provide it with an initializer and
+<p>Again, we’ll define a new class, and provide it with an initializer and
 a string converter method:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -116,9 +113,9 @@ We create two new <code class="docutils literal"><span class="pre">Rectangle</sp
 </pre></div>
 </div>
 </div></blockquote>
-<p>The dot operator composes. The expression <code class="docutils literal"><span class="pre">box.corner.x</span></code> means, &#8220;Go to the
+<p>The dot operator composes. The expression <code class="docutils literal"><span class="pre">box.corner.x</span></code> means, “Go to the
 object that <code class="docutils literal"><span class="pre">box</span></code> refers to and select its attribute named <code class="docutils literal"><span class="pre">corner</span></code>, then go to
-that object and select its attribute named <code class="docutils literal"><span class="pre">x</span></code>&#8221;.</p>
+that object and select its attribute named <code class="docutils literal"><span class="pre">x</span></code>”.</p>
 <p>The figure shows the state of this object:</p>
 <blockquote>
 <div><img alt="_images/rectangle.png" src="_images/rectangle.png" />
@@ -136,7 +133,7 @@ changing its position, we could modify the values of <code class="docutils liter
 </pre></div>
 </div>
 </div></blockquote>
-<p>Of course, we&#8217;d probably like to provide a method to encapsulate this
+<p>Of course, we’d probably like to provide a method to encapsulate this
 inside the class.  We will also provide another method to move the
 position of the rectangle elsewhere:</p>
 <blockquote>
@@ -183,16 +180,16 @@ position of the rectangle elsewhere:</p>
 </div>
 <div class="section" id="sameness">
 <span id="index-1"></span><h2>16.3. Sameness<a class="headerlink" href="#sameness" title="Permalink to this headline">¶</a></h2>
-<p>The meaning of the word &#8220;same&#8221; seems perfectly clear until we give it some
+<p>The meaning of the word “same” seems perfectly clear until we give it some
 thought, and then we realize there is more to it than we initially expected.</p>
-<p>For example, if we say, &#8220;Alice and Bob have the same car&#8221;, we mean that her car
+<p>For example, if we say, “Alice and Bob have the same car”, we mean that her car
 and his are the same make and model, but that they are two different cars. If
-we say, &#8220;Alice and Bob have the same mother&#8221;, we mean that her mother and his
+we say, “Alice and Bob have the same mother”, we mean that her mother and his
 are the same person.</p>
 <p>When we talk about objects, there is a similar ambiguity. For example, if two
 <code class="docutils literal"><span class="pre">Point</span></code>s are the same, does that mean they contain the same data
 (coordinates) or that they are actually the same object?</p>
-<p>We&#8217;ve already seen the <code class="docutils literal"><span class="pre">is</span></code> operator in the chapter on lists, where we
+<p>We’ve already seen the <code class="docutils literal"><span class="pre">is</span></code> operator in the chapter on lists, where we
 talked about aliases:
 it allows us to find out if two references refer to the same object:</p>
 <blockquote>
@@ -215,7 +212,7 @@ of the same object:</p>
 </div></blockquote>
 <p>This type of equality is called <strong>shallow equality</strong> because it
 compares only the references, not the contents of the objects.</p>
-<p>To compare the contents of the objects &#8212; <strong>deep equality</strong> &#8212;
+<p>To compare the contents of the objects — <strong>deep equality</strong> —
 we can write a function called <code class="docutils literal"><span class="pre">same_coordinates</span></code>:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -238,10 +235,10 @@ we can write a function called <code class="docutils literal"><span class="pre">
 shallow and deep equality.</p>
 <div class="admonition-beware-of admonition">
 <p class="first admonition-title">Beware of  ==</p>
-<p>&#8220;When I use a word,&#8221; Humpty Dumpty said, in a rather scornful tone, &#8220;it means just what I choose it to mean &#8212; neither more nor less.&#8221;   <em>Alice in Wonderland</em></p>
+<p>“When I use a word,” Humpty Dumpty said, in a rather scornful tone, “it means just what I choose it to mean — neither more nor less.”   <em>Alice in Wonderland</em></p>
 <p>Python has a powerful feature that allows a designer of a class to decide what an operation
-like <code class="docutils literal"><span class="pre">==</span></code> or <code class="docutils literal"><span class="pre">&lt;</span></code> should mean.  (We&#8217;ve just shown how we can control how our own objects
-are converted to strings, so we&#8217;ve already made a start!)  We&#8217;ll cover more detail later.
+like <code class="docutils literal"><span class="pre">==</span></code> or <code class="docutils literal"><span class="pre">&lt;</span></code> should mean.  (We’ve just shown how we can control how our own objects
+are converted to strings, so we’ve already made a start!)  We’ll cover more detail later.
 But sometimes the implementors will attach shallow equality semantics, and
 sometimes deep equality, as shown in this little experiment:</p>
 <blockquote>
@@ -299,11 +296,11 @@ object:</p>
 <p>Once we import the <code class="docutils literal"><span class="pre">copy</span></code> module, we can use the <code class="docutils literal"><span class="pre">copy</span></code> function to make
 a new <code class="docutils literal"><span class="pre">Point</span></code>. <code class="docutils literal"><span class="pre">p1</span></code> and <code class="docutils literal"><span class="pre">p2</span></code> are not the same point, but they contain
 the same data.</p>
-<p>To copy a simple object like a <code class="docutils literal"><span class="pre">Point</span></code>, which doesn&#8217;t contain any
+<p>To copy a simple object like a <code class="docutils literal"><span class="pre">Point</span></code>, which doesn’t contain any
 embedded objects, <code class="docutils literal"><span class="pre">copy</span></code> is sufficient. This is called <strong>shallow
 copying</strong>.</p>
 <p>For something like a <code class="docutils literal"><span class="pre">Rectangle</span></code>, which contains a reference to a
-<code class="docutils literal"><span class="pre">Point</span></code>, <code class="docutils literal"><span class="pre">copy</span></code> doesn&#8217;t do quite the right thing. It copies the
+<code class="docutils literal"><span class="pre">Point</span></code>, <code class="docutils literal"><span class="pre">copy</span></code> doesn’t do quite the right thing. It copies the
 reference to the <code class="docutils literal"><span class="pre">Point</span></code> object, so both the old <code class="docutils literal"><span class="pre">Rectangle</span></code> and the
 new one refer to a single <code class="docutils literal"><span class="pre">Point</span></code>.</p>
 <p>If we create a box, <code class="docutils literal"><span class="pre">b1</span></code>, in the usual way and then make a copy, <code class="docutils literal"><span class="pre">b2</span></code>,
@@ -317,7 +314,7 @@ invoking <code class="docutils literal"><span class="pre">move</span></code> on 
 confusing and error-prone. The shallow copy has created an alias to the
 <code class="docutils literal"><span class="pre">Point</span></code> that represents the corner.</p>
 <p>Fortunately, the <code class="docutils literal"><span class="pre">copy</span></code> module contains a function named <code class="docutils literal"><span class="pre">deepcopy</span></code> that
-copies not only the object but also any embedded objects. It won&#8217;t be
+copies not only the object but also any embedded objects. It won’t be
 surprising to learn that this operation is called a <strong>deep copy</strong>.</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b2</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
@@ -384,7 +381,7 @@ it does not contain the point (10, 2).  These tests should pass:</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">In games, we often put a rectangular &#8220;bounding box&#8221; around our sprites.
+<li><p class="first">In games, we often put a rectangular “bounding box” around our sprites.
 (A sprite is an object that can move about in the game, as we will see
 shortly.)  We can then do <em>collision detection</em> between, say,
 bombs and spaceships, by comparing whether their rectangles overlap anywhere.</p>
@@ -418,7 +415,7 @@ cases before you code.</em></p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

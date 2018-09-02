@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>28. Trees &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="Debugging" href="app_a.html" />
     <link rel="prev" title="27. Queues" href="queues.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -75,7 +72,7 @@ are its <strong>children</strong>. Nodes with the same parent are called <strong
 mentioned left and right, but there is also up (toward the parent/root) and
 down (toward the children/leaves). Also, all of the nodes that are the same
 distance from the root comprise a <strong>level</strong> of the tree.</p>
-<p>We probably don&#8217;t need three metaphors for talking about trees, but there they
+<p>We probably don’t need three metaphors for talking about trees, but there they
 are.</p>
 <p>Like linked lists, trees are recursive data structures because they are defined
 recursively.  A tree is either:</p>
@@ -134,8 +131,8 @@ be tree nodes. <code class="docutils literal"><span class="pre">left</span></cod
 </div>
 <div class="section" id="traversing-trees">
 <h2>28.2. Traversing trees<a class="headerlink" href="#traversing-trees" title="Permalink to this headline">¶</a></h2>
-<p>Any time you see a new data structure, your first question should be, &#8220;How do I
-traverse it?&#8221; The most natural way to traverse a tree is recursively. For
+<p>Any time you see a new data structure, your first question should be, “How do I
+traverse it?” The most natural way to traverse a tree is recursively. For
 example, if the tree contains integers as cargo, this function returns their
 sum:</p>
 <blockquote>
@@ -265,7 +262,7 @@ on, we can generate a graphical representation of a tree:</p>
 </div></blockquote>
 <p>The parameter <code class="docutils literal"><span class="pre">level</span></code> keeps track of where we are in the tree. By default, it
 is initially 0. Each time we make a recursive call, we pass <code class="docutils literal"><span class="pre">level+1</span></code> because
-the child&#8217;s level is always one greater than the parent&#8217;s. Each item is
+the child’s level is always one greater than the parent’s. Each item is
 indented by two spaces per level. The result for the example tree is:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">print_tree_indented</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
@@ -299,7 +296,7 @@ The token list for <code class="docutils literal"><span class="pre">(3</span> <s
 </div></blockquote>
 <p>The <code class="docutils literal"><span class="pre">end</span></code> token is useful for preventing the parser from reading past the end
 of the list.</p>
-<p>The first function we&#8217;ll write is <code class="docutils literal"><span class="pre">get_token</span></code>, which takes a token list and
+<p>The first function we’ll write is <code class="docutils literal"><span class="pre">get_token</span></code>, which takes a token list and
 an expected token as parameters. It compares the expected token to the first
 token on the list: if they match, it removes the token from the list and
 returns <code class="docutils literal"><span class="pre">True</span></code>; otherwise, it returns <code class="docutils literal"><span class="pre">False</span></code>:</p>
@@ -412,7 +409,7 @@ product:</p>
 <p>In other words, a product can be either a singleton or a tree with <code class="docutils literal"><span class="pre">*</span></code> at the
 root, a number on the left, and a product on the right. This kind of recursive
 definition should be starting to feel familiar.</p>
-<p>Let&#8217;s test the new version with a compound product:</p>
+<p>Let’s test the new version with a compound product:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">token_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">get_product</span><span class="p">(</span><span class="n">token_list</span><span class="p">)</span>
@@ -429,7 +426,7 @@ a product.</p>
 we can represent any expression (without parentheses) as a sum of products.
 This property is the basis of our parsing algorithm.</p>
 <p><code class="docutils literal"><span class="pre">get_sum</span></code> tries to build a tree with a product on the left and a sum on
-the right. But if it doesn&#8217;t find a <code class="docutils literal"><span class="pre">+</span></code>, it just builds a product.</p>
+the right. But if it doesn’t find a <code class="docutils literal"><span class="pre">+</span></code>, it just builds a product.</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -445,7 +442,7 @@ the right. But if it doesn&#8217;t find a <code class="docutils literal"><span c
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>Let&#8217;s test it with <code class="docutils literal"><span class="pre">9</span> <span class="pre">*</span> <span class="pre">11</span> <span class="pre">+</span> <span class="pre">5</span> <span class="pre">*</span> <span class="pre">7</span></code>:</p>
+<p>Let’s test it with <code class="docutils literal"><span class="pre">9</span> <span class="pre">*</span> <span class="pre">11</span> <span class="pre">+</span> <span class="pre">5</span> <span class="pre">*</span> <span class="pre">7</span></code>:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">token_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">get_sum</span><span class="p">(</span><span class="n">token_list</span><span class="p">)</span>
@@ -481,7 +478,7 @@ enclosed in parentheses. We just need to modify <code class="docutils literal"><
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>Let&#8217;s test this code with <code class="docutils literal"><span class="pre">9</span> <span class="pre">*</span> <span class="pre">(11</span> <span class="pre">+</span> <span class="pre">5)</span> <span class="pre">*</span> <span class="pre">7</span></code>:</p>
+<p>Let’s test this code with <code class="docutils literal"><span class="pre">9</span> <span class="pre">*</span> <span class="pre">(11</span> <span class="pre">+</span> <span class="pre">5)</span> <span class="pre">*</span> <span class="pre">7</span></code>:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">token_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">get_sum</span><span class="p">(</span><span class="n">token_list</span><span class="p">)</span>
@@ -497,7 +494,7 @@ multiplication.</p>
 </div>
 <div class="section" id="handling-errors">
 <h2>28.6. Handling errors<a class="headerlink" href="#handling-errors" title="Permalink to this headline">¶</a></h2>
-<p>Throughout the parser, we&#8217;ve been assuming that expressions are well-formed.
+<p>Throughout the parser, we’ve been assuming that expressions are well-formed.
 For example, when we reach the end of a subexpression, we assume that the next
 character is a close parenthesis. If there is an error and the next character
 is something else, we should deal with it.</p>
@@ -665,7 +662,7 @@ the user. If the response begins with <em>y</em> or <em>Y</em>, the function ret
 continue until the <code class="docutils literal"><span class="pre">break</span></code> statement executes, if the user is not thinking of
 an animal.</p>
 <p>The inner <code class="docutils literal"><span class="pre">while</span></code> loop walks the tree from top to bottom, guided by the
-user&#8217;s responses.</p>
+user’s responses.</p>
 <p>When a new node is added to the tree, the new question replaces the cargo, and
 the two children are the new animal and the original cargo.</p>
 <p>One shortcoming of the program is that when it exits, it forgets everything you
@@ -741,7 +738,7 @@ Implement the one you think is easiest.</li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>22. Even more OOP &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="23. Collections of objects" href="collections.html" />
     <link rel="prev" title="21. A Case Study: Indexing your files" href="casestudy_fileindexer.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -58,8 +55,8 @@
 <h1>22. Even more OOP<a class="headerlink" href="#even-more-oop" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="mytime">
 <h2>22.1. MyTime<a class="headerlink" href="#mytime" title="Permalink to this headline">¶</a></h2>
-<p>As another example of a user-defined type, we&#8217;ll define a class called <code class="docutils literal"><span class="pre">MyTime</span></code>
-that records the time of day. We&#8217;ll provide an <code class="docutils literal"><span class="pre">__init__</span></code> method to ensure
+<p>As another example of a user-defined type, we’ll define a class called <code class="docutils literal"><span class="pre">MyTime</span></code>
+that records the time of day. We’ll provide an <code class="docutils literal"><span class="pre">__init__</span></code> method to ensure
 that every instance is created with appropriate attributes and initialization.
 The class definition looks like this:</p>
 <blockquote>
@@ -89,12 +86,12 @@ The class definition looks like this:</p>
 <blockquote>
 <div><img alt="_images/time.png" src="_images/time.png" />
 </div></blockquote>
-<p>We&#8217;ll leave it as an exercise for the readers to add a <code class="docutils literal"><span class="pre">__str__</span></code>
+<p>We’ll leave it as an exercise for the readers to add a <code class="docutils literal"><span class="pre">__str__</span></code>
 method so that MyTime objects can print themselves decently.</p>
 </div>
 <div class="section" id="pure-functions">
 <span id="index-0"></span><h2>22.2. Pure functions<a class="headerlink" href="#pure-functions" title="Permalink to this headline">¶</a></h2>
-<p>In the next few sections, we&#8217;ll write two versions of a function called
+<p>In the next few sections, we’ll write two versions of a function called
 <code class="docutils literal"><span class="pre">add_time</span></code>, which calculates the sum of two <code class="docutils literal"><span class="pre">MyTime</span></code> objects. They will demonstrate
 two kinds of functions: pure functions and modifiers.</p>
 <p>The following is a rough version of <code class="docutils literal"><span class="pre">add_time</span></code>:</p>
@@ -118,10 +115,10 @@ returns a reference to the new object. This is called a <strong>pure function</s
 because it does not modify any of the objects passed to it as parameters and it
 has no side effects, such as updating global variables,
 displaying a value, or getting user input.</p>
-<p>Here is an example of how to use this function. We&#8217;ll create two <code class="docutils literal"><span class="pre">MyTime</span></code>
+<p>Here is an example of how to use this function. We’ll create two <code class="docutils literal"><span class="pre">MyTime</span></code>
 objects: <code class="docutils literal"><span class="pre">current_time</span></code>, which contains the current time; and <code class="docutils literal"><span class="pre">bread_time</span></code>,
 which contains the amount of time it takes for a breadmaker to make bread. Then
-we&#8217;ll use <code class="docutils literal"><span class="pre">add_time</span></code> to figure out when the bread will be done.</p>
+we’ll use <code class="docutils literal"><span class="pre">add_time</span></code> to figure out when the bread will be done.</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">current_time</span> <span class="o">=</span> <span class="n">MyTime</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bread_time</span> <span class="o">=</span> <span class="n">MyTime</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -137,7 +134,7 @@ hand, there are cases where the result is not correct. Can you think of one?</p>
 seconds or minutes adds up to more than sixty. When that happens, we have to
 carry the extra seconds into the minutes column or the extra minutes into the
 hours column.</p>
-<p>Here&#8217;s a better version of the function:</p>
+<p>Here’s a better version of the function:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -173,7 +170,7 @@ hours column.</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>This function is starting to get bigger, and still doesn&#8217;t work
+<p>This function is starting to get bigger, and still doesn’t work
 for all possible cases.  Later we will
 suggest an alternative approach that yields better code.</p>
 </div>
@@ -243,7 +240,7 @@ hours does not exceed 23, but it is not a particularly good solution.</p>
 <div class="section" id="converting-increment-to-a-method">
 <h2>22.4. Converting <code class="docutils literal"><span class="pre">increment</span></code> to a method<a class="headerlink" href="#converting-increment-to-a-method" title="Permalink to this headline">¶</a></h2>
 <p>Once again, OOP programmers would prefer to put functions that work with
-<code class="docutils literal"><span class="pre">MyTime</span></code> objects into the <code class="docutils literal"><span class="pre">MyTime</span></code> class, so let&#8217;s convert <code class="docutils literal"><span class="pre">increment</span></code>
+<code class="docutils literal"><span class="pre">MyTime</span></code> objects into the <code class="docutils literal"><span class="pre">MyTime</span></code> class, so let’s convert <code class="docutils literal"><span class="pre">increment</span></code>
 to a method. To save space, we will leave out previously defined methods,
 but you should keep them in your version:</p>
 <blockquote>
@@ -275,7 +272,7 @@ but you should keep them in your version:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>The transformation is purely mechanical &#8212; we move the definition into
+<p>The transformation is purely mechanical — we move the definition into
 the class definition and (optionally) change the name of the first parameter to
 <code class="docutils literal"><span class="pre">self</span></code>, to fit with Python style conventions.</p>
 <p>Now we can invoke <code class="docutils literal"><span class="pre">increment</span></code> using the syntax for invoking a method.</p>
@@ -288,7 +285,7 @@ the class definition and (optionally) change the name of the first parameter to
 parameter, <code class="docutils literal"><span class="pre">self</span></code>. The second parameter, <code class="docutils literal"><span class="pre">seconds</span></code> gets the value <code class="docutils literal"><span class="pre">500</span></code>.</p>
 </div>
 <div class="section" id="an-aha-insight">
-<h2>22.5. An &#8220;Aha!&#8221; insight<a class="headerlink" href="#an-aha-insight" title="Permalink to this headline">¶</a></h2>
+<h2>22.5. An “Aha!” insight<a class="headerlink" href="#an-aha-insight" title="Permalink to this headline">¶</a></h2>
 <p>Often a high-level insight into the problem can make the programming much easier.</p>
 <p>In this case, the insight is that a <code class="docutils literal"><span class="pre">MyTime</span></code> object is really a
 three-digit number in base 60! The <code class="docutils literal"><span class="pre">second</span></code>
@@ -296,7 +293,7 @@ component is the ones column, the <code class="docutils literal"><span class="pr
 and the <code class="docutils literal"><span class="pre">hour</span></code> component is the thirty-six hundreds column.</p>
 <p>When we wrote <code class="docutils literal"><span class="pre">add_time</span></code> and <code class="docutils literal"><span class="pre">increment</span></code>, we were effectively doing
 addition in base 60, which is why we had to carry from one column to the next.</p>
-<p>This observation suggests another approach to the whole problem &#8212; we can
+<p>This observation suggests another approach to the whole problem — we can
 convert a <code class="docutils literal"><span class="pre">MyTime</span></code> object into a single number and take advantage of the fact
 that the computer knows how to do arithmetic with numbers.  The following
 method is added to the <code class="docutils literal"><span class="pre">MyTime</span></code> class to convert any instance into
@@ -336,14 +333,14 @@ can do this for us:</p>
 </div></blockquote>
 <p>You might have to think a bit to convince yourself that this technique to
 convert from one base to another is correct.</p>
-<p>In OOP we&#8217;re really trying to wrap together the data and the operations
-that apply to it.  So we&#8217;d like to have this logic inside the <code class="docutils literal"><span class="pre">MyTime</span></code>
+<p>In OOP we’re really trying to wrap together the data and the operations
+that apply to it.  So we’d like to have this logic inside the <code class="docutils literal"><span class="pre">MyTime</span></code>
 class.  A good solution is to rewrite the class initializer so that it can
 cope with initial values of seconds or minutes that are outside the
 <strong>normalized</strong> values.  (A normalized time would be something
 like 3 hours 12 minutes and 20 seconds.  The same time, but unnormalized
 could be 2 hours 70 minutes and 140 seconds.)</p>
-<p>Let&#8217;s rewrite a more powerful initializer for <code class="docutils literal"><span class="pre">MyTime</span></code>:</p>
+<p>Let’s rewrite a more powerful initializer for <code class="docutils literal"><span class="pre">MyTime</span></code>:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -414,21 +411,21 @@ often take the opposite approach, and generalize everything.</p>
 playing cards, time, or dominoes, their most likely response is
 to observe that all these objects can be represented by integers. Playing cards, for example,
 can be numbered from 0 to 51.  Days within the century can be numbered. Mathematicians will say
-<em>&#8220;These things are enumerable &#8212; the elements can be uniquely numbered (and we can
-reverse this numbering to get back to the original concept). So let&#8217;s number
+<em>“These things are enumerable — the elements can be uniquely numbered (and we can
+reverse this numbering to get back to the original concept). So let’s number
 them, and confine our thinking to integers.  Luckily, we have powerful techniques and a
-good understanding of integers, and so our abstractions &#8212; the way we tackle and simplify
-these problems &#8212; is to try to reduce them to problems about integers.&#8221;</em></p>
+good understanding of integers, and so our abstractions — the way we tackle and simplify
+these problems — is to try to reduce them to problems about integers.”</em></p>
 <p>Computer Scientists tend to do the opposite.  We will argue that there are many integer
 operations that are simply not meaningful for dominoes, or for days of the century.  So
-we&#8217;ll often define new specialized types, like <code class="docutils literal"><span class="pre">MyTime</span></code>, because we can restrict,
+we’ll often define new specialized types, like <code class="docutils literal"><span class="pre">MyTime</span></code>, because we can restrict,
 control, and specialize the operations that are possible.  Object-oriented programming
 is particularly popular because it gives us a good way to bundle methods and specialized data
 into a new type.</p>
 <p class="last">Both approaches are powerful problem-solving techniques. Often it may help to try to
-think about the problem from both points of view &#8212; <em>&#8220;What would happen if I tried to reduce
-everything to very few primitive types?&#8221;</em>, versus
-<em>&#8220;What would happen if this thing had its own specialized type?&#8221;</em></p>
+think about the problem from both points of view — <em>“What would happen if I tried to reduce
+everything to very few primitive types?”</em>, versus
+<em>“What would happen if this thing had its own specialized type?”</em></p>
 </div>
 </div>
 <div class="section" id="another-example">
@@ -444,7 +441,7 @@ time is strictly after the second, e.g.</p>
 </div>
 </div></blockquote>
 <p>This is slightly more complicated because it operates on two <code class="docutils literal"><span class="pre">MyTime</span></code>
-objects, not just one.  But we&#8217;d prefer to write it as a method anyway &#8212;
+objects, not just one.  But we’d prefer to write it as a method anyway —
 in this case, a method on the first argument:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -494,11 +491,11 @@ in this case, a method on the first argument:</p>
 </td></tr></table></div>
 </div></blockquote>
 <p>We can almost read the invocation like English: If the current time is after the
-done time, then...</p>
+done time, then…</p>
 <p>The logic of the <code class="docutils literal"><span class="pre">if</span></code> statements deserve special attention here.   Lines 11-18
 will only be reached if the two hour fields are the same.  Similarly, the test at
 line 16 is only executed if both times have the same hours and the same minutes.</p>
-<p>Could we make this easier by using our &#8220;Aha!&#8221; insight and extra work from earlier,
+<p>Could we make this easier by using our “Aha!” insight and extra work from earlier,
 and reducing both times to integers?   Yes, with spectacular results!</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -559,7 +556,7 @@ the <code class="docutils literal"><span class="pre">__add__</span></code> metho
 <p>The expression <code class="docutils literal"><span class="pre">t1</span> <span class="pre">+</span> <span class="pre">t2</span></code> is equivalent to <code class="docutils literal"><span class="pre">t1.__add__(t2)</span></code>, but obviously
 more elegant.  As an exercise, add a method <code class="docutils literal"><span class="pre">__sub__(self,</span> <span class="pre">other)</span></code> that
 overloads the subtraction operator, and try it out.</p>
-<p>For the next couple of exercises we&#8217;ll go back to the <code class="docutils literal"><span class="pre">Point</span></code> class defined
+<p>For the next couple of exercises we’ll go back to the <code class="docutils literal"><span class="pre">Point</span></code> class defined
 in our first chapter about objects, and overload some of its operators.   Firstly, adding
 two points adds their respective (x, y) coordinates:</p>
 <blockquote>
@@ -686,9 +683,9 @@ twice, forward and backward:</p>
 </td></tr></table></div>
 </div></blockquote>
 <p>Because the <code class="docutils literal"><span class="pre">reverse</span></code> method is a modifier, we make a copy of the list before
-reversing it. That way, this function doesn&#8217;t modify the list it gets as a
+reversing it. That way, this function doesn’t modify the list it gets as a
 parameter.</p>
-<p>Here&#8217;s an example that applies <code class="docutils literal"><span class="pre">front_and_back</span></code> to a list:</p>
+<p>Here’s an example that applies <code class="docutils literal"><span class="pre">front_and_back</span></code> to a list:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">front_and_back</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
@@ -698,7 +695,7 @@ parameter.</p>
 </div></blockquote>
 <p>Of course, we intended to apply this function to lists, so it is not surprising
 that it works. What would be surprising is if we could apply it to a <code class="docutils literal"><span class="pre">Point</span></code>.</p>
-<p>To determine whether a function can be applied to a new type, we apply Python&#8217;s
+<p>To determine whether a function can be applied to a new type, we apply Python’s
 fundamental rule of polymorphism, called the <strong>duck typing rule</strong>: <em>If all of
 the operations inside the function
 can be applied to the type, the function can be applied to the type.</em> The
@@ -740,14 +737,14 @@ parameters. Most modifier functions are void (do not return a value).</dd>
 <dt id="term-normalized">normalized</dt>
 <dd>Data is said to be normalized if it fits into some reduced range or set of rules.
 We usually normalize our angles to values in the range [0..360). We normalize
-minutes and seconds to be values in the range [0..60).  And we&#8217;d
-be surprised if the local store advertised its cold drinks at &#8220;One dollar,
-two hundred and fifty cents&#8221;.</dd>
+minutes and seconds to be values in the range [0..60).  And we’d
+be surprised if the local store advertised its cold drinks at “One dollar,
+two hundred and fifty cents”.</dd>
 <dt id="term-operator-overloading">operator overloading</dt>
 <dd>Extending built-in operators ( <code class="docutils literal"><span class="pre">+</span></code>, <code class="docutils literal"><span class="pre">-</span></code>, <code class="docutils literal"><span class="pre">*</span></code>, <code class="docutils literal"><span class="pre">&gt;</span></code>, <code class="docutils literal"><span class="pre">&lt;</span></code>, etc.)
-so that they do different things for different types of arguments. We&#8217;ve
+so that they do different things for different types of arguments. We’ve
 seen early in the book how <code class="docutils literal"><span class="pre">+</span></code> is overloaded for numbers and strings,
-and here we&#8217;ve shown how to further overload it for user-defined types.</dd>
+and here we’ve shown how to further overload it for user-defined types.</dd>
 <dt id="term-polymorphic">polymorphic</dt>
 <dd>A function that can operate on more than one type.  Notice the subtle
 distinction: overloading has different functions (all with the same name)
@@ -781,7 +778,7 @@ at the lower bound and open at the upper bound, i.e. return True if
 </pre></div>
 </div>
 </li>
-<li><p class="first">Rewrite <code class="docutils literal"><span class="pre">increment</span></code> as a method that uses our &#8220;Aha&#8221; insight.</p>
+<li><p class="first">Rewrite <code class="docutils literal"><span class="pre">increment</span></code> as a method that uses our “Aha” insight.</p>
 </li>
 <li><p class="first">Create some test cases for the <code class="docutils literal"><span class="pre">increment</span></code> method.   Consider specifically the case
 where the number of seconds to add to the time is negative.  Fix up <code class="docutils literal"><span class="pre">increment</span></code> so
@@ -819,7 +816,7 @@ can find on the Internet about this.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

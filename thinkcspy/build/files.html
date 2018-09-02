@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>13. Files &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="14. List Algorithms" href="list_algorithms.html" />
     <link rel="prev" title="12. Modules" href="modules.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -77,7 +74,7 @@ indicate whether we want to read or write.</p>
 </div>
 <div class="section" id="writing-our-first-file">
 <h2>13.2. Writing our first file<a class="headerlink" href="#writing-our-first-file" title="Permalink to this headline">¶</a></h2>
-<p>Let&#8217;s begin with a simple program that writes three lines of text into a file:</p>
+<p>Let’s begin with a simple program that writes three lines of text into a file:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -101,21 +98,21 @@ writing.</p>
 it will be created. If there already is one, it will be replaced by the
 file we are writing.</p>
 <p>To put data in the file we invoke the <code class="docutils literal"><span class="pre">write</span></code> method on the handle, shown
-in lines 2, 3 and 4 above.  In bigger programs, lines 2&#8211;4 will usually be
+in lines 2, 3 and 4 above.  In bigger programs, lines 2–4 will usually be
 replaced by a loop that writes many more lines into the file.</p>
 <p>Closing the file handle (line 5) tells the system that we are done writing and makes
 the disk file available for reading by other programs (or by our own program).</p>
 <blockquote>
 <div><div class="admonition-a-handle-is-somewhat-like-a-tv-remote-control admonition">
 <p class="first admonition-title">A handle is somewhat like a TV remote control</p>
-<p>We&#8217;re all familiar with a remote control for a TV.  We perform operations on
-the remote control &#8212; switch channels, change the volume, etc.  But the real action
-happens on the TV.  So, by simple analogy, we&#8217;d call the remote control our <cite>handle</cite>
+<p>We’re all familiar with a remote control for a TV.  We perform operations on
+the remote control — switch channels, change the volume, etc.  But the real action
+happens on the TV.  So, by simple analogy, we’d call the remote control our <cite>handle</cite>
 to the underlying TV.</p>
-<p class="last">Sometimes we want to emphasize the difference &#8212; the file handle is not the same
+<p class="last">Sometimes we want to emphasize the difference — the file handle is not the same
 as the file, and the remote control is not the same as the TV.
 But at other times we prefer to treat them as a single mental chunk, or abstraction,
-and we&#8217;ll just say &#8220;close the file&#8221;, or &#8220;flip the TV channel&#8221;.</p>
+and we’ll just say “close the file”, or “flip the TV channel”.</p>
 </div>
 </div></blockquote>
 </div>
@@ -146,38 +143,38 @@ the lines in the file, one at a time. This time, the mode argument is <code clas
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>This is a handy pattern for our toolbox. In bigger programs, we&#8217;d
-squeeze more extensive logic into the body of the loop at line 8 &#8212;
+<p>This is a handy pattern for our toolbox. In bigger programs, we’d
+squeeze more extensive logic into the body of the loop at line 8 —
 for example, if each line of the file contained the name and email address
-of one of our friends, perhaps we&#8217;d split the line into some pieces and
+of one of our friends, perhaps we’d split the line into some pieces and
 call a function to send the friend a party invitation.</p>
 <p>On line 8 we suppress the newline character that <code class="docutils literal"><span class="pre">print</span></code>
 usually appends to our strings.  Why?  This is because the string already
 has its own newline:  the <code class="docutils literal"><span class="pre">readline</span></code> method in line 3 returns everything
 up to <em>and including</em> the newline character.  This also explains the
 end-of-file detection logic: when there are no more lines to be
-read from the file, <code class="docutils literal"><span class="pre">readline</span></code> returns an empty string &#8212; one that does not
+read from the file, <code class="docutils literal"><span class="pre">readline</span></code> returns an empty string — one that does not
 even have a newline at the end, hence its length is 0.</p>
 <blockquote>
 <div><div class="admonition-fail-first admonition">
-<p class="first admonition-title">Fail first ...</p>
+<p class="first admonition-title">Fail first …</p>
 <p>In our sample case here, we have three lines in the file, yet
 we enter the loop <em>four</em> times.  In Python, you only learn that
 the file has no more lines by failure to read another line.
 In some other programming languages
 (e.g. Pascal), things are different: there you read three lines,
-but you have what is called <em>look ahead</em> &#8212; after reading the third
+but you have what is called <em>look ahead</em> — after reading the third
 line you already know that there are no more lines in the file.
-You&#8217;re not even allowed to try to read the fourth line.</p>
+You’re not even allowed to try to read the fourth line.</p>
 <p>So the templates for working line-at-a-time in Pascal and Python are
 subtly different!</p>
 <p class="last">When you transfer your Python skills to your next computer language,
-be sure to ask how you&#8217;ll know when the file has ended: is the style
-in the language &#8220;try, and after you fail you&#8217;ll know&#8221;, or is
-it &#8220;look ahead&#8221;?</p>
+be sure to ask how you’ll know when the file has ended: is the style
+in the language “try, and after you fail you’ll know”, or is
+it “look ahead”?</p>
 </div>
 </div></blockquote>
-<p>If we try to open a file that doesn&#8217;t exist, we get an error:</p>
+<p>If we try to open a file that doesn’t exist, we get an error:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mynewhandle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;wharrah.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
 <span class="go">IOError: [Errno 2] No such file or directory: &quot;wharrah.txt&quot;</span>
@@ -190,7 +187,7 @@ it &#8220;look ahead&#8221;?</p>
 <p>It is often useful to fetch data from
 a disk file and turn it into a list of lines.  Suppose we have a
 file containing our friends and their email addresses, one per line
-in the file.  But we&#8217;d like the lines sorted into
+in the file.  But we’d like the lines sorted into
 alphabetical order.  A good plan is to read everything into a
 list of lines, then sort the list, and then write the sorted list
 back to another file:</p>
@@ -228,8 +225,8 @@ to use the method that the Python implementors gave us!</p>
 <p>Another way of working with text files is to read the complete
 contents of the file into a string, and then to use our string-processing
 skills to work with the contents.</p>
-<p>We&#8217;d normally use this method of processing files if we were not
-interested in the line structure of the file.   For example, we&#8217;ve
+<p>We’d normally use this method of processing files if we were not
+interested in the line structure of the file.   For example, we’ve
 seen the <code class="docutils literal"><span class="pre">split</span></code> method on strings which can break a string into
 words.  So here is how we might count the number of words in a
 file:</p>
@@ -249,24 +246,24 @@ file:</p>
 </td></tr></table></div>
 </div></blockquote>
 <p>Notice here that we left out the <code class="docutils literal"><span class="pre">&quot;r&quot;</span></code> mode in line 1.
-By default, if we don&#8217;t supply the mode, Python opens the file for reading.</p>
+By default, if we don’t supply the mode, Python opens the file for reading.</p>
 <div class="admonition-your-file-paths-may-need-to-be-explicitly-named admonition">
 <p class="first admonition-title">Your file paths may need to be explicitly named.</p>
-<p>In the above example, we&#8217;re assuming that the file <code class="docutils literal"><span class="pre">somefile.txt</span></code> is
+<p>In the above example, we’re assuming that the file <code class="docutils literal"><span class="pre">somefile.txt</span></code> is
 in the same directory as your Python source code.  If this is
 not the case, you may need to provide a full or a relative path to the file.  On Windows, a full
 path could look like <code class="docutils literal"><span class="pre">&quot;C:\\temp\\somefile.txt&quot;</span></code>, while on a Unix system the full path could be
 <code class="docutils literal"><span class="pre">&quot;/home/jimmy/somefile.txt&quot;</span></code>.</p>
-<p class="last">We&#8217;ll return to this later in this chapter.</p>
+<p class="last">We’ll return to this later in this chapter.</p>
 </div>
 </div>
 <div class="section" id="working-with-binary-files">
 <h2>13.6. Working with binary files<a class="headerlink" href="#working-with-binary-files" title="Permalink to this headline">¶</a></h2>
 <p>Files that hold photographs, videos, zip files, executable programs, etc. are called
-<strong>binary</strong> files: they&#8217;re not organized into lines, and cannot be opened with a
+<strong>binary</strong> files: they’re not organized into lines, and cannot be opened with a
 normal text editor.  Python works just as easily with binary files, but
-when we read from the file we&#8217;re going to get bytes back rather than
-a string.  Here we&#8217;ll copy one binary file to another:</p>
+when we read from the file we’re going to get bytes back rather than
+a string.  Here we’ll copy one binary file to another:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -299,8 +296,8 @@ tells it how many bytes to attempt to read from the file.  Here we
 chose to read and write up to 1024 bytes on each iteration of the loop.  When
 we get back an empty buffer from our attempt to read, we know we can
 break out of the loop and close both the files.</p>
-<p>If we set a breakpoint at line 6, (or print  <code class="docutils literal"><span class="pre">type(buf)</span></code> there) we&#8217;ll
-see that the type of <code class="docutils literal"><span class="pre">buf</span></code> is <code class="docutils literal"><span class="pre">bytes</span></code>.  We don&#8217;t do any detailed
+<p>If we set a breakpoint at line 6, (or print  <code class="docutils literal"><span class="pre">type(buf)</span></code> there) we’ll
+see that the type of <code class="docutils literal"><span class="pre">buf</span></code> is <code class="docutils literal"><span class="pre">bytes</span></code>.  We don’t do any detailed
 work with <code class="docutils literal"><span class="pre">bytes</span></code> objects in this textbook.</p>
 </div>
 <div class="section" id="an-example">
@@ -348,16 +345,16 @@ omitting any lines that begin with <code class="docutils literal"><span class="p
 </div></blockquote>
 <p>The <code class="docutils literal"><span class="pre">continue</span></code> statement at line 9 skips over the remaining lines in
 the current iteration of the loop, but the loop will still iterate.  This
-style looks a bit contrived here, but it is often useful to say <em>&#8220;get the
-lines we&#8217;re not concerned with out of the way early, so that we have
+style looks a bit contrived here, but it is often useful to say <em>“get the
+lines we’re not concerned with out of the way early, so that we have
 cleaner more focused logic in the meaty part of the loop that might be
-written around line 11.&#8221;</em></p>
+written around line 11.”</em></p>
 <p>Thus, if <code class="docutils literal"><span class="pre">text</span></code> is the empty string, the loop exits. If the first character
 of <code class="docutils literal"><span class="pre">text</span></code> is a hash mark, the flow of execution goes to the top of the loop, ready
 to start processing the next line.
 Only if both conditions fail do we fall through to do the processing at line 11, in this
 example, writing the line into the new file.</p>
-<p>Let&#8217;s consider one more case: suppose our original file contained empty
+<p>Let’s consider one more case: suppose our original file contained empty
 lines.  At line 6 above, would this program find the first empty line in the
 file, and terminate immediately?   No!  Recall that <code class="docutils literal"><span class="pre">readline</span></code> always
 includes the newline character in the string it returns.  It is only when we
@@ -415,14 +412,14 @@ simple example that copies the contents at some web URL to a local file.</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>The <code class="docutils literal"><span class="pre">urlretrieve</span></code> function &#8212; just one call &#8212; could be used
+<p>The <code class="docutils literal"><span class="pre">urlretrieve</span></code> function — just one call — could be used
 to download any kind of content from the Internet.</p>
 <dl class="docutils">
-<dt>We&#8217;ll need to get a few things right before this works:</dt>
+<dt>We’ll need to get a few things right before this works:</dt>
 <dd><ul class="first last simple">
-<li>The resource we&#8217;re trying to fetch must exist!  Check this using a browser.</li>
-<li>We&#8217;ll need permission to write to the destination filename, and the file will
-be created in the &#8220;current directory&#8221; - i.e. the same folder that the Python program is saved in.</li>
+<li>The resource we’re trying to fetch must exist!  Check this using a browser.</li>
+<li>We’ll need permission to write to the destination filename, and the file will
+be created in the “current directory” - i.e. the same folder that the Python program is saved in.</li>
 <li>If we are behind a proxy server that requires authentication,
 (as some students are), this may require some more special handling to work around our proxy.
 Use a local resource for the purpose of this demonstration!</li>
@@ -551,7 +548,7 @@ read a file with numbered lines and produce another file without line numbers.</
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

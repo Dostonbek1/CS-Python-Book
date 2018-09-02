@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>20. Dictionaries &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="21. A Case Study: Indexing your files" href="casestudy_fileindexer.html" />
     <link rel="prev" title="19. Exceptions" href="exceptions.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -56,10 +53,10 @@
 </div>
 <div class="section" id="dictionaries">
 <h1>20. Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="index-0"></span><p>All of the compound data types we have studied in detail so far &#8212; strings,
-lists, and tuples &#8212; are sequence types, which use integers as indices to access
+<span class="target" id="index-0"></span><p>All of the compound data types we have studied in detail so far — strings,
+lists, and tuples — are sequence types, which use integers as indices to access
 the values they contain within them.</p>
-<p><strong>Dictionaries</strong> are yet another kind of compound type. They are Python&#8217;s
+<p><strong>Dictionaries</strong> are yet another kind of compound type. They are Python’s
 built-in <strong>mapping type</strong>. They map <strong>keys</strong>, which can be any immutable type,
 to values, which can be any type (heterogeneous), just like the elements
 of a list or tuple. In other languages, they are called associative
@@ -106,7 +103,7 @@ technique called hashing, which allows us to access a value very
 quickly. By contrast, the list of tuples implementation is slow. If
 we wanted to find a value associated with a key, we would have to
 iterate over every tuple, checking the 0th element. What if the key
-wasn&#8217;t even in the list? We would have to get to the end of it to
+wasn’t even in the list? We would have to get to the end of it to
 find out.</p>
 </div>
 <p>Another way to create a dictionary is to provide a list of key:value pairs
@@ -116,7 +113,7 @@ using the same syntax as the previous output:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>It doesn&#8217;t matter what order we write the pairs. The values in a dictionary are
+<p>It doesn’t matter what order we write the pairs. The values in a dictionary are
 accessed with keys, not with indices, so there is no need to care about
 ordering.</p>
 <p>Here is how we use a key to look up the corresponding value:</p>
@@ -128,8 +125,8 @@ ordering.</p>
 </div></blockquote>
 <p>The key <code class="docutils literal"><span class="pre">&quot;two&quot;</span></code> yields the value <code class="docutils literal"><span class="pre">&quot;dos&quot;</span></code>.</p>
 <p>Lists, tuples, and strings have been called <em>sequences</em>, because their items
-occur in order.  The dictionary is the first compound type that we&#8217;ve
-seen that is not a sequence, so we can&#8217;t index or slice a dictionary.</p>
+occur in order.  The dictionary is the first compound type that we’ve
+seen that is not a sequence, so we can’t index or slice a dictionary.</p>
 <div class="section" id="dictionary-operations">
 <span id="index-1"></span><h2>20.1. Dictionary operations<a class="headerlink" href="#dictionary-operations" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal"><span class="pre">del</span></code> statement removes a key:value pair from a dictionary. For example,
@@ -150,7 +147,7 @@ each fruit in stock:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Or if we&#8217;re expecting more pears soon, we might just change the value
+<p>Or if we’re expecting more pears soon, we might just change the value
 associated with pears:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">inventory</span><span class="p">[</span><span class="s2">&quot;pears&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
@@ -180,8 +177,8 @@ of key:value pairs:</p>
 <h2>20.2. Dictionary methods<a class="headerlink" href="#dictionary-methods" title="Permalink to this headline">¶</a></h2>
 <p>Dictionaries have a number of useful built-in methods.</p>
 <p>The <code class="docutils literal"><span class="pre">keys</span></code> method returns what Python 3 calls a <strong>view</strong> of its underlying keys.
-A view object has some similarities to the <code class="docutils literal"><span class="pre">range</span></code> object we saw earlier &#8212;
-it is a lazy promise, to deliver its elements when they&#8217;re needed by the
+A view object has some similarities to the <code class="docutils literal"><span class="pre">range</span></code> object we saw earlier —
+it is a lazy promise, to deliver its elements when they’re needed by the
 rest of the program.  We can iterate over the view, or turn the view into a
 list like this:</p>
 <blockquote>
@@ -207,7 +204,7 @@ list like this:</p>
 </div>
 </div></blockquote>
 <p>It is so common to iterate over the keys in a dictionary that we can
-omit the <code class="docutils literal"><span class="pre">keys</span></code> method call in the <code class="docutils literal"><span class="pre">for</span></code> loop &#8212; iterating over
+omit the <code class="docutils literal"><span class="pre">keys</span></code> method call in the <code class="docutils literal"><span class="pre">for</span></code> loop — iterating over
 a dictionary implicitly iterates over its keys:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -224,7 +221,7 @@ into a list:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>The <code class="docutils literal"><span class="pre">items</span></code> method also returns a view, which promises a list of tuples &#8212; one
+<p>The <code class="docutils literal"><span class="pre">items</span></code> method also returns a view, which promises a list of tuples — one
 tuple for each key:value pair:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">eng2sp</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
@@ -413,7 +410,7 @@ using memos:</p>
 <p>The dictionary named <code class="docutils literal"><span class="pre">alreadyknown</span></code> keeps track of the Fibonacci numbers we
 already know. We start with only two pairs: 0 maps to 1; and 1 maps to 1.</p>
 <p>Whenever <code class="docutils literal"><span class="pre">fib</span></code> is called, it checks the dictionary to determine if it
-contains the result. If it&#8217;s there, the function can return immediately without
+contains the result. If it’s there, the function can return immediately without
 making any more recursive calls. If not, it has to compute the new value. The
 new value is added to the dictionary before the function returns.</p>
 <p>Using this version of <code class="docutils literal"><span class="pre">fib</span></code>, our machines can compute
@@ -461,7 +458,7 @@ can do that with the <code class="docutils literal"><span class="pre">items</spa
 </div></blockquote>
 <p>Notice in the first line we had to call the type conversion function <code class="docutils literal"><span class="pre">list</span></code>.
 That turns the promise we get from <code class="docutils literal"><span class="pre">items</span></code> into a list, a step that is
-needed before we can use the list&#8217;s <code class="docutils literal"><span class="pre">sort</span></code> method.</p>
+needed before we can use the list’s <code class="docutils literal"><span class="pre">sort</span></code> method.</p>
 </div>
 <div class="section" id="glossary">
 <h2>20.7. Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
@@ -485,7 +482,7 @@ across the dictionary.</dd>
 dictionary by key.</dd>
 <dt id="term-mapping-type">mapping type</dt>
 <dd>A mapping type is a data type comprised of a collection of keys and
-associated values. Python&#8217;s only built-in mapping type is the
+associated values. Python’s only built-in mapping type is the
 dictionary.  Dictionaries implement the
 <a class="reference external" href="http://en.wikipedia.org/wiki/Associative_array">associative array</a>
 abstract data type.</dd>
@@ -504,7 +501,7 @@ and tuples are not.</dd>
 table of the letters of the alphabet in alphabetical order which occur in
 the string together with the number of times each letter occurs. Case should
 be ignored. A sample output of the program when the user enters the data
-&#8220;ThiS is String with Upper and lower case Letters&#8221;, would look this this:</p>
+“ThiS is String with Upper and lower case Letters”, would look this this:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span>  <span class="mi">2</span>
 <span class="n">c</span>  <span class="mi">1</span>
 <span class="n">d</span>  <span class="mi">1</span>
@@ -524,7 +521,7 @@ be ignored. A sample output of the program when the user enters the data
 </pre></div>
 </div>
 </li>
-<li><p class="first">Give the Python interpreter&#8217;s response to each of the following from a
+<li><p class="first">Give the Python interpreter’s response to each of the following from a
 continuous interpreter session:</p>
 <ol class="loweralpha">
 <li><div class="first highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apples&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;bananas&quot;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="s2">&quot;grapes&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">}</span>
@@ -589,7 +586,7 @@ have learned to fill in the body of the function below:</p>
 </li>
 <li><p class="first">Write a program called <code class="docutils literal"><span class="pre">alice_words.py</span></code> that creates a text file named
 <code class="docutils literal"><span class="pre">alice_words.txt</span></code> containing an alphabetical listing of all the words, and the
-number of times each occurs, in the text version of <cite>Alice&#8217;s Adventures in Wonderland</cite>.
+number of times each occurs, in the text version of <cite>Alice’s Adventures in Wonderland</cite>.
 (You can obtain a free plain text version of the book, along with many others, from
 <a class="reference external" href="http://www.gutenberg.org">http://www.gutenberg.org</a>.) The first 10 lines of your output file should look
 something like this:</p>
@@ -635,7 +632,7 @@ something like this:</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

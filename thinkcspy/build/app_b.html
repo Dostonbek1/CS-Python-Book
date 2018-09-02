@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>An odds-and-ends Workbook &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="Configuring Ubuntu for Python Development" href="app_c.html" />
     <link rel="prev" title="Debugging" href="app_a.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -71,27 +68,27 @@ Learn and practice your scales.  Learn to rearrange formulae.</li>
 <li><strong>Strategic Competence:</strong>  Can you see what to do next?
 Can you formulate this word problem into your
 notation?  Can you take the music where you want it to go?</li>
-<li><strong>Adaptive Reasoning:</strong> Can you see how to change what you&#8217;ve learned for this new problem?</li>
+<li><strong>Adaptive Reasoning:</strong> Can you see how to change what you’ve learned for this new problem?</li>
 <li><dl class="first docutils">
 <dt>A <strong>Productive Disposition:</strong>  We need that <em>Can Do!</em> attitude!</dt>
 <dd><ol class="first last loweralpha">
 <li>You habitually think it is worthwhile studying this stuff.</li>
 <li>You are diligent and disciplined enough to grind through the tough stuff,
 and to put in your practice hours.</li>
-<li>You develop a sense of <em>efficacy</em> &#8212; that you can make things happen!</li>
+<li>You develop a sense of <em>efficacy</em> — that you can make things happen!</li>
 </ol>
 </dd>
 </dl>
 </li>
 </ol>
 <p>Check out <a class="reference external" href="http://mason.gmu.edu/~jsuh4/teaching/strands.htm">http://mason.gmu.edu/~jsuh4/teaching/strands.htm</a>, or
-Kilpatrick&#8217;s book at <a class="reference external" href="http://www.nap.edu/openbook.php?isbn=0309069955">http://www.nap.edu/openbook.php?isbn=0309069955</a></p>
+Kilpatrick’s book at <a class="reference external" href="http://www.nap.edu/openbook.php?isbn=0309069955">http://www.nap.edu/openbook.php?isbn=0309069955</a></p>
 </div>
 <div class="section" id="sending-email">
 <span id="index-1"></span><h2>Sending Email<a class="headerlink" href="#sending-email" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes it is fun to do powerful things with Python &#8212; remember
-that part of the &#8220;productive disposition&#8221; we saw under the
-five threads of proficiency included <em>efficacy</em> &#8212; the sense of
+<p>Sometimes it is fun to do powerful things with Python — remember
+that part of the “productive disposition” we saw under the
+five threads of proficiency included <em>efficacy</em> — the sense of
 being able to accomplish something useful.  Here is a Python
 example of how you can send email to someone.</p>
 <div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -164,7 +161,7 @@ there are powerful libraries which allow you to write your own
 stand-alone web server in a couple of lines.  This simpler approach means
 that you can have a test web server running on your own desktop machine
 in a couple of minutes, without having to install any extra software.</p>
-<p>In this cookbook example we use the <code class="docutils literal"><span class="pre">wsgi</span></code> (&#8220;wizz-gee&#8221;) protocol: a modern way
+<p>In this cookbook example we use the <code class="docutils literal"><span class="pre">wsgi</span></code> (“wizz-gee”) protocol: a modern way
 of connecting web servers to code that runs to provide the services.
 See <a class="reference external" href="http://en.wikipedia.org/wiki/Web_Server_Gateway_Interface">http://en.wikipedia.org/wiki/Web_Server_Gateway_Interface</a> for more on <code class="docutils literal"><span class="pre">wsgi</span></code>.</p>
 <div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -365,10 +362,10 @@ code into your Python system.)</p>
 <span class="go">StudentSubjects table now has 18 rows of data.</span>
 </pre></div>
 </div>
-<p>Our next recipe adds to our web browser from the previous section.  We&#8217;ll
+<p>Our next recipe adds to our web browser from the previous section.  We’ll
 allow a query like <code class="docutils literal"><span class="pre">classlist?subject=CompSci&amp;year=2012</span></code> and show how
 our server can extract the arguments from the query string, query the database,
-and send the rows back to the browser as a formatted table within an html page.  We&#8217;ll start
+and send the rows back to the browser as a formatted table within an html page.  We’ll start
 with two new imports to get access to <code class="docutils literal"><span class="pre">sqlite3</span></code> and <code class="docutils literal"><span class="pre">cgi</span></code>, a library which
 helps us parse forms and query strings that are sent to the server:</p>
 <div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -449,7 +446,7 @@ helps us parse forms and query strings that are sent to the server:</p>
 </pre></div>
 </td></tr></table></div>
 <p>When we run this and navigate to <a class="reference external" href="http://127.0.0.1:8000/classlist?subject=CompSci&amp;year=2012">http://127.0.0.1:8000/classlist?subject=CompSci&amp;year=2012</a>
-with a browser, we&#8217;ll get output like this:</p>
+with a browser, we’ll get output like this:</p>
 <img alt="_images/app_b_classlist.png" src="_images/app_b_classlist.png" />
 <p>It is unlikely that we would write our own web server from scratch.  But the beauty of this
 approach is that it creates a great test environment for working with server-side applications
@@ -480,7 +477,7 @@ server like Apache which can interact with our handlers using <code class="docut
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

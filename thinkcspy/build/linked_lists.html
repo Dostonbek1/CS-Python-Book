@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>25. Linked lists &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="26. Stacks" href="stacks.html" />
     <link rel="prev" title="24. Inheritance" href="inheritance.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -76,7 +73,7 @@ list.</li>
 </div>
 <div class="section" id="the-node-class">
 <h2>25.2. The <code class="docutils literal"><span class="pre">Node</span></code> class<a class="headerlink" href="#the-node-class" title="Permalink to this headline">¶</a></h2>
-<p>As usual when writing a new class, we&#8217;ll start with the initialization and
+<p>As usual when writing a new class, we’ll start with the initialization and
 <code class="docutils literal"><span class="pre">__str__</span></code> methods so that we can test the basic mechanism of creating and
 displaying the new type:</p>
 <blockquote>
@@ -117,7 +114,7 @@ value in a list.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>This code creates three nodes, but we don&#8217;t have a list yet because the nodes
+<p>This code creates three nodes, but we don’t have a list yet because the nodes
 are not <strong>linked</strong>. The state diagram looks like this:</p>
 <blockquote>
 <div><img alt="_images/link1.png" src="_images/link1.png" />
@@ -188,8 +185,8 @@ head); and the rest (called the tail).</li>
 <li>Print the head.</li>
 </ol>
 <p>Of course, Step 2, the recursive call, assumes that we have a way of printing a
-list backward. But if we assume that the recursive call works &#8212; the leap of
-faith &#8212; then we can convince ourselves that this algorithm works.</p>
+list backward. But if we assume that the recursive call works — the leap of
+faith — then we can convince ourselves that this algorithm works.</p>
 <p>All we need are a base case and a way of proving that for any list, we will
 eventually get to the base case. Given the recursive definition of a list, a
 natural base case is the empty list, represented by <code class="docutils literal"><span class="pre">None</span></code>:</p>
@@ -223,7 +220,7 @@ each node.</p>
 <p>You might wonder why <code class="docutils literal"><span class="pre">print_list</span></code> and <code class="docutils literal"><span class="pre">print_backward</span></code> are functions and not
 methods in the <code class="docutils literal"><span class="pre">Node</span></code> class. The reason is that we want to use <code class="docutils literal"><span class="pre">None</span></code> to
 represent the empty list and it is not legal to invoke a method on <code class="docutils literal"><span class="pre">None</span></code>.
-This limitation makes it awkward to write list &#8211; manipulating code in a clean
+This limitation makes it awkward to write list – manipulating code in a clean
 object-oriented style.</p>
 <p>Can we prove that <code class="docutils literal"><span class="pre">print_backward</span></code> will always terminate? In other words,
 will it always reach the base case? In fact, the answer is no.  Some lists will
@@ -233,7 +230,7 @@ make this method crash.</p>
 <p>In our earlier chapter on recursion we distinguished between the high-level
 view that requires a leap of faith, and the low-level operational view.  In terms
 of mental chunking, we want to encourage the more abstract high-level view.</p>
-<p class="last">But if you&#8217;d like to see the detail you should use your single-stepping debugging tools to
+<p class="last">But if you’d like to see the detail you should use your single-stepping debugging tools to
 step into the recursive levels and to examine the execution stack frames at every call
 to <code class="docutils literal"><span class="pre">print_backward</span></code>.</p>
 </div>
@@ -254,7 +251,7 @@ number as a list of digits and use an infinite list to represent a repeating
 fraction.</p>
 <p>Regardless, it is problematic that we cannot prove that <code class="docutils literal"><span class="pre">print_list</span></code> and
 <code class="docutils literal"><span class="pre">print_backward</span></code> terminate. The best we can do is the hypothetical statement,
-&#8220;If the list contains no loops, then these methods will terminate.&#8221; This sort of
+“If the list contains no loops, then these methods will terminate.” This sort of
 claim is called a <strong>precondition</strong>. It imposes a constraint on one of the
 parameters and describes the behavior of the method if the constraint is
 satisfied. You will see more examples soon.</p>
@@ -275,7 +272,7 @@ same value. So why did we create a new variable?</p>
 as a reference to a single node, and we think of <code class="docutils literal"><span class="pre">list</span></code> as a reference to the
 first node of a list. These roles are not part of the program; they are in the
 mind of the programmer.</p>
-<p>In general we can&#8217;t tell by looking at a program what role a variable plays.
+<p>In general we can’t tell by looking at a program what role a variable plays.
 This ambiguity can be useful, but it can also make programs difficult to read.
 We often use variable names like <code class="docutils literal"><span class="pre">node</span></code> and <code class="docutils literal"><span class="pre">list</span></code> to document how we
 intend to use a variable and sometimes create additional variables to
@@ -305,7 +302,7 @@ node as a single object or as the first in a list of nodes.</em></p>
 <p>There are two ways to modify a linked list. Obviously, we can change the cargo
 of one of the nodes, but the more interesting operations are the ones that add,
 remove, or reorder the nodes.</p>
-<p>As an example, let&#8217;s write a method that removes the second node in the list
+<p>As an example, let’s write a method that removes the second node in the list
 and returns a reference to the removed node:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -355,7 +352,7 @@ violation of the precondition in a reasonable way.</p>
 <p>It is often useful to divide a list operation into two methods. For example, to
 print a list backward in the conventional list format <code class="docutils literal"><span class="pre">[3,</span> <span class="pre">2,</span> <span class="pre">1]</span></code> we can use
 the <code class="docutils literal"><span class="pre">print_backward</span></code> method to print <code class="docutils literal"><span class="pre">3,</span> <span class="pre">2,</span></code> but we need a separate method
-to print the brackets and the first node. Let&#8217;s call it
+to print the brackets and the first node. Let’s call it
 <code class="docutils literal"><span class="pre">print_backward_nicely</span></code>:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -378,9 +375,9 @@ uses <code class="docutils literal"><span class="pre">print_backward</span></cod
 <div class="section" id="the-linkedlist-class">
 <h2>25.9. The <code class="docutils literal"><span class="pre">LinkedList</span></code> class<a class="headerlink" href="#the-linkedlist-class" title="Permalink to this headline">¶</a></h2>
 <p>There are some subtle problems with the way we have been implementing lists. In
-a reversal of cause and effect, we&#8217;ll propose an alternative implementation
+a reversal of cause and effect, we’ll propose an alternative implementation
 first and then explain what problems it solves.</p>
-<p>First, we&#8217;ll create a new class called <code class="docutils literal"><span class="pre">LinkedList</span></code>. Its attributes are an
+<p>First, we’ll create a new class called <code class="docutils literal"><span class="pre">LinkedList</span></code>. Its attributes are an
 integer that contains the length of the list and a reference to the first node.
 <code class="docutils literal"><span class="pre">LinkedList</span></code> objects serve as handles for manipulating lists of <code class="docutils literal"><span class="pre">Node</span></code>
 objects:</p>
@@ -545,7 +542,7 @@ output in this format.</li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

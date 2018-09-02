@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>How to Think Like a Computer Scientist &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
+    <title>Kompyuter Dasturchi Kabi Qanday Fikrlash &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -29,7 +26,7 @@
     <link rel="copyright" title="Copyright" href="copyright.html" />
     <link rel="next" title="Copyright Notice" href="copyright.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -47,13 +44,13 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="how-to-think-like-a-computer-scientist">
-<h1>Kompyuter Dasturchi Kabi Qanday Fikrlash<a class="headerlink" href="#how-to-think-like-a-computer-scientist" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="kompyuter-dasturchi-kabi-qanday-fikrlash">
+<h1>Kompyuter Dasturchi Kabi Qanday Fikrlash<a class="headerlink" href="#kompyuter-dasturchi-kabi-qanday-fikrlash" title="Permalink to this headline">¶</a></h1>
 <img alt="GASP Logo" src="_images/gasp_lessons.png" />
-<div class="section" id="learning-with-python-3-rle">
-<h2>Python 3 bilan o'rganish<a class="headerlink" href="#learning-with-python-3-rle" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python-piton-3-bilan-o-rganish">
+<h2>Python (Piton) 3 bilan o’rganish<a class="headerlink" href="#python-piton-3-bilan-o-rganish" title="Permalink to this headline">¶</a></h2>
 <p>Version date: October 2012</p>
-<p>by Peter Wentworth, Jeffrey Elkner, Allen B. Downey, and Chris Meyers</p>
+<p>by Dostonbek Toirov, Peter Wentworth, Jeffrey Elkner, Allen B. Downey, and Chris Meyers</p>
 <blockquote>
 <div>(based on 2nd edition by Jeffrey Elkner, Allen B. Downey, and Chris Meyers)</div></blockquote>
 <p>Corresponding author: <a class="reference external" href="mailto:p&#46;wentworth&#37;&#52;&#48;ru&#46;ac&#46;za">p<span>&#46;</span>wentworth<span>&#64;</span>ru<span>&#46;</span>ac<span>&#46;</span>za</a></p>
@@ -63,38 +60,38 @@ from <a class="reference external" href="http://www.ict.ru.ac.za/Resources/cspw/
 <ul class="simple">
 <li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
 <li><a class="reference external" href="copyright.html">Copyright Notice</a></li>
-<li><a class="reference external" href="foreword.html">Foreword</a></li>
-<li><a class="reference external" href="preface.html">Preface</a></li>
+<li><a class="reference external" href="foreword.html">So’z Boshi</a></li>
+<li><a class="reference external" href="preface.html">Kirish</a></li>
 <li><a class="reference external" href="preface3-rle.html">Preface-3</a> <em>This Rhodes Local Edition (RLE) of the book</em></li>
-<li><a class="reference external" href="contrib.html">Contributor List</a></li>
-<li><a class="reference external" href="way_of_the_program.html">Chapter 1</a> <em>The way of the program</em></li>
-<li><a class="reference external" href="variables_expressions_statements.html">Chapter 2</a> <em>Variables, expressions, and statements</em></li>
-<li><a class="reference external" href="hello_little_turtles.html">Chapter 3</a> <em>Hello, little turtles!</em></li>
-<li><a class="reference external" href="functions.html">Chapter 4</a> <em>Functions</em></li>
-<li><a class="reference external" href="conditionals.html">Chapter 5</a> <em>Conditionals</em></li>
-<li><a class="reference external" href="fruitful_functions.html">Chapter 6</a> <em>Fruitful functions</em></li>
-<li><a class="reference external" href="iteration.html">Chapter 7</a> <em>Iteration</em></li>
-<li><a class="reference external" href="strings.html">Chapter 8</a> <em>Strings</em></li>
-<li><a class="reference external" href="tuples.html">Chapter 9</a> <em>Tuples</em></li>
-<li><a class="reference external" href="events.html">Chapter 10</a> <em>Event handling</em></li>
-<li><a class="reference external" href="lists.html">Chapter 11</a> <em>Lists</em></li>
-<li><a class="reference external" href="modules.html">Chapter 12</a> <em>Modules</em></li>
-<li><a class="reference external" href="files.html">Chapter 13</a> <em>Files</em></li>
-<li><a class="reference external" href="list_algorithms.html">Chapter 14</a> <em>List Algorithms</em></li>
-<li><a class="reference external" href="classes_and_objects_I.html">Chapter 15</a> <em>Classes and Objects - the Basics</em></li>
-<li><a class="reference external" href="classes_and_objects_II.html">Chapter 16</a> <em>Classes and Objects - Digging a little deeper</em></li>
-<li><a class="reference external" href="pygame.html">Chapter 17</a> <em>PyGame</em></li>
-<li><a class="reference external" href="recursion.html">Chapter 18</a> <em>Recursion</em></li>
-<li><a class="reference external" href="exceptions.html">Chapter 19</a> <em>Exceptions</em></li>
-<li><a class="reference external" href="dictionaries.html">Chapter 20</a> <em>Dictionaries</em></li>
-<li><a class="reference external" href="casestudy_fileindexer.html">Chapter 21</a> <em>Case Study: A File Indexer</em></li>
-<li><a class="reference external" href="even_more_oop.html">Chapter 22</a> <em>Even more OOP</em></li>
-<li><a class="reference external" href="collections.html">Chapter 23</a> <em>Collections of Objects</em></li>
-<li><a class="reference external" href="inheritance.html">Chapter 24</a> <em>Inheritance</em></li>
-<li><a class="reference external" href="linked_lists.html">Chapter 25</a> <em>Linked Lists</em></li>
-<li><a class="reference external" href="stacks.html">Chapter 26</a> <em>Stacks</em></li>
-<li><a class="reference external" href="queues.html">Chapter 27</a> <em>Queues</em></li>
-<li><a class="reference external" href="trees.html">Chapter 28</a> <em>Trees</em></li>
+<li><a class="reference external" href="contrib.html">Ishtirokchilar Ro’yxati</a></li>
+<li><a class="reference external" href="way_of_the_program.html">1-Bo’lim</a> <em>Dasturning yo’li</em></li>
+<li><a class="reference external" href="variables_expressions_statements.html">2-Bo’lim</a> <em>O’zgaruvchilar, ifodalar, and bayonot</em></li>
+<li><a class="reference external" href="hello_little_turtles.html">3-Bo’lim</a> <em>Salom, mitti toshbaqachalar!</em></li>
+<li><a class="reference external" href="functions.html">4-Bo’limi</a> <em>Funksiyalar</em></li>
+<li><a class="reference external" href="conditionals.html">5-Bo’lim</a> <em>Shartlar</em></li>
+<li><a class="reference external" href="fruitful_functions.html">6-Bo’lim</a> <em>‘Mevali’ funksiyalar</em></li>
+<li><a class="reference external" href="iteration.html">7-Bo’lim</a> <em>Iteratsiya (Takrorlash)</em></li>
+<li><a class="reference external" href="strings.html">8-Bo’lim</a> <em>Matnlar</em></li>
+<li><a class="reference external" href="tuples.html">9-Bo’lim</a> <em>Tuple</em></li>
+<li><a class="reference external" href="events.html">10-Bo’lim</a> <em>Hodisalarni boshqarish</em></li>
+<li><a class="reference external" href="lists.html">11-Bo’lim</a> <em>Ro’yxat</em></li>
+<li><a class="reference external" href="modules.html">12-Bo’lim</a> <em>Modullar</em></li>
+<li><a class="reference external" href="files.html">13-Bo’lim</a> <em>Fayllar</em></li>
+<li><a class="reference external" href="list_algorithms.html">14-Bo’lim</a> <em>List Algoritmlari</em></li>
+<li><a class="reference external" href="classes_and_objects_I.html">15-Bo’lim</a> <em>Sinflar va Obyektlar - Asoslar</em></li>
+<li><a class="reference external" href="classes_and_objects_II.html">16-Bo’lim</a> <em>Sinflar va Obyektlar - Chuqurroq o’rganish</em></li>
+<li><a class="reference external" href="pygame.html">17-Bo’lim</a> <em>PyGame</em></li>
+<li><a class="reference external" href="recursion.html">18-Bo’lim</a> <em>Rekursiya (Recursion)</em></li>
+<li><a class="reference external" href="exceptions.html">19-Bo’lim 19</a> <em>Istisnolar</em></li>
+<li><a class="reference external" href="dictionaries.html">20-Bo’lim</a> <em>Lug’atlar</em></li>
+<li><a class="reference external" href="casestudy_fileindexer.html">21-Bo’lim</a> <em>Amaliy Tadqiqot: Fayl Indekslovchi</em></li>
+<li><a class="reference external" href="even_more_oop.html">22-Bo’lim</a> <em>Yanada ko’proq OYD (Obyektga Yo’naltirilgan Dasturlash)</em></li>
+<li><a class="reference external" href="collections.html">23-Bo’lim</a> <em>Obyektlar To’plami</em></li>
+<li><a class="reference external" href="inheritance.html">24-Bo’lim</a> <em>Meros</em></li>
+<li><a class="reference external" href="linked_lists.html">25-Bo’lim</a> <em>Bog’langan Ro’yxatlar</em></li>
+<li><a class="reference external" href="stacks.html">26-Bo’lim</a> <em>To’plamlar</em></li>
+<li><a class="reference external" href="queues.html">27-Bo’lim</a> <em>Navbatlar</em></li>
+<li><a class="reference external" href="trees.html">28-Bo’lim</a> <em>Daraxtlar</em></li>
 <li><a class="reference external" href="app_a.html">Appendix A</a> <em>Debugging</em></li>
 <li><a class="reference external" href="app_b.html">Appendix B</a> <em>An odds-and-ends Workbook</em></li>
 <li><a class="reference external" href="app_c.html">Appendix C</a> <em>Configuring Ubuntu for Python Development</em></li>
@@ -133,7 +130,7 @@ from <a class="reference external" href="http://www.ict.ru.ac.za/Resources/cspw/
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

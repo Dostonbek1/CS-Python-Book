@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>21. A Case Study: Indexing your files &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="22. Even more OOP" href="even_more_oop.html" />
     <link rel="prev" title="20. Dictionaries" href="dictionaries.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -58,7 +55,7 @@
 <h1>21. A Case Study: Indexing your files<a class="headerlink" href="#a-case-study-indexing-your-files" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">We present a small case study that ties together modules, recursion,
 files, dictionaries and introduces simple serialization and deserialization.</p>
-<p>In this chapter we&#8217;re going to use a dictionary to help us find a
+<p>In this chapter we’re going to use a dictionary to help us find a
 file rapidly.</p>
 <p>The case study has two components:</p>
 <ul class="simple">
@@ -71,10 +68,10 @@ user queries about where a file is located.</li>
 <h2>21.1. The Crawler<a class="headerlink" href="#the-crawler" title="Permalink to this headline">¶</a></h2>
 <p>Near the end of the chapter on recursion we showed an example of
 how to recursively list all files under a given path of our filesystem.</p>
-<p>We&#8217;ll borrow (and change) that code somewhat to provide the skeleton of
-our crawler.  It&#8217;s function is to recursively traverse every file in
-a given path.  (We&#8217;ll figure out what to do with the file soon: for
-the moment we&#8217;ll just print it&#8217;s short name, and its full path.)</p>
+<p>We’ll borrow (and change) that code somewhat to provide the skeleton of
+our crawler.  It’s function is to recursively traverse every file in
+a given path.  (We’ll figure out what to do with the file soon: for
+the moment we’ll just print it’s short name, and its full path.)</p>
 <div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -129,7 +126,7 @@ the moment we&#8217;ll just print it&#8217;s short name, and its full path.)</p>
 <span class="gp">...</span>
 </pre></div>
 </div>
-<p>We&#8217;ll adapt this now to store the short name and the full path of the file
+<p>We’ll adapt this now to store the short name and the full path of the file
 as a key:value pair in a dictionary.  But first, two observations:</p>
 <ul class="simple">
 <li>We can have many instances of files with the same name (in different
@@ -137,13 +134,13 @@ paths).  For example, the name <cite>index.html</cite> is quite common.  But dic
 keys must be unique.  Our solution is to map each key in our dictionary
 to a <em>list</em> of paths.</li>
 <li>File names are not case sensitive. (Well, not for Windows users!)  So
-a good technique is to <em>normalize</em> the keys before storing them.  Here we&#8217;ll
-just ensure that all keys are converted to lowercase.  Of course we&#8217;ll do the
+a good technique is to <em>normalize</em> the keys before storing them.  Here we’ll
+just ensure that all keys are converted to lowercase.  Of course we’ll do the
 same later when we write the query program.</li>
 </ul>
-<p>We&#8217;ll change the code above by setting up a global dictionary, initially empty:
+<p>We’ll change the code above by setting up a global dictionary, initially empty:
 The statement <code class="docutils literal"><span class="pre">thedict</span> <span class="pre">=</span> <span class="pre">{}</span></code> inserted at line 3 will do this.  Then instead of
-printing the information at line 17, we&#8217;ll add the filename and path to the
+printing the information at line 17, we’ll add the filename and path to the
 dictionary.  The code will need to check whether the key already exists:</p>
 <div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -171,9 +168,9 @@ that the dictionary seems to have been built correctly:</p>
 </pre></div>
 </div>
 <p>It would be nice to add a progress bar while the crawler is running: a typical
-technique is to print dots to show progress.  We&#8217;ll introduce a count of how
-many files have been indexed (this can be a global variable), and after we&#8217;ve
-handled the current file, we&#8217;ll add this code:</p>
+technique is to print dots to show progress.  We’ll introduce a count of how
+many files have been indexed (this can be a global variable), and after we’ve
+handled the current file, we’ll add this code:</p>
 <div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -186,7 +183,7 @@ handled the current file, we&#8217;ll add this code:</p>
 </pre></div>
 </td></tr></table></div>
 <p>As we complete each 100 files we print a dot. After every 50 dots we
-start a new line.   You&#8217;ll need to also create the global variable,
+start a new line.   You’ll need to also create the global variable,
 initialize it to zero, and remember to declare the variable as
 global in the crawler.</p>
 <p>The main calling code can now print some statistics for us.  It becomes</p>
@@ -199,7 +196,7 @@ global in the crawler.</p>
                      <span class="nb">format</span><span class="p">(</span><span class="n">filecount</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">thedict</span><span class="p">)))</span>
 </pre></div>
 </td></tr></table></div>
-<p>We&#8217;ll now get something like</p>
+<p>We’ll now get something like</p>
 <div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
 <span class="go">..................................................</span>
 <span class="go">..................................................</span>
@@ -215,13 +212,13 @@ number of files as our program does!</p>
 </div>
 <div class="section" id="saving-the-dictionary-to-disk">
 <h2>21.2. Saving the dictionary to disk<a class="headerlink" href="#saving-the-dictionary-to-disk" title="Permalink to this headline">¶</a></h2>
-<p>The dictionary we&#8217;ve built is an object.  To save it we&#8217;re going to
+<p>The dictionary we’ve built is an object.  To save it we’re going to
 turn it into a string, and write the string to a file on our disk.
 The string must be in a format that allows another program to
 unambiguously reconstruct another dictionary with the same
 key-value entries.  The process of turning an object into a
 string representation is called <strong>serialization</strong>, and the
-inverse operation &#8212; reconstructing a new object from a string &#8212;
+inverse operation — reconstructing a new object from a string —
 is called <strong>deserialization</strong>.</p>
 <p>There are a few ways to do this: some use binary formats, some use
 text formats, and the way different types of data are encoded differs.
@@ -308,7 +305,7 @@ then provide a lookup function:</p>
 <div class="section" id="compressing-the-serialized-dictionary">
 <h2>21.4. Compressing the serialized dictionary<a class="headerlink" href="#compressing-the-serialized-dictionary" title="Permalink to this headline">¶</a></h2>
 <p>The JSON file might get quite big.  Gzip compression is available in Python,
-so let&#8217;s take advantage of it...</p>
+so let’s take advantage of it…</p>
 <p>When we saved the dictionary to disk we opened a text file for writing.  We simply
 have to change that one line of the program (and import the correct modules),
 to create a gzip file instead of a normal text file.   The replacement code is</p>
@@ -345,7 +342,7 @@ servers and browsers for significantly faster downloads.)</p>
 </pre></div>
 </td></tr></table></div>
 <div class="admonition-composability-is-the-key admonition">
-<p class="first admonition-title">Composability is the key...</p>
+<p class="first admonition-title">Composability is the key…</p>
 <p>In the earliest chapters of the book we talked about composability:
 the ability to join together or <em>compose</em> different fragments of code
 and functionality to build more powerful constructs.</p>
@@ -401,7 +398,7 @@ data.</dd>
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

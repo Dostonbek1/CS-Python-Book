@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>23. Collections of objects &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="24. Inheritance" href="inheritance.html" />
     <link rel="prev" title="22. Even more OOP" href="even_more_oop.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -136,7 +133,7 @@ for each attribute.</p>
 </div></blockquote>
 <p>In the first case above, for example, the first argument, <code class="docutils literal"><span class="pre">0</span></code>, represents the suit Clubs.</p>
 <div class="admonition-save-this-code-for-later-use admonition">
-<p class="first admonition-title">Save this code for later use ...</p>
+<p class="first admonition-title">Save this code for later use …</p>
 <p class="last">In the next chapter we assume that we have save the <code class="docutils literal"><span class="pre">Cards</span></code> class,
 and the upcoming <code class="docutils literal"><span class="pre">Deck</span></code> class in a file called <code class="docutils literal"><span class="pre">Cards.py</span></code>.</p>
 </div>
@@ -231,7 +228,7 @@ etc.) that compare values and determine when one is greater than, less than, or
 equal to another.   If we want our own types to be comparable using the syntax
 of these relational operators, we need to define six corresponding special methods
 in our class.</p>
-<p>We&#8217;d like to start with a single method named <code class="docutils literal"><span class="pre">cmp</span></code> that houses the logic of ordering.
+<p>We’d like to start with a single method named <code class="docutils literal"><span class="pre">cmp</span></code> that houses the logic of ordering.
 By convention, a comparison method takes two parameters, <code class="docutils literal"><span class="pre">self</span></code> and <code class="docutils literal"><span class="pre">other</span></code>,
 and returns 1 if the first object is greater, -1 if the second object is greater,
 and 0 if they are equal to each other.</p>
@@ -313,7 +310,7 @@ overloading of each of the relational operators for us:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>With this machinery in place, the relational operators now work as we&#8217;d like them to:</p>
+<p>With this machinery in place, the relational operators now work as we’d like them to:</p>
 <blockquote>
 <div><div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">card1</span> <span class="o">=</span> <span class="n">Card</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">card2</span> <span class="o">=</span> <span class="n">Card</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -331,7 +328,7 @@ overloading of each of the relational operators for us:</p>
 <p>Now that we have objects to represent <code class="docutils literal"><span class="pre">Card</span></code>s, the next logical step is to
 define a class to represent a <code class="docutils literal"><span class="pre">Deck</span></code>. Of course, a deck is made up of cards,
 so each <code class="docutils literal"><span class="pre">Deck</span></code> object will contain a list of cards as an attribute.  Many card
-games will need at least two different decks &#8212; a red deck and a blue deck.</p>
+games will need at least two different decks — a red deck and a blue deck.</p>
 <p>The following is a class definition for the <code class="docutils literal"><span class="pre">Deck</span></code> class. The initialization
 method creates the attribute <code class="docutils literal"><span class="pre">cards</span></code> and generates the standard pack of
 fifty-two cards:</p>
@@ -494,7 +491,7 @@ order of the cards would be less than entirely random:</p>
 <p>Rather than assume that there are fifty-two cards in the deck, we get the
 actual length of the list and store it in <code class="docutils literal"><span class="pre">num_cards</span></code>.</p>
 <p>For each card in the deck, we choose a random card from among the cards that
-haven&#8217;t been shuffled yet. Then we swap the current card (<code class="docutils literal"><span class="pre">i</span></code>) with the
+haven’t been shuffled yet. Then we swap the current card (<code class="docutils literal"><span class="pre">i</span></code>) with the
 selected card (<code class="docutils literal"><span class="pre">j</span></code>). To swap the cards we use a tuple assignment:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">cards</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
@@ -546,7 +543,7 @@ the card was in the deck and <code class="docutils literal"><span class="pre">Fa
 </div></blockquote>
 <p>The <code class="docutils literal"><span class="pre">in</span></code> operator returns <code class="docutils literal"><span class="pre">True</span></code> if the first operand is in the second.
 If the first operand is an object, Python uses
-the object&#8217;s <code class="docutils literal"><span class="pre">__eq__</span></code> method to determine equality with items in the list.
+the object’s <code class="docutils literal"><span class="pre">__eq__</span></code> method to determine equality with items in the list.
 Since the <code class="docutils literal"><span class="pre">__eq__</span></code> we provided in the <code class="docutils literal"><span class="pre">Card</span></code> class checks for deep equality, the
 <code class="docutils literal"><span class="pre">remove</span></code> method checks for deep equality.</p>
 <p>To deal cards, we want to remove and return the top card. The list method
@@ -623,7 +620,7 @@ concatenating them onto a string or adding them to a running sum.</dd>
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

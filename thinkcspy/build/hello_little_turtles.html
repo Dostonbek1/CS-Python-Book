@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>3. Hello, little turtles! &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="4. Functions" href="functions.html" />
     <link rel="prev" title="2. Variables, expressions and statements" href="variables_expressions_statements.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -58,7 +55,7 @@
 <h1>3. Hello, little turtles!<a class="headerlink" href="#hello-little-turtles" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">There are many <em>modules</em> in Python that provide very powerful features that we
 can use in our own programs.  Some of these can send email, or fetch web pages.
-The one we&#8217;ll look at in this chapter allows us to create turtles and get them
+The one we’ll look at in this chapter allows us to create turtles and get them
 to draw shapes and patterns.</p>
 <p>The turtles are fun, but the real purpose of the chapter is to teach ourselves
 a little more Python, and to develop our theme of <em>computational thinking</em>,
@@ -66,8 +63,8 @@ or <em>thinking like a computer scientist</em>.  Most of the Python covered here
 will be explored in more depth later.</p>
 <div class="section" id="our-first-turtle-program">
 <span id="index-1"></span><h2>3.1. Our first turtle program<a class="headerlink" href="#our-first-turtle-program" title="Permalink to this headline">¶</a></h2>
-<p>Let&#8217;s write a couple of lines of Python program to create a new
-turtle and start drawing a rectangle. (We&#8217;ll call the variable that
+<p>Let’s write a couple of lines of Python program to create a new
+turtle and start drawing a rectangle. (We’ll call the variable that
 refers to our first turtle <code class="docutils literal"><span class="pre">alex</span></code>, but we can choose another
 name if we follow the naming rules from the previous chapter).</p>
 <blockquote>
@@ -95,27 +92,27 @@ name if we follow the naming rules from the previous chapter).</p>
 <blockquote>
 <div><img alt="_images/tess01.png" src="_images/tess01.png" />
 </div></blockquote>
-<p>Here are a couple of things we&#8217;ll need to understand about this program.</p>
+<p>Here are a couple of things we’ll need to understand about this program.</p>
 <p>The first line tells Python to load a module named <code class="docutils literal"><span class="pre">turtle</span></code>.
 That module brings us two new types that we can use:
 the <code class="docutils literal"><span class="pre">Turtle</span></code> type, and the <code class="docutils literal"><span class="pre">Screen</span></code> type.  The dot
-notation <code class="docutils literal"><span class="pre">turtle.Turtle</span></code> means <em>&#8220;The Turtle type that is defined within
-the turtle module&#8221;</em>.   (Remember that Python is case sensitive, so the
+notation <code class="docutils literal"><span class="pre">turtle.Turtle</span></code> means <em>“The Turtle type that is defined within
+the turtle module”</em>.   (Remember that Python is case sensitive, so the
 module name, with a lowercase <cite>t</cite>, is different from the type <code class="docutils literal"><span class="pre">Turtle</span></code>.)</p>
 <p>We then create and open what it calls a screen (we would prefer to call it
 a window), which we assign to variable <code class="docutils literal"><span class="pre">wn</span></code>. Every window contains
 a <strong>canvas</strong>, which is the area inside the window on which we can draw.</p>
 <p>In line 3 we create a turtle. The variable <code class="docutils literal"><span class="pre">alex</span></code> is made to refer to this turtle.</p>
-<p>So these first three lines have set things up, we&#8217;re ready to get our turtle to draw on our canvas.</p>
+<p>So these first three lines have set things up, we’re ready to get our turtle to draw on our canvas.</p>
 <p>In lines 5-7, we instruct the <strong>object</strong> <code class="docutils literal"><span class="pre">alex</span></code> to move, and to turn. We
-do this by <strong>invoking</strong>, or activating, <code class="docutils literal"><span class="pre">alex</span></code>&#8216;s <strong>methods</strong> &#8212; these are
+do this by <strong>invoking</strong>, or activating, <code class="docutils literal"><span class="pre">alex</span></code>’s <strong>methods</strong> — these are
 the instructions that all turtles know how to respond to.</p>
 <p>The last line plays a part too: the <code class="docutils literal"><span class="pre">wn</span></code> variable refers to
 the window shown above. When we invoke its <code class="docutils literal"><span class="pre">mainloop</span></code> method, it enters
 a state where it waits for events (like keypresses, or mouse movement and clicks).
 The program will terminate when the user closes the window.</p>
-<p>An object can have various methods &#8212; things it can do &#8212; and it can also have
-<strong>attributes</strong> &#8212; (sometimes called <em>properties</em>).  For example, each turtle has
+<p>An object can have various methods — things it can do — and it can also have
+<strong>attributes</strong> — (sometimes called <em>properties</em>).  For example, each turtle has
 a <em>color</em> attribute.  The method invocation
 <code class="docutils literal"><span class="pre">alex.color(&quot;red&quot;)</span></code> will make <code class="docutils literal"><span class="pre">alex</span></code> red, and drawing will be red too.
 (Note the word <cite>color</cite>  is spelled the American way!)</p>
@@ -125,8 +122,8 @@ current <strong>state</strong>.   Similarly, the window object has a background 
 some text in the title bar, and a size and position on the screen.  These are all
 part of the state of the window object.</p>
 <p>Quite a number of methods exist that allow us to modify the turtle and the
-window objects.  We&#8217;ll just show a couple. In this program we&#8217;ve only commented those
-lines that are different from the previous example (and we&#8217;ve used a different
+window objects.  We’ll just show a couple. In this program we’ve only commented those
+lines that are different from the previous example (and we’ve used a different
 variable name for this turtle):</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -165,28 +162,28 @@ screen until we close it.</p>
 <div><img alt="_images/tess02.png" src="_images/tess02.png" />
 </div></blockquote>
 <div class="admonition-extend-this-program admonition">
-<p class="first admonition-title">Extend this program ...</p>
+<p class="first admonition-title">Extend this program …</p>
 <ol class="last arabic simple">
 <li>Modify this program so that before it creates the window, it prompts
-the user to enter the desired background color. It should store the user&#8217;s
+the user to enter the desired background color. It should store the user’s
 responses in a variable, and modify the color of the window
-according to the user&#8217;s wishes.
+according to the user’s wishes.
 (Hint: you can find a list of permitted color names at
 <a class="reference external" href="http://www.tcl.tk/man/tcl8.4/TkCmd/colors.htm">http://www.tcl.tk/man/tcl8.4/TkCmd/colors.htm</a>.  It includes some quite unusual
-ones, like &#8220;peach puff&#8221;  and &#8220;HotPink&#8221;.)</li>
-<li>Do similar changes to allow the user, at runtime, to set <code class="docutils literal"><span class="pre">tess</span></code>&#8216; color.</li>
-<li>Do the same for the width of <code class="docutils literal"><span class="pre">tess</span></code>&#8216; pen.  <em>Hint:</em> your dialog with the
-user will return a string, but <code class="docutils literal"><span class="pre">tess</span></code>&#8216; <code class="docutils literal"><span class="pre">pensize</span></code> method
-expects its argument to be an int.  So you&#8217;ll need to convert
+ones, like “peach puff”  and “HotPink”.)</li>
+<li>Do similar changes to allow the user, at runtime, to set <code class="docutils literal"><span class="pre">tess</span></code>’ color.</li>
+<li>Do the same for the width of <code class="docutils literal"><span class="pre">tess</span></code>’ pen.  <em>Hint:</em> your dialog with the
+user will return a string, but <code class="docutils literal"><span class="pre">tess</span></code>’ <code class="docutils literal"><span class="pre">pensize</span></code> method
+expects its argument to be an int.  So you’ll need to convert
 the string to an int before you pass it to <code class="docutils literal"><span class="pre">pensize</span></code>.</li>
 </ol>
 </div>
 </div>
 <div class="section" id="instances-a-herd-of-turtles">
-<span id="index-2"></span><h2>3.2. Instances &#8212; a herd of turtles<a class="headerlink" href="#instances-a-herd-of-turtles" title="Permalink to this headline">¶</a></h2>
+<span id="index-2"></span><h2>3.2. Instances — a herd of turtles<a class="headerlink" href="#instances-a-herd-of-turtles" title="Permalink to this headline">¶</a></h2>
 <p>Just like we can have many different integers in a program, we can have many turtles.
 Each of them is called an <strong>instance</strong>.  Each instance has its own attributes and
-methods &#8212; so <code class="docutils literal"><span class="pre">alex</span></code> might draw with a thin black pen and be at some position,
+methods — so <code class="docutils literal"><span class="pre">alex</span></code> might draw with a thin black pen and be at some position,
 while <code class="docutils literal"><span class="pre">tess</span></code> might be going in her own direction with a fat pink pen.</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -265,7 +262,7 @@ add up to some multiple of 360.  This should convince us that <code class="docut
 exactly the same direction as he was when he was first created. (Geometry
 conventions have 0 degrees facing East, and that is the case here too!)</li>
 <li>We could have left out the last turn for <code class="docutils literal"><span class="pre">alex</span></code>, but that would not have been
-as satisfying.  If we&#8217;re asked to draw a closed shape like a
+as satisfying.  If we’re asked to draw a closed shape like a
 square or a rectangle, it is a good idea to
 complete all the turns and to leave the turtle back where it started, facing the
 same direction as it started in.
@@ -273,11 +270,11 @@ This makes reasoning about the program and composing chunks of code into bigger 
 easier for us humans!</li>
 <li>We did the same with <code class="docutils literal"><span class="pre">tess</span></code>: she drew her triangle, and turned through a full 360 degrees.
 Then we turned her around and moved her aside.  Even the blank line 18
-is a hint about how the programmer&#8217;s <em>mental chunking</em> is working:
-in big terms, <code class="docutils literal"><span class="pre">tess</span></code>&#8216; movements were chunked as &#8220;draw the triangle&#8221;
-(lines 12-17) and then &#8220;move away from the origin&#8221; (lines 19 and 20).</li>
+is a hint about how the programmer’s <em>mental chunking</em> is working:
+in big terms, <code class="docutils literal"><span class="pre">tess</span></code>’ movements were chunked as “draw the triangle”
+(lines 12-17) and then “move away from the origin” (lines 19 and 20).</li>
 <li>One of the key uses for comments is to record our mental chunking, and big ideas.
-They&#8217;re not always explicit in the code.</li>
+They’re not always explicit in the code.</li>
 <li>And, uh-huh, two turtles may not be enough for a herd. But the important idea is that the
 turtle module gives us a kind of factory that lets us create as many turtles as we
 need. Each instance has its own state and behaviour.</li>
@@ -290,9 +287,9 @@ moving and turning four times.  If we were drawing a hexagon, or an octogon,
 or a polygon with 42 sides, it would have been worse.</p>
 <p>So a basic building block of all programs is to be able to repeat some code, over and
 over again.</p>
-<p>Python&#8217;s <strong>for</strong> loop solves this for us.   Let&#8217;s say we have some friends, and
-we&#8217;d like to send them each an email inviting them to our party.  We don&#8217;t
-quite know how to send email yet, so for the moment we&#8217;ll just print a message for each friend:</p>
+<p>Python’s <strong>for</strong> loop solves this for us.   Let’s say we have some friends, and
+we’d like to send them each an email inviting them to our party.  We don’t
+quite know how to send email yet, so for the moment we’ll just print a message for each friend:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -320,7 +317,7 @@ quite know how to send email yet, so for the moment we&#8217;ll just print a mes
 <li>The variable <code class="docutils literal"><span class="pre">f</span></code> in the <code class="docutils literal"><span class="pre">for</span></code> statement at line 1 is called the <strong>loop variable</strong>.
 We could have chosen any other variable name instead.</li>
 <li>Lines 2 and 3 are the <strong>loop body</strong>.  The loop body is always
-indented. The indentation determines exactly what statements are &#8220;in the body of the loop&#8221;.</li>
+indented. The indentation determines exactly what statements are “in the body of the loop”.</li>
 <li>On each <em>iteration</em> or <em>pass</em> of the loop, first a check is done to see if there are
 still more items to be processed.  If there are none left (this is called
 the <strong>terminating condition</strong> of the loop), the loop has finished.
@@ -339,7 +336,7 @@ next one to <code class="docutils literal"><span class="pre">f</span></code>.</l
 <p>As a program executes, the interpreter always keeps track of which statement is
 about to be executed.  We call this the <strong>control flow</strong>, of the <strong>flow of execution</strong>
 of the program.  When humans execute programs, they often use their finger to point
-to each statement in turn.  So we could think of control flow as &#8220;Python&#8217;s moving finger&#8221;.</p>
+to each statement in turn.  So we could think of control flow as “Python’s moving finger”.</p>
 <p>Control flow until now has been strictly
 top to bottom, one statement at a time.  The <code class="docutils literal"><span class="pre">for</span></code> loop changes this.</p>
 <div class="admonition-flowchart-of-a-for-loop admonition">
@@ -351,7 +348,7 @@ This shows the exact steps and logic of how the <code class="docutils literal"><
 </div>
 <div class="section" id="the-loop-simplifies-our-turtle-program">
 <span id="index-5"></span><h2>3.5. The loop simplifies our turtle program<a class="headerlink" href="#the-loop-simplifies-our-turtle-program" title="Permalink to this headline">¶</a></h2>
-<p>To draw a square we&#8217;d like to do the same thing four times &#8212; move the turtle, and turn.
+<p>To draw a square we’d like to do the same thing four times — move the turtle, and turn.
 We previously used 8 lines to have <code class="docutils literal"><span class="pre">alex</span></code> draw the four sides of a square.
 This does exactly the same, but using just three lines:</p>
 <blockquote>
@@ -365,8 +362,8 @@ This does exactly the same, but using just three lines:</p>
 </div></blockquote>
 <p>Some observations:</p>
 <ul>
-<li><p class="first">While &#8220;saving some lines of code&#8221; might be convenient, it is not the big deal here.
-What is much more important is that we&#8217;ve found a &#8220;repeating pattern&#8221; of statements,
+<li><p class="first">While “saving some lines of code” might be convenient, it is not the big deal here.
+What is much more important is that we’ve found a “repeating pattern” of statements,
 and reorganized our program to repeat the pattern.  Finding the chunks and somehow
 getting our programs arranged around those chunks is a vital
 skill in computational thinking.</p>
@@ -395,8 +392,8 @@ They start at 0, and in these cases do not include the 4 or the 10.</p>
 <li><p class="first">Our little trick earlier to make sure that <code class="docutils literal"><span class="pre">alex</span></code> did the final turn to complete
 360 degrees has paid off: if we had not done that, then we would not have been
 able to use a loop for the fourth side of the square.
-It would have become a &#8220;special case&#8221;,
-different from the other sides.  When possible, we&#8217;d much prefer to make
+It would have become a “special case”,
+different from the other sides.  When possible, we’d much prefer to make
 our code fit a general pattern, rather than have to create a special case.</p>
 </li>
 </ul>
@@ -448,8 +445,8 @@ more general situations, not only in the <code class="docutils literal"><span cl
 will move <code class="docutils literal"><span class="pre">tess</span></code> backwards, and <code class="docutils literal"><span class="pre">tess.left(-30)</span></code> turns her to the right.  Additionally,
 because there are 360 degrees in a circle, turning 30 to the left will get <code class="docutils literal"><span class="pre">tess</span></code> facing
 in the same direction as turning 330 to the right!  (The on-screen animation will differ,
-though &#8212; you will be able to tell if <code class="docutils literal"><span class="pre">tess</span></code> is turning clockwise or counter-clockwise!)</p>
-<p>This suggests that we don&#8217;t need both a left and a right turn method &#8212; we could be
+though — you will be able to tell if <code class="docutils literal"><span class="pre">tess</span></code> is turning clockwise or counter-clockwise!)</p>
+<p>This suggests that we don’t need both a left and a right turn method — we could be
 minimalists, and just have one method.  There is also a <em>backward</em>
 method.  (If you are very nerdy, you might enjoy saying <code class="docutils literal"><span class="pre">alex.backward(-100)</span></code> to
 move <code class="docutils literal"><span class="pre">alex</span></code> forward!)</p>
@@ -457,8 +454,8 @@ move <code class="docutils literal"><span class="pre">alex</span></code> forward
 relationships in our field.  So revising a few basic facts about
 geometry and number lines, and spotting the relationships between left, right,
 backward, forward, negative and positive distances or angles values is a good start
-if we&#8217;re going to play with turtles.</p>
-<p>A turtle&#8217;s pen can be picked up or put down.  This allows us to move a turtle
+if we’re going to play with turtles.</p>
+<p>A turtle’s pen can be picked up or put down.  This allows us to move a turtle
 to a different place without drawing a line.   The methods are</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -469,7 +466,7 @@ to a different place without drawing a line.   The methods are</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>Every turtle can have its own shape.  The ones available &#8220;out of the box&#8221;
+<p>Every turtle can have its own shape.  The ones available “out of the box”
 are <code class="docutils literal"><span class="pre">arrow</span></code>, <code class="docutils literal"><span class="pre">blank</span></code>, <code class="docutils literal"><span class="pre">circle</span></code>, <code class="docutils literal"><span class="pre">classic</span></code>, <code class="docutils literal"><span class="pre">square</span></code>, <code class="docutils literal"><span class="pre">triangle</span></code>, <code class="docutils literal"><span class="pre">turtle</span></code>.</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">alex</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>
@@ -477,19 +474,19 @@ are <code class="docutils literal"><span class="pre">arrow</span></code>, <code 
 </td></tr></table></div>
 <img alt="_images/alex06.png" src="_images/alex06.png" />
 </div></blockquote>
-<p>We can speed up or slow down the turtle&#8217;s animation speed. (Animation controls how
+<p>We can speed up or slow down the turtle’s animation speed. (Animation controls how
 quickly the turtle turns and moves forward).  Speed settings can be set
 between 1 (slowest) to 10 (fastest).  But if we set the speed to 0, it has
-a special meaning &#8212; turn off animation and go as fast as possible.</p>
+a special meaning — turn off animation and go as fast as possible.</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">alex</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>A turtle can &#8220;stamp&#8221; its footprint onto the canvas,
+<p>A turtle can “stamp” its footprint onto the canvas,
 and this will remain after the turtle has moved somewhere else.
 Stamping works, even when the pen is up.</p>
-<p>Let&#8217;s do an example that shows off some of these new features:</p>
+<p>Let’s do an example that shows off some of these new features:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -529,8 +526,8 @@ Stamping works, even when the pen is up.</p>
 <p>Be careful now!   How many times was the body of the loop executed?   How many turtle
 images do we see on the screen?  All except one of the shapes we see on the screen here
 are footprints created by <code class="docutils literal"><span class="pre">stamp</span></code>.  But the program still only has <em>one</em> turtle
-instance &#8212; can you figure out which one here is the real <code class="docutils literal"><span class="pre">tess</span></code>?  (Hint: if you&#8217;re not
-sure, write a new line of code after the <code class="docutils literal"><span class="pre">for</span></code> loop to change <code class="docutils literal"><span class="pre">tess</span></code>&#8216; color,
+instance — can you figure out which one here is the real <code class="docutils literal"><span class="pre">tess</span></code>?  (Hint: if you’re not
+sure, write a new line of code after the <code class="docutils literal"><span class="pre">for</span></code> loop to change <code class="docutils literal"><span class="pre">tess</span></code>’ color,
 or to put her pen down and draw a line, or to change her shape, etc.)</p>
 </div>
 <div class="section" id="glossary">
@@ -568,7 +565,7 @@ of the <code class="docutils literal"><span class="pre">forward</span></code> me
 Python programs. The contents of a module are made available to the other
 program by using the <code class="docutils literal"><span class="pre">import</span></code> statement.</dd>
 <dt id="term-object">object</dt>
-<dd>A &#8220;thing&#8221; to which a variable can refer.  This could be a screen window,
+<dd>A “thing” to which a variable can refer.  This could be a screen window,
 or one of the turtles we have created.</dd>
 <dt id="term-range">range</dt>
 <dd>A built-in function in Python for generating sequences of integers.  It is especially
@@ -591,12 +588,12 @@ has been when there are no more elements to assign to the loop variable.</dd>
 <dd><div class="first last line-block">
 <div class="line"><code class="docutils literal"><span class="pre">One</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">months</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">year</span> <span class="pre">is</span> <span class="pre">January</span></code></div>
 <div class="line"><code class="docutils literal"><span class="pre">One</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">months</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">year</span> <span class="pre">is</span> <span class="pre">February</span></code></div>
-<div class="line">...</div>
+<div class="line">…</div>
 </div>
 </dd>
 </dl>
 </li>
-<li><p class="first">Suppose our turtle <code class="docutils literal"><span class="pre">tess</span></code> is at heading 0 &#8212; facing east.  We execute the statement
+<li><p class="first">Suppose our turtle <code class="docutils literal"><span class="pre">tess</span></code> is at heading 0 — facing east.  We execute the statement
 <code class="docutils literal"><span class="pre">tess.left(3645)</span></code>.  What does <code class="docutils literal"><span class="pre">tess</span></code> do, and what is her final heading?</p>
 </li>
 <li><p class="first">Assume you have the assignment <code class="docutils literal"><span class="pre">xs</span> <span class="pre">=</span> <span class="pre">[12,</span> <span class="pre">10,</span> <span class="pre">32,</span> <span class="pre">3,</span> <span class="pre">66,</span> <span class="pre">17,</span> <span class="pre">42,</span> <span class="pre">99,</span> <span class="pre">20]</span></code></p>
@@ -624,7 +621,7 @@ takes another 100 steps, turns another random amount, etc.  A social science stu
 before the next 100 steps are taken. Her experimental data is <code class="docutils literal"><span class="pre">[160,</span> <span class="pre">-43,</span> <span class="pre">270,</span> <span class="pre">-97,</span> <span class="pre">-43,</span> <span class="pre">200,</span> <span class="pre">-940,</span> <span class="pre">17,</span> <span class="pre">-86]</span></code>.
 (Positive angles are counter-clockwise.)  Use a turtle to draw the path taken by our drunk friend.</p>
 </li>
-<li><p class="first">Enhance your program above to also tell us what the drunk pirate&#8217;s heading is after he has finished stumbling
+<li><p class="first">Enhance your program above to also tell us what the drunk pirate’s heading is after he has finished stumbling
 around.  (Assume he begins at heading 0).</p>
 </li>
 <li><p class="first">If you were going to draw a regular polygon with 18 sides, what angle would you need to
@@ -659,8 +656,8 @@ anticipate correctly:</p>
 turtle.  Watch how many complete rotations your cellphone makes before you complete the
 star.  Since each full rotation is 360 degrees, you can figure out the total
 number of degrees that your phone was rotated through.  If you divide that by 5, because
-there are five points to the star, you&#8217;ll know how many degrees to turn the turtle at each point.</li>
-<li>You can hide a turtle behind its invisibility cloak if you don&#8217;t want it shown.  It will still
+there are five points to the star, you’ll know how many degrees to turn the turtle at each point.</li>
+<li>You can hide a turtle behind its invisibility cloak if you don’t want it shown.  It will still
 draw its lines if its pen is down.  The method is invoked as <code class="docutils literal"><span class="pre">tess.hideturtle()</span></code> .  To make the
 turtle visible again, use <code class="docutils literal"><span class="pre">tess.showturtle()</span></code> .</li>
 </ul>
@@ -672,7 +669,7 @@ turtle visible again, use <code class="docutils literal"><span class="pre">tess.
 </li>
 <li><p class="first">Create a turtle, and assign it to a variable.  When you ask for its type, what do you get?</p>
 </li>
-<li><p class="first">What is the collective noun for turtles?  (Hint: they don&#8217;t come in <em>herds</em>.)</p>
+<li><p class="first">What is the collective noun for turtles?  (Hint: they don’t come in <em>herds</em>.)</p>
 </li>
 <li><p class="first">What the collective noun for pythons?  Is a python a viper?  Is a python venomous?</p>
 </li>
@@ -702,7 +699,7 @@ turtle visible again, use <code class="docutils literal"><span class="pre">tess.
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

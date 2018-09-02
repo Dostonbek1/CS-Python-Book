@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>14. List Algorithms &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="15. Classes and Objects — the Basics" href="classes_and_objects_I.html" />
     <link rel="prev" title="13. Files" href="files.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -56,8 +53,8 @@
 </div>
 <div class="section" id="list-algorithms">
 <span id="index-0"></span><h1>14. List Algorithms<a class="headerlink" href="#list-algorithms" title="Permalink to this headline">¶</a></h1>
-<p>This chapter is a bit different from what we&#8217;ve done so far: rather than
-introduce more new Python syntax and features, we&#8217;re going to focus on
+<p>This chapter is a bit different from what we’ve done so far: rather than
+introduce more new Python syntax and features, we’re going to focus on
 the program development process, and some algorithms that work with lists.</p>
 <p>As in all parts of this book, our expectation is that you, the reader, will
 copy our code into your Python environment, play and experiment, and work along with us.</p>
@@ -76,20 +73,20 @@ appropriate tests for the functions we were writing.</p>
 <p><strong>Test-driven development (TDD)</strong> is a software development practice which
 takes these practices one step further.  The key idea is that automated
 tests should be written <em>first</em>.  This technique is called <em>test-driven</em>
-because &#8212; if we are to believe the extremists &#8212; non-testing code should
+because — if we are to believe the extremists — non-testing code should
 only be written when there is a failing test to make pass.</p>
 <p>We can still retain our mode of working in small incremental steps, but
-now we&#8217;ll define and express those steps in terms of a sequence of increasingly
+now we’ll define and express those steps in terms of a sequence of increasingly
 sophisticated unit tests that demand more from our code at each stage.</p>
-<p>We&#8217;ll turn our attention to some standard algorithms that process lists now, but
-as we proceed through this chapter we&#8217;ll attempt to do so in the spirit envisaged
+<p>We’ll turn our attention to some standard algorithms that process lists now, but
+as we proceed through this chapter we’ll attempt to do so in the spirit envisaged
 by TDD.</p>
 </div>
 <div class="section" id="the-linear-search-algorithm">
 <span id="index-2"></span><h2>14.2. The linear search algorithm<a class="headerlink" href="#the-linear-search-algorithm" title="Permalink to this headline">¶</a></h2>
-<p>We&#8217;d like to know the index where a specific item occurs within in a list of items.
-Specifically, we&#8217;ll return the index of the item if it is found, or we&#8217;ll return
--1 if the item doesn&#8217;t occur in the list.  Let us start with some tests:</p>
+<p>We’d like to know the index where a specific item occurs within in a list of items.
+Specifically, we’ll return the index of the item if it is found, or we’ll return
+-1 if the item doesn’t occur in the list.  Let us start with some tests:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -103,7 +100,7 @@ Specifically, we&#8217;ll return the index of the item if it is found, or we&#82
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>Motivated by the fact that our tests don&#8217;t even run, let alone pass, we now write
+<p>Motivated by the fact that our tests don’t even run, let alone pass, we now write
 the function:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -120,36 +117,36 @@ the function:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>There are a some points to learn here: We&#8217;ve seen a similar algorithm in section 8.10 when
-we searched for a character in a string.  There we used a <code class="docutils literal"><span class="pre">while</span></code> loop, here we&#8217;ve used a
+<p>There are a some points to learn here: We’ve seen a similar algorithm in section 8.10 when
+we searched for a character in a string.  There we used a <code class="docutils literal"><span class="pre">while</span></code> loop, here we’ve used a
 <code class="docutils literal"><span class="pre">for</span></code> loop, coupled with <code class="docutils literal"><span class="pre">enumerate</span></code> to extract the <code class="docutils literal"><span class="pre">(i,</span> <span class="pre">v)</span></code> pair on each iteration.
-There are other variants &#8212; for example, we could have used <code class="docutils literal"><span class="pre">range</span></code> and made the loop
+There are other variants — for example, we could have used <code class="docutils literal"><span class="pre">range</span></code> and made the loop
 run only over the indexes, or we could have used the idiom of returning <code class="docutils literal"><span class="pre">None</span></code> when the
 item was not found in the list.  But the essential similarity in all these variations is
 that we test every item in the list in turn, from first to last, using the pattern of
-the short-circuit <em>eureka traversal</em> that we introduced earlier &#8212;
+the short-circuit <em>eureka traversal</em> that we introduced earlier —
 that we return from the
-function as soon as we find the target that we&#8217;re looking for.</p>
+function as soon as we find the target that we’re looking for.</p>
 <p>Searching all items of a sequence from first to last is called a <strong>linear search</strong>.
-Each time we check whether <code class="docutils literal"><span class="pre">v</span> <span class="pre">==</span> <span class="pre">target</span></code> we&#8217;ll call it a <strong>probe</strong>.  We like to count
+Each time we check whether <code class="docutils literal"><span class="pre">v</span> <span class="pre">==</span> <span class="pre">target</span></code> we’ll call it a <strong>probe</strong>.  We like to count
 probes as a measure of how efficient our algorithm is, and this will be a good enough
 indication of how long our algorithm will take to execute.</p>
 <p>Linear searching is characterized by the fact that the number of probes needed to find some
 target depends directly on the length of the list. So if the list becomes ten times bigger,
 we can expect to wait ten times longer when searching for things.
-Notice too, that if we&#8217;re searching for a target
-that is not present in the list, we&#8217;ll have to go all the way to the end before we can return
-the negative value. So this case needs N probes, where N is the length of the list. However, if we&#8217;re
+Notice too, that if we’re searching for a target
+that is not present in the list, we’ll have to go all the way to the end before we can return
+the negative value. So this case needs N probes, where N is the length of the list. However, if we’re
 searching for a target that does exist in the list, we could be lucky
 and find it immediately in position 0, or we might have to look further, perhaps even all
-the way to the last item. On average, when the target is present, we&#8217;re going to need
+the way to the last item. On average, when the target is present, we’re going to need
 to go about halfway through the list, or N/2 probes.</p>
 <p>We say that this search has <strong>linear performance</strong> (linear meaning <cite>straight line</cite>) because,
 if we were to measure the average search times for different sizes of lists (N), and then plot a graph
-of time-to-search against N, we&#8217;d get a more-or-less straight line graph.</p>
-<p>Analysis like this is pretty meaningless for small lists &#8212; the computer is quick enough
-not to bother if the list only has a handful of items. So generally, we&#8217;re interested in
-the <strong>scalability</strong> of our algorithms &#8212; how do they perform if we throw bigger problems at
+of time-to-search against N, we’d get a more-or-less straight line graph.</p>
+<p>Analysis like this is pretty meaningless for small lists — the computer is quick enough
+not to bother if the list only has a handful of items. So generally, we’re interested in
+the <strong>scalability</strong> of our algorithms — how do they perform if we throw bigger problems at
 them.  Would this search be a sensible one to use if we had a million or ten million
 items (perhaps the catalog of books in your local library) in our list?  What happens
 for really large datasets, e.g. how does Google search so brilliantly well?</p>
@@ -158,8 +155,8 @@ for really large datasets, e.g. how does Google search so brilliantly well?</p>
 <h2>14.3. A more realistic problem<a class="headerlink" href="#a-more-realistic-problem" title="Permalink to this headline">¶</a></h2>
 <p>As children learn to read, there are expectations that their vocabulary will grow.  So a
 child of age 14 is expected to know more words than a child of age 8. When prescribing
-reading books for a grade, an important question might be <em>&#8220;which words in this book
-are not in the expected vocabulary at this level?&#8221;</em></p>
+reading books for a grade, an important question might be <em>“which words in this book
+are not in the expected vocabulary at this level?”</em></p>
 <p>Let us assume we can read a vocabulary of words into our program, and read the text
 of a book, and split it into words.  Let us write some tests for what we need to do
 next.  Test data can usually be very small, even if we intend to finally use our
@@ -179,10 +176,10 @@ program for larger cases:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>Notice we were a bit lazy, and used <code class="docutils literal"><span class="pre">split</span></code> to create our list of words &#8212;
+<p>Notice we were a bit lazy, and used <code class="docutils literal"><span class="pre">split</span></code> to create our list of words —
 it is easier than typing out the list, and very convenient if you want to input a
 sentence into the program and turn it into a list of words.</p>
-<p>We now need to implement the function for which we&#8217;ve written tests, and we&#8217;ll make
+<p>We now need to implement the function for which we’ve written tests, and we’ll make
 use of our linear search.  The basic strategy is to run through each of the words in
 the book, look it up in the vocabulary, and if it is not in the vocabulary, save it
 into a new resulting list which we return from the function:</p>
@@ -207,7 +204,7 @@ into a new resulting list which we return from the function:</p>
 <p>Now let us look at the scalability.  We have more realistic vocabulary in the text file
 that could be downloaded at the beginning of this chapter,
 so let us read in the file (as a single string) and split it into a list of words. For
-convenience, we&#8217;ll create a function to do this for us, and test it on a file we happen
+convenience, we’ll create a function to do this for us, and test it on a file we happen
 to have available:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -241,14 +238,14 @@ to have available:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>So we&#8217;ve got a more sensible size vocabulary. Now let us load up a book,
-once again we&#8217;ll use the one we downloaded at the beginning of this chapter.
-Loading a book is much like loading words from a file, but we&#8217;re going
+<p>So we’ve got a more sensible size vocabulary. Now let us load up a book,
+once again we’ll use the one we downloaded at the beginning of this chapter.
+Loading a book is much like loading words from a file, but we’re going
 to do a little extra black magic.  Books are full of punctuation, and have
 mixtures of lowercase and uppercase letters.  We need to clean up the contents
 of the book.  This will involve removing punctuation, and converting everything
 to the same case (lowercase, because our vocabulary is all in lowercase).  So
-we&#8217;ll want a more sophisticated way of converting text to words.</p>
+we’ll want a more sophisticated way of converting text to words.</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -259,7 +256,7 @@ we&#8217;ll want a more sophisticated way of converting text to words.</p>
 </td></tr></table></div>
 </div></blockquote>
 <p>There is a powerful <code class="docutils literal"><span class="pre">translate</span></code> method available for strings.  The idea is that one sets up
-desired substitutions &#8212; for every character, we can give a
+desired substitutions — for every character, we can give a
 corresponding replacement character.  The <code class="docutils literal"><span class="pre">translate</span></code> method will apply
 these replacements throughout the whole string.  So here we go:</p>
 <blockquote>
@@ -298,7 +295,7 @@ these replacements throughout the whole string.  So here we go:</p>
 <p>The translation turns all uppercase characters into lowercase, and all
 punctuation characters and digits into spaces. Then, of course, <code class="docutils literal"><span class="pre">split</span></code>
 will get rid of the spaces as it breaks the text into a list of words.  The tests pass.</p>
-<p>Now we&#8217;re ready to read in our book:</p>
+<p>Now we’re ready to read in our book:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -324,7 +321,7 @@ will get rid of the spaces as it breaks the text into a list of words.  The test
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>Python prints the following (all on one line, we&#8217;ve cheated a bit for the textbook):</p>
+<p>Python prints the following (all on one line, we’ve cheated a bit for the textbook):</p>
 <blockquote>
 <div><div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="go">There are 27336 words in the book, the first 100 are</span>
 <span class="go">[&#39;alice&#39;, &#39;s&#39;, &#39;adventures&#39;, &#39;in&#39;, &#39;wonderland&#39;, &#39;lewis&#39;, &#39;carroll&#39;,</span>
@@ -352,8 +349,8 @@ the vocabulary:</p>
 </div></blockquote>
 <p>We wait a considerable time now, something like a minute, before Python finally
 works its way through this, and prints a list of 3398 words in the book that are
-not in the vocabulary.  Mmm...  This is not particularly scaleable.  For a vocabulary
-that is twenty times larger (you&#8217;ll often find school dictionaries with 300 000 words,
+not in the vocabulary.  Mmm…  This is not particularly scaleable.  For a vocabulary
+that is twenty times larger (you’ll often find school dictionaries with 300 000 words,
 for example), and longer books, this is going to be slow.  So let us make some timing
 measurements while we think about how we can improve this in the next section.</p>
 <blockquote>
@@ -383,10 +380,10 @@ measurements while we think about how we can improve this in the next section.</
 </div>
 <div class="section" id="binary-search">
 <span id="index-3"></span><h2>14.4. Binary Search<a class="headerlink" href="#binary-search" title="Permalink to this headline">¶</a></h2>
-<p>If you think about what we&#8217;ve just done, it is not how we work in real life.
+<p>If you think about what we’ve just done, it is not how we work in real life.
 If you were given a vocabulary and asked to tell if some word was present,
-you&#8217;d probably start in the middle. You can do this because the vocabulary
-is ordered &#8212; so you can probe some word in the middle, and immediately realize
+you’d probably start in the middle. You can do this because the vocabulary
+is ordered — so you can probe some word in the middle, and immediately realize
 that your target was before (or perhaps after) the one you had probed.  Applying this
 principle repeatedly leads us to a very much better algorithm for searching in a
 list of items that are already ordered.  (Note that if the items are not ordered,
@@ -404,7 +401,7 @@ the items are in order, we can improve our searching technique).</p>
 </div>
 </div></blockquote>
 <p>Even our test cases are interesting this time: notice that we start
-with items not in the list and look at boundary conditions &#8212; in the
+with items not in the list and look at boundary conditions — in the
 middle of the list, less than all items in the list, bigger than the biggest.
 Then we use a loop to use every list item as a target, and to confirm that our
 binary search returns the corresponding index of that item in the list.</p>
@@ -469,13 +466,13 @@ we end up with no more items in our region of interest.  We can code this as fol
 </div></blockquote>
 <p>The region of interest is represented by two variables, a lower bound <code class="docutils literal"><span class="pre">lb</span></code>
 and an upper bound <code class="docutils literal"><span class="pre">ub</span></code>.  It is important to be precise about what values
-these indexes have.  We&#8217;ll make <code class="docutils literal"><span class="pre">lb</span></code> hold the index of the first item in the ROI, and
+these indexes have.  We’ll make <code class="docutils literal"><span class="pre">lb</span></code> hold the index of the first item in the ROI, and
 make <code class="docutils literal"><span class="pre">ub</span></code> hold the index just <em>beyond</em> the last item of interest.  So these semantics
 are similar to a Python slice semantics: the region of interest is exactly the slice
 <code class="docutils literal"><span class="pre">xs[lb:ub]</span></code>.  (The algorithm never actually takes any array slices!)</p>
 <p>With this code in place, our tests pass.   Great.  Now if we substitute a call to this
 search algorithm instead of calling the <code class="docutils literal"><span class="pre">search_linear</span></code> in <code class="docutils literal"><span class="pre">find_unknown_words</span></code>, can we
-improve our performance?  Let&#8217;s do that, and again run this test:</p>
+improve our performance?  Let’s do that, and again run this test:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -497,8 +494,8 @@ improve our performance?  Let&#8217;s do that, and again run this test:</p>
 </div>
 </div></blockquote>
 <p>Why is this binary search so much faster than the linear search?  If we uncomment
-the print statement on lines 15 and 16, we&#8217;ll get a trace of the probes done during a
-search.  Let&#8217;s go ahead, and try that:</p>
+the print statement on lines 15 and 16, we’ll get a trace of the probes done during a
+search.  Let’s go ahead, and try that:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">search_binary</span><span class="p">(</span><span class="n">bigger_vocab</span><span class="p">,</span> <span class="s2">&quot;magic&quot;</span><span class="p">)</span>
 <span class="go">ROI[0:19469](size=19469), probed=&#39;known&#39;, target=&#39;magic&#39;</span>
@@ -519,7 +516,7 @@ search.  Let&#8217;s go ahead, and try that:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Here we see that finding the target word &#8220;magic&#8221; needed just 14 probes before it was found
+<p>Here we see that finding the target word “magic” needed just 14 probes before it was found
 at index 10328.  The important thing is that each probe halves (with some truncation)
 the remaining region of interest. By contrast, the linear search would have needed
 10329 probes to find the same target word.</p>
@@ -527,7 +524,7 @@ the remaining region of interest. By contrast, the linear search would have need
 probe splits the list into two pieces and discards the one half from the region of interest.</p>
 <p>The beauty of the algorithm is that we could double the size of the vocabulary, and
 it would only need one more probe!  And after another doubling, just another one probe.
-So as the vocabulary gets bigger, this algorithm&#8217;s performance becomes even more
+So as the vocabulary gets bigger, this algorithm’s performance becomes even more
 impressive.</p>
 <p>Can we put a formula to this?   If our list size is N, what is the biggest number of
 probes k we could need?  The maths is a bit easier if we turn the question around:
@@ -539,7 +536,7 @@ middle item, and two sublists of size 3).  With four probes, we can search 15 it
 and 5 probes lets us search up to 31 items.  So the general relationship is given by the formula</p>
 <blockquote>
 <div>N =  2<sup>k</sup> - 1</div></blockquote>
-<p>where k is the number of probes we&#8217;re allowed to make, and N is
+<p>where k is the number of probes we’re allowed to make, and N is
 the maximum size of the list that can be searched in that many probes.   This function
 is <em>exponential</em> in k (because k occurs in the exponent part).  If we wanted to
 turn the formula around and solve for k in terms of N, we need to move the
@@ -551,8 +548,8 @@ inverse of an exponent.)  So the formula for k in terms of N is now:</p>
 <p>The square-only-on-top brackets are called <em>ceiling brackets</em>: this means that you must round the
 number up to the next whole integer.</p>
 <p>Let us try this on a calculator, or in Python, which is the mother of all calculators:
-suppose I have 1000 elements to be searched, what is the maximum number of probes I&#8217;ll need?
-(There is a pesky +1 in the formula, so let us not forget to add it on...):</p>
+suppose I have 1000 elements to be searched, what is the maximum number of probes I’ll need?
+(There is a pesky +1 in the formula, so let us not forget to add it on…):</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">log</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">log</span><span class="p">(</span><span class="mi">1000</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -560,7 +557,7 @@ suppose I have 1000 elements to be searched, what is the maximum number of probe
 </pre></div>
 </div>
 </div></blockquote>
-<p>Telling us that we&#8217;ll need 9.96 probes maximum, to search 1000 items is not quite what we want.
+<p>Telling us that we’ll need 9.96 probes maximum, to search 1000 items is not quite what we want.
 We forgot to take the ceiling.  The <code class="docutils literal"><span class="pre">ceil</span></code> function in the <code class="docutils literal"><span class="pre">math</span></code>
 module does exactly this.  So more accurately, now:</p>
 <blockquote>
@@ -582,8 +579,8 @@ module does exactly this.  So more accurately, now:</p>
 </div></blockquote>
 <p>This tells us that searching 1000 items needs 10 probes. (Well technically, with 10
 probes we can search exactly 1023 items, but the easy and useful stuff to
-remember here is that &#8220;1000 items needs 10 probes, a million needs 20 probes,
-and a billion items only needs 30 probes&#8221;).</p>
+remember here is that “1000 items needs 10 probes, a million needs 20 probes,
+and a billion items only needs 30 probes”).</p>
 <p>You will rarely encounter algorithms that scale to large datasets as beautifully as binary search does!</p>
 </div>
 <div class="section" id="removing-adjacent-duplicates-from-a-list">
@@ -591,7 +588,7 @@ and a billion items only needs 30 probes&#8221;).</p>
 <p>We often want to get the unique elements in a list, i.e. produce a new list in which each
 different element occurs just once.  Consider our case of looking for words in Alice in Wonderland
 that are not in our vocabulary.  We had a report that there are 3398 such words, but there
-are duplicates in that list.  In fact, the word &#8220;alice&#8221; occurs 398 times
+are duplicates in that list.  In fact, the word “alice” occurs 398 times
 in the book, and it is not in our vocabulary!  How should we remove these duplicates?</p>
 <p>A good approach is to sort the list, then remove all adjacent duplicates.  Let us start
 with removing adjacent duplicates</p>
@@ -635,12 +632,12 @@ item that was inserted into the result, and avoid inserting it again:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>The amount of work done in this algorithm is linear &#8212; each item in <code class="docutils literal"><span class="pre">xs</span></code> causes the loop
+<p>The amount of work done in this algorithm is linear — each item in <code class="docutils literal"><span class="pre">xs</span></code> causes the loop
 to execute exactly once, and there are no nested loops.  So doubling the number of elements in
 <code class="docutils literal"><span class="pre">xs</span></code> should cause this function to run twice as long: the relationship between the size of
 the list and the time to run will be graphed as a straight (linear) line.</p>
 <p>Let us go back now to our analysis of <cite>Alice in Wonderland</cite>.  Before checking the words in the
-book against the vocabulary, we&#8217;ll sort those words into order, and eliminate duplicates.
+book against the vocabulary, we’ll sort those words into order, and eliminate duplicates.
 So our new code looks like this:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -698,7 +695,7 @@ and sort the result:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>But this doesn&#8217;t take advantage of the fact that the two lists are
+<p>But this doesn’t take advantage of the fact that the two lists are
 already sorted, and is going to have poor scalability and performance for very large lists.</p>
 <p>Lets get some tests together first:</p>
 <blockquote>
@@ -776,15 +773,15 @@ already sorted, and is going to have poor scalability and performance for very l
 </div></blockquote>
 <p>The algorithm works as follows: we create a result list, and keep two indexes,
 one into each list (lines 3-5).  On each iteration of the loop, whichever list item is smaller
-is copied to the result list, and that list&#8217;s index is advanced.  As soon as either index
+is copied to the result list, and that list’s index is advanced.  As soon as either index
 reaches the end of its list, we copy all the remaining items from the other list
 into the result, which we return.</p>
 </div>
 <div class="section" id="alice-in-wonderland-again">
 <h2>14.7. Alice in Wonderland, again!<a class="headerlink" href="#alice-in-wonderland-again" title="Permalink to this headline">¶</a></h2>
 <p>Underlying the algorithm for merging sorted lists is a deep pattern of computation that
-is widely reusable.  The pattern essence is <em>&#8220;Run through the lists always processing the
-smallest remaining items from each, with these cases to consider:&#8221;</em></p>
+is widely reusable.  The pattern essence is <em>“Run through the lists always processing the
+smallest remaining items from each, with these cases to consider:”</em></p>
 <ul class="simple">
 <li>What should we do when either list has no more items?</li>
 <li>What should we do if the smallest items from each list are equal to each other?</li>
@@ -799,12 +796,12 @@ the merging algorithm pattern for each of these cases:</p>
 <li>Return only those items that are present in the second list, but not in the first.</li>
 <li>Return items that are present in either the first or the second list.</li>
 <li>Return items from the first list that are not eliminated by a matching element
-in the second list.  In this case, an item in the second list &#8220;knocks out&#8221; just one
+in the second list.  In this case, an item in the second list “knocks out” just one
 matching item in the first list.  This operation is sometimes called <em>bagdiff</em>.
 For example  <code class="docutils literal"><span class="pre">bagdiff([5,7,11,11,11,12,13],</span> <span class="pre">[7,8,11])</span></code> would return  <code class="docutils literal"><span class="pre">[5,11,11,12,13]</span></code></li>
 </ul>
 <p>In the previous section we sorted the words from the book, and eliminated duplicates.
-Our vocabulary is also sorted.  So third case above &#8212; find all items in the second list
+Our vocabulary is also sorted.  So third case above — find all items in the second list
 that are not in the first list, would be another way to implement <code class="docutils literal"><span class="pre">find_unknown_words</span></code>.
 Instead of searching for every word in the dictionary (either by linear or binary search),
 why not use a variant of the merge to return the words that occur in the book, but not in
@@ -891,7 +888,7 @@ the vocabulary.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Let&#8217;s review what we&#8217;ve done. We started with a word-by-word linear lookup in the vocabulary
+<p>Let’s review what we’ve done. We started with a word-by-word linear lookup in the vocabulary
 that ran in about 50 seconds.  We implemented a clever binary search,
 and got that down to 0.22 seconds, more than 200 times faster.
 But then we did something even better: we sorted the
@@ -903,22 +900,22 @@ algorithm is more than a 1000 times faster than our first attempt!</p>
 <span class="target" id="eightqueenssolver"></span></div>
 <div class="section" id="eight-queens-puzzle-part-1">
 <span id="index-6"></span><h2>14.8. Eight Queens puzzle, part 1<a class="headerlink" href="#eight-queens-puzzle-part-1" title="Permalink to this headline">¶</a></h2>
-<p>As told by Wikipedia, <em>&#8220;The eight queens puzzle is the problem of placing eight chess
+<p>As told by Wikipedia, <em>“The eight queens puzzle is the problem of placing eight chess
 queens on an 8x8 chessboard so that no two queens attack each other. Thus, a
-solution requires that no two queens share the same row, column, or diagonal.&#8221;</em></p>
+solution requires that no two queens share the same row, column, or diagonal.”</em></p>
 <blockquote>
 <div><img alt="_images/eight_queens_01.png" src="_images/eight_queens_01.png" />
 </div></blockquote>
 <p>Please try this yourself, and find a few more solutions by hand.</p>
-<p>We&#8217;d like to write a program to find solutions to this puzzle.  In fact,
-the puzzle generalizes to placing N queens on an NxN board, so we&#8217;re going to
+<p>We’d like to write a program to find solutions to this puzzle.  In fact,
+the puzzle generalizes to placing N queens on an NxN board, so we’re going to
 think about the general case, not just the 8x8 case.  Perhaps we can find solutions
 for 12 queens on a 12x12 board, or 20 queens on a 20x20 board.</p>
 <p>How do we approach a complex problem like this?  A good starting point is to think
-about our <em>data structures</em> &#8212; how exactly do we plan to represent the state of
+about our <em>data structures</em> — how exactly do we plan to represent the state of
 the chessboard and its queens in our program?  Once we have some handle on what
 our puzzle is going to look like in memory, we can begin to think about the functions
-and logic we&#8217;ll need to solve the puzzle, i.e. how do we put another queen onto the board
+and logic we’ll need to solve the puzzle, i.e. how do we put another queen onto the board
 somewhere, and to check whether it clashes with any of the queens already on the board.</p>
 <p>The steps of finding a good representation, and then finding a good algorithm to operate on
 the data cannot always be done independently of each other.  As you think about the operations
@@ -927,11 +924,11 @@ to do the operations you need.</p>
 <p>This relationship between algorithms and data was elegantly expressed in the title
 of a book <em>Algorithms + Data Structures = Programs</em>, written by one of the pioneers in
 Computer Science, Niklaus Wirth, the inventor of Pascal.</p>
-<p>Let&#8217;s brainstorm some ideas about how a chessboard and queens could be represented in memory.</p>
+<p>Let’s brainstorm some ideas about how a chessboard and queens could be represented in memory.</p>
 <ul>
 <li><p class="first">A two dimensional matrix (a list of 8 lists, each containing 8 squares) is one possibility.
-At each square of the board would like to know whether it contains a queen or not &#8212; just two
-possible states for each square &#8212; so perhaps each element in the lists could be True or False,
+At each square of the board would like to know whether it contains a queen or not — just two
+possible states for each square — so perhaps each element in the lists could be True or False,
 or, more simply, 0 or 1.</p>
 <p>Our state for the solution above could then have this data representation:</p>
 <blockquote>
@@ -954,7 +951,7 @@ or, more simply, 0 or 1.</p>
 </td></tr></table></div>
 </div></blockquote>
 <p>You should also be able to see how the empty board would be represented, and you should start
-to imagine what operations or changes you&#8217;d need to make to the data to place another
+to imagine what operations or changes you’d need to make to the data to place another
 queen somewhere on the board.</p>
 </li>
 <li><p class="first">Another idea might be to keep a list of coordinates of
@@ -966,9 +963,9 @@ the illustration, for example, we could represent the state of that solution as:
 </td></tr></table></div>
 </div></blockquote>
 </li>
-<li><p class="first">We could make other tweaks to this &#8212; perhaps each
+<li><p class="first">We could make other tweaks to this — perhaps each
 element in this list should rather be a tuple, with
-integer coordinates for both axes.  And being good computer scientists, we&#8217;d probably start numbering
+integer coordinates for both axes.  And being good computer scientists, we’d probably start numbering
 each axis from 0 instead of at 1. Now our representation could be:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">bd3</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">)]</span>
@@ -976,7 +973,7 @@ each axis from 0 instead of at 1. Now our representation could be:</p>
 </td></tr></table></div>
 </div></blockquote>
 </li>
-<li><p class="first">Looking at this representation, we can&#8217;t help but notice that the first coordinates
+<li><p class="first">Looking at this representation, we can’t help but notice that the first coordinates
 are <code class="docutils literal"><span class="pre">0,1,2,3,4,5,6,7</span></code> and they correspond exactly to the index position of the
 pairs in the list.  So we could discard them, and come up with this really compact
 alternative representation of the solution:</p>
@@ -985,15 +982,15 @@ alternative representation of the solution:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>This will be what we&#8217;ll use, let&#8217;s see where that takes us.</p>
+<p>This will be what we’ll use, let’s see where that takes us.</p>
 </li>
 </ul>
 <blockquote>
 <div><div class="admonition-this-representation-is-not-general admonition">
 <p class="first admonition-title">This representation is not general</p>
-<p>We&#8217;ve come up with a great representation. But will it work for other puzzles?
+<p>We’ve come up with a great representation. But will it work for other puzzles?
 Our list representation has the constraint that one can only put
-one queen in each column. But that is a puzzle constraint anyway &#8212; no two queens are
+one queen in each column. But that is a puzzle constraint anyway — no two queens are
 allowed to share the same column.  So puzzle and data representation are well matched.</p>
 <p class="last">But if we were trying to solve a different puzzle on a chessboard, perhaps
 play a game of checkers, where many pieces could occupy the same column, our
@@ -1021,8 +1018,8 @@ queens on the same diagonal.</p>
 generate various permutations of that list, and check each permutation to see if it
 has any clashes (queens that are on the same diagonal).  If it has no clashes, it is
 a solution, and we can print it.</p>
-<p>Let us be precise and clear on this issue: if we only use permutations of the rows, and we&#8217;re
-using our compact representation, no queens can clash on either rows or columns, and we don&#8217;t
+<p>Let us be precise and clear on this issue: if we only use permutations of the rows, and we’re
+using our compact representation, no queens can clash on either rows or columns, and we don’t
 even have to concern ourselves with those cases.  So the only clashes we need
 to test for are clashes on the diagonals.</p>
 <p>It sounds like a useful function will be one that can test if two queens
@@ -1059,12 +1056,12 @@ in each direction:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>If you copy the code and run it, you&#8217;ll be happy to learn that the tests pass!</p>
-<p>Now let&#8217;s consider how we construct a solution by hand.  We&#8217;ll put a queen
+<p>If you copy the code and run it, you’ll be happy to learn that the tests pass!</p>
+<p>Now let’s consider how we construct a solution by hand.  We’ll put a queen
 somewhere in the first column, then place one in the second column, only if it
-does not clash with the one already on the board.  And then we&#8217;ll put a third
+does not clash with the one already on the board.  And then we’ll put a third
 one on, checking it against the two queens already to its left. When we consider
-the queen on column 6, we&#8217;ll need to check for clashes against those in all
+the queen on column 6, we’ll need to check for clashes against those in all
 the columns to its left, i.e. in columns 0,1,2,3,4,5.</p>
 <p>So the next building block is a function that, given a partially completed
 puzzle, can check whether the queen at column <code class="docutils literal"><span class="pre">c</span></code> clashes with any of the
@@ -1118,7 +1115,7 @@ queens to its left, at columns 0,1,2,..c-1:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>Finally, we&#8217;re going to give our program one of our permutations &#8212; i.e.
+<p>Finally, we’re going to give our program one of our permutations — i.e.
 all queens placed somewhere, one on each row, one on each column.  But does
 the permutation have any diagonal clashes?</p>
 <blockquote>
@@ -1154,13 +1151,13 @@ the permutation have any diagonal clashes?</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>Summary of what we&#8217;ve done so far:  we now have a powerful function called <code class="docutils literal"><span class="pre">has_clashes</span></code> that can
-tell if a configuration is a solution to the queens puzzle.   Let&#8217;s get on now with generating
+<p>Summary of what we’ve done so far:  we now have a powerful function called <code class="docutils literal"><span class="pre">has_clashes</span></code> that can
+tell if a configuration is a solution to the queens puzzle.   Let’s get on now with generating
 lots of permutations and finding solutions!</p>
 </div>
 <div class="section" id="eight-queens-puzzle-part-2">
 <span id="eightqueensmainprog"></span><h2>14.9. Eight Queens puzzle, part 2<a class="headerlink" href="#eight-queens-puzzle-part-2" title="Permalink to this headline">¶</a></h2>
-<p>This is the fun, easy part.  We could try to find all permutations of <code class="docutils literal"><span class="pre">[0,1,2,3,4,5,6,7]</span></code> &#8212; that
+<p>This is the fun, easy part.  We could try to find all permutations of <code class="docutils literal"><span class="pre">[0,1,2,3,4,5,6,7]</span></code> — that
 might be algorithmically challenging, and would be a <em>brute force</em> way of tackling the
 problem.  We just try everything, and find all possible solutions.</p>
 <p>Of course we know there are N! permutations of N things, so we can get an early idea of
@@ -1168,16 +1165,16 @@ how long it would take to search all of them for all solutions.  Not too long at
 8! is only 40320 different cases to check out.  This is vastly better than starting with
 64 places to put eight queens.  If you
 do the sums for how many ways can you choose 8 of the 64 squares for your queens, the
-formula (called <em>N choose k</em> where you&#8217;re choosing k=8 squares of the available N=64)
+formula (called <em>N choose k</em> where you’re choosing k=8 squares of the available N=64)
 yields a whopping 4426165368, obtained from (64! / (8! x 56!)).</p>
-<p>So our earlier key insight &#8212; that we only need to consider permutations &#8212;
+<p>So our earlier key insight — that we only need to consider permutations —
 has reduced what we call the <em>problem space</em> from about 4.4 billion cases to just 40320!</p>
-<p>We&#8217;re not even going to explore all those, however.  When we introduced the random number
+<p>We’re not even going to explore all those, however.  When we introduced the random number
 module, we learned that it had a <code class="docutils literal"><span class="pre">shuffle</span></code> method that randomly permuted a list of items.
-So we&#8217;re going to write a &#8220;random&#8221; algorithm to find solutions to the N queens
-problem.  We&#8217;ll begin with the permutation [0,1,2,3,4,5,6,7] and we&#8217;ll repeatedly shuffle
-the list, and test each to see if it works!  Along the way we&#8217;ll count how many attempts
-we need before we find each solution, and we&#8217;ll find 10 solutions  (we could hit the same
+So we’re going to write a “random” algorithm to find solutions to the N queens
+problem.  We’ll begin with the permutation [0,1,2,3,4,5,6,7] and we’ll repeatedly shuffle
+the list, and test each to see if it works!  Along the way we’ll count how many attempts
+we need before we find each solution, and we’ll find 10 solutions  (we could hit the same
 solution more than once, because shuffle is random!):</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -1233,7 +1230,7 @@ solution more than once, because shuffle is random!):</p>
 there are known to be 92 different solutions to this puzzle.
 We are randomly picking one of 40320 possible permutations of our representation.
 So our chances of picking a solution on each try are 92/40320.  Put another way,
-on average we&#8217;ll need 40320/92 tries &#8212; about 438.26 &#8212;
+on average we’ll need 40320/92 tries — about 438.26 —
 before we stumble across a solution.  The number of tries we printed looks
 like our experimental data agrees quite nicely with our theory!</p>
 <div class="admonition-save-this-code-for-later admonition">
@@ -1262,7 +1259,7 @@ various other scenarios, such as finding words that are in a book, but not in a 
 <dt id="term-probe">probe</dt>
 <dd>Each time we take a look when searching for an item is called a probe.  In our
 chapter on <cite>Iteration</cite> we also played a guessing game where the computer tried
-to guess the user&#8217;s secret number. Each of those tries would also be called a probe.</dd>
+to guess the user’s secret number. Each of those tries would also be called a probe.</dd>
 <dt id="term-test-driven-development-tdd">test-driven development (TDD)</dt>
 <dd>A software development practice which arrives at a desired feature
 through a series of small, iterative steps motivated by automated tests
@@ -1286,7 +1283,7 @@ as was suggested there:</p>
 <li>Return only those items that are present in the second list, but not in the first.</li>
 <li>Return items that are present in either the first or the second list.</li>
 <li>Return items from the first list that are not eliminated by a matching element
-in the second list.  In this case, an item in the second list &#8220;knocks out&#8221; just one
+in the second list.  In this case, an item in the second list “knocks out” just one
 matching item in the first list.  This operation is sometimes called <em>bagdiff</em>.
 For example  <code class="docutils literal"><span class="pre">bagdiff([5,7,11,11,11,12,13],</span> <span class="pre">[7,8,11])</span></code> would return  <code class="docutils literal"><span class="pre">[5,11,11,12,13]</span></code></li>
 </ol>
@@ -1296,14 +1293,14 @@ For example  <code class="docutils literal"><span class="pre">bagdiff([5,7,11,11
 maximum size puzzle you can usually solve in under a minute?</p>
 </li>
 <li><p class="first">Adapt the queens program so that we keep a list of solutions that have already
-printed, so that we don&#8217;t print the same solution more than once.</p>
+printed, so that we don’t print the same solution more than once.</p>
 </li>
 <li><p class="first">Chess boards are symmetric: if we have a solution to the queens problem, its
-mirror solution &#8212; either flipping the board on the X or in the Y axis,
+mirror solution — either flipping the board on the X or in the Y axis,
 is also a solution.  And giving the board a 90 degree, 180 degree, or
 270 degree rotation is also a solution.  In some sense, solutions that are just
-mirror images or rotations of other solutions &#8212; in the same family &#8212;
-are less interesting than the unique &#8220;core cases&#8221;.   Of the 92 solutions for
+mirror images or rotations of other solutions — in the same family —
+are less interesting than the unique “core cases”.   Of the 92 solutions for
 the 8 queens problem, there are only 12 unique families
 if you take rotations and mirror images into account.
 Wikipedia has some fascinating stuff about this.</p>
@@ -1326,7 +1323,7 @@ are</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Now adapt the queens program so it won&#8217;t list solutions that are in the
+<li><p class="first">Now adapt the queens program so it won’t list solutions that are in the
 same family.  It only prints solutions from unique families.</p>
 </li>
 </ol>
@@ -1373,7 +1370,7 @@ prime numbers in her selection of the four tickets.  Return a list of all primes
 </li>
 <li><p class="first">Write a function that repeatedly makes a new draw, and compares the draw to the four tickets.</p>
 <ol class="lowerroman simple">
-<li>Count how many draws are needed until one of the computer scientist&#8217;s tickets has at least
+<li>Count how many draws are needed until one of the computer scientist’s tickets has at least
 3 correct picks.
 Try the experiment twenty times, and average out the number of draws needed.</li>
 <li>How many draws are needed, on average, before she gets at least 4 picks correct?</li>
@@ -1389,7 +1386,7 @@ the answer should be!</p>
 </li>
 <li><p class="first">Read <em>Alice in Wonderland</em>.  You can read the plain text version we have with this textbook,
 or if you have e-book reader software on your PC, or a Kindle, iPhone, Android, etc.
-you&#8217;ll be able to find a suitable version for your device at
+you’ll be able to find a suitable version for your device at
 <a class="reference external" href="http://www.gutenberg.org/">http://www.gutenberg.org/</a>.  They also have html and pdf versions, with pictures,
 and thousands of other classic books!</p>
 </li>
@@ -1419,7 +1416,7 @@ and thousands of other classic books!</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

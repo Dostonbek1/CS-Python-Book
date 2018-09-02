@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>8. Strings &#8212; How to Think Like a Computer Scientist: Learning with Python 3</title>
-    
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +27,7 @@
     <link rel="next" title="9. Tuples" href="tuples.html" />
     <link rel="prev" title="7. Iteration" href="iteration.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -59,9 +56,9 @@
 <div class="section" id="a-compound-data-type">
 <span id="index-0"></span><h2>8.1. A compound data type<a class="headerlink" href="#a-compound-data-type" title="Permalink to this headline">¶</a></h2>
 <p>So far we have seen built-in types like <code class="docutils literal"><span class="pre">int</span></code>, <code class="docutils literal"><span class="pre">float</span></code>,
-<code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">str</span></code> and we&#8217;ve seen lists and pairs.
+<code class="docutils literal"><span class="pre">bool</span></code>, <code class="docutils literal"><span class="pre">str</span></code> and we’ve seen lists and pairs.
 Strings, lists, and pairs are qualitatively different from the others because they
-are made up of smaller pieces.  In the case of strings, they&#8217;re made up of smaller
+are made up of smaller pieces.  In the case of strings, they’re made up of smaller
 strings each containing one <strong>character</strong>.</p>
 <p>Types that comprise smaller pieces are called <strong>compound data types</strong>.
 Depending on what we are doing, we may want to treat a compound data type as a
@@ -71,7 +68,7 @@ single thing, or we may want to access its parts. This ambiguity is useful.</p>
 <h2>8.2. Working with strings as single things<a class="headerlink" href="#working-with-strings-as-single-things" title="Permalink to this headline">¶</a></h2>
 <p>We previously saw that each turtle instance has its own attributes and
 a number of methods that can be applied to the instance.  For example,
-we could set the turtle&#8217;s color, and we wrote <code class="docutils literal"><span class="pre">tess.turn(90)</span></code>.</p>
+we could set the turtle’s color, and we wrote <code class="docutils literal"><span class="pre">tess.turn(90)</span></code>.</p>
 <p>Just like a turtle, a string is also an object.  So each string instance
 has its own attributes and methods.</p>
 <p>For example:</p>
@@ -89,7 +86,7 @@ characters are in uppercase.  (The original string <code class="docutils literal
 <p>There are also methods such as <code class="docutils literal"><span class="pre">lower</span></code>, <code class="docutils literal"><span class="pre">capitalize</span></code>, and
 <code class="docutils literal"><span class="pre">swapcase</span></code> that do other interesting stuff.</p>
 <p>To learn what methods are available, you can consult the Help documentation, look for
-string methods, and read the documentation.  Or, if you&#8217;re a bit lazier,
+string methods, and read the documentation.  Or, if you’re a bit lazier,
 simply type the following into a PyScripter script:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -99,14 +96,14 @@ simply type the following into a PyScripter script:</p>
 </td></tr></table></div>
 </div></blockquote>
 <p>When you type the period to select one of the methods of <code class="docutils literal"><span class="pre">ss</span></code>, PyScripter will pop up a
-selection window showing all the methods (there are around 70 of them &#8212; thank goodness we&#8217;ll only
+selection window showing all the methods (there are around 70 of them — thank goodness we’ll only
 use a few of those!) that could be used on your string.</p>
 <blockquote>
 <div><img alt="_images/string_methods.png" src="_images/string_methods.png" />
 </div></blockquote>
 <p>When you type the name of the method, some further help about its parameter and return
-type, and its docstring, will be displayed.  This is a good example of a tool &#8212; PyScripter &#8212;
-using the meta-information &#8212; the docstrings &#8212; provided by the module programmers.</p>
+type, and its docstring, will be displayed.  This is a good example of a tool — PyScripter —
+using the meta-information — the docstrings — provided by the module programmers.</p>
 <blockquote>
 <div><img alt="_images/swapcase.png" src="_images/swapcase.png" />
 </div></blockquote>
@@ -156,9 +153,9 @@ expression.</p>
 </div></blockquote>
 <p>Do not worry about <code class="docutils literal"><span class="pre">enumerate</span></code> at this point, we will see more of it
 in the chapter on lists.</p>
-<p>Note that indexing returns a <em>string</em> &#8212; Python has no special type for a single character.
+<p>Note that indexing returns a <em>string</em> — Python has no special type for a single character.
 It is just a string of length 1.</p>
-<p>We&#8217;ve also seen lists previously.  The same indexing notation works to extract elements from
+<p>We’ve also seen lists previously.  The same indexing notation works to extract elements from
 a list:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">prime_nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
@@ -190,7 +187,7 @@ this:</p>
 </pre></div>
 </td></tr></table></div>
 </div></blockquote>
-<p>That won&#8217;t work. It causes the runtime error
+<p>That won’t work. It causes the runtime error
 <code class="docutils literal"><span class="pre">IndexError:</span> <span class="pre">string</span> <span class="pre">index</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">range</span></code>. The reason is that there is no
 character at index position 6 in <code class="docutils literal"><span class="pre">&quot;banana&quot;</span></code>.
 Because we start counting at zero, the six indexes are
@@ -207,8 +204,8 @@ the length of <code class="docutils literal"><span class="pre">fruit</span></cod
 end of the string. The expression <code class="docutils literal"><span class="pre">fruit[-1]</span></code> yields the last letter,
 <code class="docutils literal"><span class="pre">fruit[-2]</span></code> yields the second to last, and so on.</p>
 <p>As you might have guessed, indexing with a negative index also works like this for lists.</p>
-<p>We won&#8217;t use negative indexes in the rest of these notes &#8212; not many computer languages
-use this idiom, and you&#8217;ll probably be better off avoiding it. But there is plenty of
+<p>We won’t use negative indexes in the rest of these notes — not many computer languages
+use this idiom, and you’ll probably be better off avoiding it. But there is plenty of
 Python code out on the Internet that will use this trick, so it is best to know that it exists.</p>
 <span class="target" id="index-2"></span></div>
 <div class="section" id="traversal-and-the-for-loop">
@@ -235,7 +232,7 @@ The loop condition is <code class="docutils literal"><span class="pre">ix</span>
 length of the string, the condition is false, and the body of the loop is not
 executed. The last character accessed is the one with the index
 <code class="docutils literal"><span class="pre">len(fruit)-1</span></code>, which is the last character in the string.</p>
-<p>But we&#8217;ve previously seen how the <code class="docutils literal"><span class="pre">for</span></code> loop can easily iterate over
+<p>But we’ve previously seen how the <code class="docutils literal"><span class="pre">for</span></code> loop can easily iterate over
 the elements in a list and it can do so for strings as well:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -250,7 +247,7 @@ can see the expressive power the <code class="docutils literal"><span class="pre
 while loop when traversing a string.</p>
 <p>The following example shows how to use concatenation and a <code class="docutils literal"><span class="pre">for</span></code> loop to
 generate an abecedarian series. Abecedarian refers to a series or list in which
-the elements appear in alphabetical order. For example, in Robert McCloskey&#8217;s
+the elements appear in alphabetical order. For example, in Robert McCloskey’s
 book <em>Make Way for Ducklings</em>, the names of the ducklings are Jack, Kack, Lack,
 Mack, Nack, Ouack, Pack, and Quack.  This loop outputs these names in order:</p>
 <blockquote>
@@ -279,8 +276,8 @@ Mack, Nack, Ouack, Pack, and Quack.  This loop outputs these names in order:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Of course, that&#8217;s not quite right because Ouack and Quack are misspelled.
-You&#8217;ll fix this as an exercise below.</p>
+<p>Of course, that’s not quite right because Ouack and Quack are misspelled.
+You’ll fix this as an exercise below.</p>
 </div>
 <div class="section" id="slices">
 <span id="index-4"></span><h2>8.6. Slices<a class="headerlink" href="#slices" title="Permalink to this headline">¶</a></h2>
@@ -300,8 +297,8 @@ slice a list to refer to some sublist of the items in the list:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>The operator <code class="docutils literal"><span class="pre">[n:m]</span></code> returns the part of the string from the n&#8217;th character
-to the m&#8217;th character, including the first but excluding the last. This
+<p>The operator <code class="docutils literal"><span class="pre">[n:m]</span></code> returns the part of the string from the n’th character
+to the m’th character, including the first but excluding the last. This
 behavior makes sense if you imagine the indices
 pointing <em>between</em> the characters, as in the following diagram:</p>
 <blockquote>
@@ -314,7 +311,7 @@ both within the bounds of the string, your result will be of length (m-n).</p>
 the slice starts at the beginning of the string (or list). If you omit the second index,
 the slice extends to the end of the string (or list). Similarly, if you provide value for
 <code class="docutils literal"><span class="pre">n</span></code> that is bigger than the length of the string (or list), the slice will take all the
-values up to the end. (It won&#8217;t give an &#8220;out of range&#8221; error like the normal indexing operation
+values up to the end. (It won’t give an “out of range” error like the normal indexing operation
 does.)   Thus:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fruit</span> <span class="o">=</span> <span class="s2">&quot;banana&quot;</span>
@@ -383,7 +380,7 @@ with the intention of changing a character in a string.  For example:</p>
 </div></blockquote>
 <p>Instead of producing the output <code class="docutils literal"><span class="pre">Jello,</span> <span class="pre">world!</span></code>, this code produces the
 runtime error <code class="docutils literal"><span class="pre">TypeError:</span> <span class="pre">'str'</span> <span class="pre">object</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">support</span> <span class="pre">item</span> <span class="pre">assignment</span></code>.</p>
-<p>Strings are <strong>immutable</strong>, which means you can&#8217;t change an existing string. The
+<p>Strings are <strong>immutable</strong>, which means you can’t change an existing string. The
 best you can do is create a new string that is a variation on the original:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -507,11 +504,11 @@ the function returns <code class="docutils literal"><span class="pre">-1</span><
 <p>This is another example where we see a <code class="docutils literal"><span class="pre">return</span></code> statement inside a loop.
 If <code class="docutils literal"><span class="pre">strng[ix]</span> <span class="pre">==</span> <span class="pre">ch</span></code>, the function returns immediately, breaking out of
 the loop prematurely.</p>
-<p>If the character doesn&#8217;t appear in the string, then the program exits the loop
+<p>If the character doesn’t appear in the string, then the program exits the loop
 normally and returns <code class="docutils literal"><span class="pre">-1</span></code>.</p>
 <p>This pattern of computation is sometimes called a <strong>eureka traversal</strong> or
 <strong>short-circuit evaluation</strong>,  because as soon as we find what we are looking for,
-we can cry &#8220;Eureka!&#8221;, take the short-circuit, and stop looking.</p>
+we can cry “Eureka!”, take the short-circuit, and stop looking.</p>
 </div>
 <div class="section" id="looping-and-counting">
 <span id="index-9"></span><h2>8.11. Looping and counting<a class="headerlink" href="#looping-and-counting" title="Permalink to this headline">¶</a></h2>
@@ -565,7 +562,7 @@ starting position in the search string:</p>
 </td></tr></table></div>
 </div></blockquote>
 <p>The call <code class="docutils literal"><span class="pre">find2(&quot;banana&quot;,</span> <span class="pre">&quot;a&quot;,</span> <span class="pre">2)</span></code> now returns <code class="docutils literal"><span class="pre">3</span></code>, the index of the first
-occurrence of &#8220;a&#8221; in &#8220;banana&#8221; starting the search at index 2. What does
+occurrence of “a” in “banana” starting the search at index 2. What does
 <code class="docutils literal"><span class="pre">find2(&quot;banana&quot;,</span> <span class="pre">&quot;n&quot;,</span> <span class="pre">3)</span></code> return? If you said, 4, there is a good chance you
 understand how <code class="docutils literal"><span class="pre">find2</span></code> works.</p>
 <p>Better still, we can combine <code class="docutils literal"><span class="pre">find</span></code> and <code class="docutils literal"><span class="pre">find2</span></code> using an
@@ -620,7 +617,7 @@ position, up to but not including the end position:</p>
 <p>The optional value for <code class="docutils literal"><span class="pre">end</span></code> is interesting: we give it a default value <code class="docutils literal"><span class="pre">None</span></code> if the
 caller does not supply any argument.  In the body of the function we test what <code class="docutils literal"><span class="pre">end</span></code> is,
 and if the caller did not supply any argument, we reassign <code class="docutils literal"><span class="pre">end</span></code> to be the length of the string.
-If the caller has supplied an argument for <code class="docutils literal"><span class="pre">end</span></code>, however, the caller&#8217;s value will be used in the loop.</p>
+If the caller has supplied an argument for <code class="docutils literal"><span class="pre">end</span></code>, however, the caller’s value will be used in the loop.</p>
 <p>The semantics of <code class="docutils literal"><span class="pre">start</span></code> and <code class="docutils literal"><span class="pre">end</span></code> in this function are precisely the same as they are in
 the <code class="docutils literal"><span class="pre">range</span></code> function.</p>
 <p>Here are some test cases that should pass:</p>
@@ -642,7 +639,7 @@ the <code class="docutils literal"><span class="pre">range</span></code> functio
 </div>
 <div class="section" id="the-built-in-find-method">
 <span id="index-11"></span><h2>8.13. The built-in <code class="docutils literal"><span class="pre">find</span></code> method<a class="headerlink" href="#the-built-in-find-method" title="Permalink to this headline">¶</a></h2>
-<p>Now that we&#8217;ve done all this work to write a powerful <code class="docutils literal"><span class="pre">find</span></code> function, we can reveal that
+<p>Now that we’ve done all this work to write a powerful <code class="docutils literal"><span class="pre">find</span></code> function, we can reveal that
 strings already have their own built-in <code class="docutils literal"><span class="pre">find</span></code> method.  It can do everything
 that our code can do, and more!</p>
 <blockquote>
@@ -668,7 +665,7 @@ substrings, not just single characters:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Usually we&#8217;d prefer to use the methods that Python provides rather than reinvent
+<p>Usually we’d prefer to use the methods that Python provides rather than reinvent
 our own equivalents. But many of the built-in functions and methods make good
 teaching exercises, and the underlying techniques you learn are your building blocks
 to becoming a proficient programmer.</p>
@@ -691,13 +688,13 @@ and split it into words.</p>
 </div>
 <div class="section" id="cleaning-up-your-strings">
 <h2>8.15. Cleaning up your strings<a class="headerlink" href="#cleaning-up-your-strings" title="Permalink to this headline">¶</a></h2>
-<p>We&#8217;ll often work with strings that contain punctuation, or tab and newline characters,
-especially, as we&#8217;ll see in a future chapter, when we read our text from files or from
-the Internet. But if we&#8217;re writing a program, say, to count word frequencies or check the
-spelling of each word, we&#8217;d prefer to strip off these unwanted characters.</p>
-<p>We&#8217;ll show just one example of how to strip punctuation from a string.
+<p>We’ll often work with strings that contain punctuation, or tab and newline characters,
+especially, as we’ll see in a future chapter, when we read our text from files or from
+the Internet. But if we’re writing a program, say, to count word frequencies or check the
+spelling of each word, we’d prefer to strip off these unwanted characters.</p>
+<p>We’ll show just one example of how to strip punctuation from a string.
 Remember that strings are immutable, so we cannot change the string with the
-punctuation &#8212; we need to traverse the original string and create a new string,
+punctuation — we need to traverse the original string and create a new string,
 omitting any punctuation:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -721,7 +718,7 @@ omitting any punctuation:</p>
 <p>Setting up that first assignment is messy and error-prone.
 Fortunately, the Python <code class="docutils literal"><span class="pre">string</span></code> module already does it
 for us.  So we will make a slight improvement to this
-program &#8212; we&#8217;ll import the <code class="docutils literal"><span class="pre">string</span></code> module and use its definition:</p>
+program — we’ll import the <code class="docutils literal"><span class="pre">string</span></code> module and use its definition:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -752,7 +749,7 @@ program &#8212; we&#8217;ll import the <code class="docutils literal"><span clas
 </td></tr></table></div>
 </div></blockquote>
 <p>Composing together this function and the <code class="docutils literal"><span class="pre">split</span></code> method from the previous section
-makes a useful combination &#8212; we&#8217;ll clean out the punctuation, and
+makes a useful combination — we’ll clean out the punctuation, and
 <code class="docutils literal"><span class="pre">split</span></code> will clean out the newlines and tabs while turning the string into
 a list of words:</p>
 <blockquote>
@@ -788,7 +785,7 @@ a list of words:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>There are other useful string methods, but this book isn&#8217;t intended to
+<p>There are other useful string methods, but this book isn’t intended to
 be a reference manual. On the other hand, the <em>Python Library Reference</em>
 is. Along with a wealth of other documentation, it is available at
 the <a class="reference external" href="http://www.python.org">Python website</a>.</p>
@@ -796,7 +793,7 @@ the <a class="reference external" href="http://www.python.org">Python website</a
 <div class="section" id="the-string-format-method">
 <span id="index-12"></span><h2>8.16. The string format method<a class="headerlink" href="#the-string-format-method" title="Permalink to this headline">¶</a></h2>
 <p>The easiest and most powerful way to format a string in Python 3 is to use the
-<code class="docutils literal"><span class="pre">format</span></code> method.  To see how this works, let&#8217;s start with a few examples:</p>
+<code class="docutils literal"><span class="pre">format</span></code> method.  To see how this works, let’s start with a few examples:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -835,19 +832,19 @@ the <a class="reference external" href="http://www.python.org">Python website</a
 <p>The template string contains <em>place holders</em>,  <code class="docutils literal"><span class="pre">...</span> <span class="pre">{0}</span> <span class="pre">...</span> <span class="pre">{1}</span> <span class="pre">...</span> <span class="pre">{2}</span> <span class="pre">...</span></code> etc.
 The <code class="docutils literal"><span class="pre">format</span></code> method substitutes its arguments into the place holders.
 The numbers in the place holders are indexes that determine which argument
-gets substituted &#8212; make sure you understand line 6 above!</p>
-<p>But there&#8217;s more!  Each of the replacement fields can also contain a <strong>format specification</strong> &#8212;
+gets substituted — make sure you understand line 6 above!</p>
+<p>But there’s more!  Each of the replacement fields can also contain a <strong>format specification</strong> —
 it is always introduced by the <code class="docutils literal"><span class="pre">:</span></code> symbol  (Line 11 above uses one.)
 This modifies how the substitutions are made into the template, and can control things like:</p>
 <ul class="simple">
 <li>whether the field is aligned to the left <code class="docutils literal"><span class="pre">&lt;</span></code>, center <code class="docutils literal"><span class="pre">^</span></code>, or right <code class="docutils literal"><span class="pre">&gt;</span></code></li>
 <li>the width allocated to the field within the result string (a number like <code class="docutils literal"><span class="pre">10</span></code>)</li>
-<li>the type of conversion (we&#8217;ll initially only force conversion to float, <code class="docutils literal"><span class="pre">f</span></code>, as we did in
-line 11 of the code above, or perhaps we&#8217;ll ask integer numbers to be converted to hexadecimal using <code class="docutils literal"><span class="pre">x</span></code>)</li>
+<li>the type of conversion (we’ll initially only force conversion to float, <code class="docutils literal"><span class="pre">f</span></code>, as we did in
+line 11 of the code above, or perhaps we’ll ask integer numbers to be converted to hexadecimal using <code class="docutils literal"><span class="pre">x</span></code>)</li>
 <li>if the type conversion is a float, you can also specify how many decimal places are wanted
 (typically, <code class="docutils literal"><span class="pre">.2f</span></code> is useful for working with currencies to two decimal places.)</li>
 </ul>
-<p>Let&#8217;s do a few simple and common examples that should be enough for most needs.  If you need to
+<p>Let’s do a few simple and common examples that should be enough for most needs.  If you need to
 do anything more esoteric, use <em>help</em> and read all the powerful, gory details.</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -920,7 +917,7 @@ at all:</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>As you might expect, you&#8217;ll get an index error if
+<p>As you might expect, you’ll get an index error if
 your placeholders refer to arguments that you do not provide:</p>
 <blockquote>
 <div><div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;hello </span><span class="si">{3}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Dave&quot;</span><span class="p">)</span>
@@ -931,7 +928,7 @@ your placeholders refer to arguments that you do not provide:</p>
 </div>
 </div></blockquote>
 <p>The following example illustrates the real utility of string formatting.
-First, we&#8217;ll try to print a table without using string formatting:</p>
+First, we’ll try to print a table without using string formatting:</p>
 <blockquote>
 <div><div class="highlight-python3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -1072,7 +1069,7 @@ given for it in the function call.</dd>
 <dd>A style of programming that shortcuts extra work as soon as the
 outcome is know with certainty. In this chapter our <code class="docutils literal"><span class="pre">find</span></code>
 function returned as soon as it found what it was looking for; it
-didn&#8217;t traverse all the rest of the items in the string.</dd>
+didn’t traverse all the rest of the items in the string.</dd>
 <dt id="term-slice">slice</dt>
 <dd>A part of a string (substring) specified by a range of indices. More
 generally, a subsequence of any sequence type in Python can be created
@@ -1147,11 +1144,11 @@ string, it repeatedly calls the <code class="docutils literal"><span class="pre"
 to locate new occurrences of the letter being counted.</p>
 </li>
 <li><p class="first">Assign to a variable in your program a triple-quoted string that contains
-your favourite paragraph of text &#8212; perhaps a poem, a speech, instructions
+your favourite paragraph of text — perhaps a poem, a speech, instructions
 to bake a cake, some inspirational verses, etc.</p>
 <p>Write a function which removes all punctuation from the string, breaks the string
 into a list of words, and counts the number of words in your text that contain
-the letter &#8220;e&#8221;.  Your program should print an analysis of the text like this:</p>
+the letter “e”.  Your program should print an analysis of the text like this:</p>
 <blockquote>
 <div><div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="go">Your text contains 243 words, of which 109 (44.8%) contain an &quot;e&quot;.</span>
 </pre></div>
@@ -1309,7 +1306,7 @@ the letter &#8220;e&#8221;.  Your program should print an analysis of the text l
     </div>
     <div class="footer" role="contentinfo">
         &#169; <a href="copyright.html">Copyright</a> 2012, Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>
